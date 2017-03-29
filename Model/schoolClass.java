@@ -9,7 +9,7 @@ package Model;
  *
  */
 public class schoolClass {
-	
+	 
 	private String className;
 	private Teacher teacher;
 	private ArrayList<Child> childList;
