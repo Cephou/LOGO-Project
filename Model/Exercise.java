@@ -16,10 +16,11 @@ public class Exercise {
 
 	/**
 	 * Constructeur pour la classe Exercice.
-	 * @param title est le titre de l'exercice
-	 * @param instruction est la consigne de l'exercice
+	 * @param title est le titre de l'exercice (taille du string inf à 50 charactères)
+	 * @param instruction est la consigne de l'exercice (taille du string inf à 3000 charactères)
 	 * @param icon est la miniature l'exercice.
-	 * @param teacher est le professeur auteur de l'exercice. Un exercice est toujours associé à l'exercice qu'il a écrit.
+	 * @param teacher est le professeur auteur de l'exercice.
+	 * Un exercice est toujours associé à l'exercice qu'il a écrit.
 	 */
 	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher) {
 		this.title = title;
