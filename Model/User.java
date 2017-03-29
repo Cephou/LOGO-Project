@@ -80,7 +80,6 @@ public abstract class User {
     }
 
     protected void setPicture(ImageIcon picture) {
-
         this.picture = picture;
     }
 

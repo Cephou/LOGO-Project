@@ -26,7 +26,8 @@ public class Teacher extends User {
      */
     public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
         super(pFirstName, pLastName, pAge, pPicture);
-        password = pPassword;
+        setAge(pAge);
+        setPassword(pPassword);
     }
 
     //////////////////// SETTERS ////////////////////
