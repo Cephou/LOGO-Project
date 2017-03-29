@@ -70,6 +70,7 @@ public class SchoolClass{
 	 * la classe Child
 	 * 
 	 * @param Ajout de l'élève --> pas d'ajout possible de la meme personne 2 fois
+	 * @throws ObjectAlreadyHereException
 	 */
 	public void addChild(Child newChild) {
 		
@@ -84,7 +85,7 @@ public class SchoolClass{
 			childList.add(newChild);
 		}else
 		{
-			throw new objectAlreadyHere();
+			throws new ObjectAlreadyHereException();
 		}
 
 	}
@@ -92,11 +93,12 @@ public class SchoolClass{
 	/**
 	 * Remove child in childList
 	 * 
-	 * @param eleve que l'on veut ajouter dans la classe --> method possible uniquement si la liste contient au moins 1 élève				
+	 * @param eleve que l'on veut ajouter dans la classe --> method possible uniquement si la liste contient au moins 1 élève	
+	 * @throws EmptyListException			
 	 */
 	public void removeChild(Child oldChild) {
 		if (childList.size() > 0) childList.remove(oldChild);
-		else throw new emptyList();
+		else throw new EmptyListException();
 	}
 
 	/**
@@ -111,6 +113,7 @@ public class SchoolClass{
 	 * Add Exercise in exerciseList
 	 * 
 	 * @param exercice que l'on ajoute --> pas d'ajout du meme exercice possible
+	 * @throws ObjectAlreadyHereException
 	 */
 	public void addExercice(Exercise newExercise) {
 		boolean check = false;
@@ -123,7 +126,7 @@ public class SchoolClass{
 			exerciseList.add(newExercise);
 		}else
 		{
-			throw new objectAlreadyHere();
+			throw new ObjectAlreadyHereException();
 		}
 		
 	}
@@ -132,9 +135,10 @@ public class SchoolClass{
 	 * Remove child in childList
 	 * 
 	 * @param exercice que l'on veut enlever --> method possible uniquement si la liste contient au moins 1 exercice
+	 * @throws EmptyListException
 	 */
 	public void removeChild(Exercise newExercise) {
 		if(exerciseList.size()>0) exerciseList.remove(newExercise);
-		else throw new emptyList();
+		else throw new EmptyListException();
 	}
 }
