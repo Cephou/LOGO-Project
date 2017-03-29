@@ -8,7 +8,7 @@ package Model;
  * Cette classe crée l'object classe définie par un nom, un professeur et une liste d'élève
  *
  */
-public class schoolClass {
+public class SchoolClass {
 	 
 	private String className;
 	private Teacher teacher;
@@ -16,17 +16,17 @@ public class schoolClass {
 	
 	/**
 	 * Constructeur
-	 * @param newClassName = nom attribué à la classe
+	 * @param newClassName = nom attribué à la classes
 	 * @param newTeacher = objet "Teacher" associé à la classe	 *
 	 */
-	public schoolClass(String newClassName, Teacher newTeacher)
+	public SchoolClass(String newClassName, Teacher newTeacher)
 	{
 		this.className = newClassName;
 		this.teqcher = newTeacher;
 		this.childList = new ArrayList<Child>();		
 	}
 	
-	/**
+	/**s
 	 * Getter className
 	 */
 	public String getClassName()
