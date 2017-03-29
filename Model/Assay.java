@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Assay {	
 	private ArrayList<Action> listAction; //liste des actions à réalisées par l'eleves
 	private Child child;				//enfant qui effectue la tentative
-	private Exercice exercice;			//exercice associé à cette tentaive
+	private Exercise exercise;			//exercice associé à cette tentaive
 	private String comment;				//commentaire laisser par le professeur
 	private Grade grade;				//apprécialtion laissée par le prpofesseur
  
@@ -24,9 +24,9 @@ public class Assay {
 	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
-	public Assay(Child child,Exercice exercice){
+	public Assay(Child child,Exercise exercise){
 		this.child = child;
-		this.exercice = exercice;
+		this.exercise = exercise;
 		listAction = new ArrayList<Action>();
 		this.grade = Grade.NotGraded;
 		
