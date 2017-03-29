@@ -3,6 +3,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  * @author grp7
  * Cette classe crée l'object classe définie par un nom, un professeur et une liste d'élève
@@ -22,7 +24,7 @@ public class SchoolClass {
 	public SchoolClass(String newClassName, Teacher newTeacher)
 	{
 		this.className = newClassName;
-		this.teqcher = newTeacher;
+		this.teacher = newTeacher;
 		this.childList = new ArrayList<Child>();		
 	}
 	
@@ -31,7 +33,7 @@ public class SchoolClass {
 	 */
 	public String getClassName()
 	{
-		return classname;
+		return className;
 	}
 
 	/**
@@ -53,7 +55,7 @@ public class SchoolClass {
 	/**
 	 * Setter teacher
 	 */
-	public Teacher setTeacher(Teacher newTeacher)
+	public void setTeacher(Teacher newTeacher)
 	{
 		teacher = newTeacher;
 	}
@@ -69,13 +71,9 @@ public class SchoolClass {
 	/**
 	 * Remove child in childList
 	 */
-	public void removeChild(Child oldChild)
+	public void removeChild(Child oldChild) 
 	{
 		childList.remove(oldChild);
 	}
-	
-	
-	
-	
 
 }
