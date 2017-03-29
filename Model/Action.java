@@ -10,9 +10,9 @@ import Model.Tortue.TortueG;
 public class Action {
 	
 	private TortueG turtle;
-	private String command; // La commande de l'action (avancer, tourner etc)
+	private PossibleAction command; // La commande de l'action (avancer, tourner etc)
 	
-	public Action(String pcommand, TortueG pturtle) {
+	public Action(PossibleAction pcommand, TortueG pturtle) {
 		command = pcommand;
 		turtle = pturtle;
 	}
@@ -23,7 +23,15 @@ public class Action {
 	 * Ne se soucis pas de la position de la tortue (à voir dans la classe assay).
 	 */
 	public void drawTurtle() {
-		
+		switch (command) {
+		  case MoveForward:
+		    /*Action*/;
+		    break;
+		  case Turn:
+			/* Action */
+		  default:
+		    /*Action*/;             
+		}
 	}
 	
 	/**
@@ -36,7 +44,7 @@ public class Action {
 	/**
 	 * @return the command
 	 */
-	public String getCommand() {
+	public PossibleAction getCommand() {
 		return command;
 	}
 
