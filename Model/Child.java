@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 public class Child extends User {
 
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
+	private SchoolClass schoolClass; // La classe de l'élève.
 	
 	/*
 	 * Créé un enfant.
@@ -43,10 +44,17 @@ public class Child extends User {
 	}
 
 	/**
-	 * @param assays the assays to set
+	 * @return the schoolClass
 	 */
-	public void setAssays(ArrayList<Assay> assays) {
-		this.assays = assays;
+	public SchoolClass getSchoolClass() {
+		return schoolClass;
+	}
+
+	/**
+	 * @param schoolClass the schoolClass to set
+	 */
+	public void setSchoolClass(SchoolClass schoolClass) {
+		this.schoolClass = schoolClass;
 	}
 
 }

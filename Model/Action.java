@@ -19,6 +19,8 @@ public class Action {
 
 	/*
 	 * Dessine l'action sur le canvas tortue à l'aide de la commande et le type de tortue
+	 * Appelle la bonne méthode des classe tortue pour dessiner la tortue.
+	 * Ne se soucis pas de la position de la tortue (à voir dans la classe assay).
 	 */
 	public void drawTurtle() {
 		
