@@ -39,9 +39,9 @@ public class Assay {
 	}
 	
 	/*
-	 * Ajouter une action réalisée par un élève à une tentive
-	 * Le nombre d'action n'est pas borné.
-	 * @param a action réalisée par l'élève
+	 * Ajouter une action réalisée par un élève à une tentative
+	 * Le nombre d'actions n'est pas borné.
+	 * @param a action réalisée par l'élève/le professeur
 	 */
 	public void addAction(Action a){
 		listAction.add(a);
@@ -60,13 +60,22 @@ public class Assay {
 	 */
 	public void evaluateAssay(Teacher teacher, String comment,Grade grade){
 		//Control teacher ? regarder si child.getTeacher() == this.teacher
+		//control valeur grade
+		if (teacher == child.getSchoolClass().getTeacher()){
+			if(grade != Grade.NotGraded){
+				this.comment=comment;
+				this.grade = grade;
+				
+			}
+		}
 		this.comment = comment;
 		this.grade = grade;
 	}
 	
 	/**
 	 * Methode permettant de rejouer la liste d'actions enregistrées
-	 * On suppose que la position initiale de la tortue est toujours la même
+	 * On suppose que la position initiale de la tortue est toujours la même.
+	 *TODO Pas plus de controle sur cette fonction ?
 	 * 
 	 * @param tortue la tortue (G, Rapide, Couleur) utilisée par l'eleves lors de sa tentative
 	 */
