@@ -7,11 +7,22 @@ import javax.swing.*;
  */
 public class Teacher extends User {
 
-    String password;
+    private String password; // The password of the teacher
 
     public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
         super(pFirstName, pLastName, pAge, pPicture);
         password = pPassword;
     }
 
+    //////////////////// GETTERS ////////////////////
+
+    public String getPassword() {
+        return password;
+    }
+
+    //////////////////// SETTERS ////////////////////
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
