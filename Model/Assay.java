@@ -11,8 +11,7 @@ import java.util.ArrayList;
  * Une tentative  comprend une suite d'actions,un commentaire et une appréciation.
  *
  */
-public class Assay {
-	
+public class Assay {	
 	private ArrayList<Action> listAction; //liste des actions à réalisées par l'eleves
 	private Child child;				//enfant qui effectue la tentative
 	private Exercice exercice;			//exercice associé à cette tentaive
