@@ -19,13 +19,15 @@ public class Assay {
 
 	/**
 	 * Constructeur de la classe Tentative
-	 * @param child l'enfait qui effectue la tentative
+	 * lors de la création d'une tentative, cette derniere prend le statut "non noté"
+	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
 	public Assay(child, exercice){
 		this.child = child;
 		this.exercice = exercice;
 		listAction = new ArrayList<Action>();
+		this.grade = Grade.NotGraded;
 		
 	}
 	
@@ -42,7 +44,8 @@ public class Assay {
 	 * Une evaluation de tentive est réalisée par un professeur
 	 * Il laisse un petit texte, le commentaire et un note (un des 3 smileys disponible).
 	 */
-	public void evaluateAssay(String c,Grade g){
+	public void evaluateAssay(Teacher t, String c,Grade g){
+		//Control teacher ?
 		this.comment = comment;
 		this.grade = grade;
 	}
