@@ -2,14 +2,19 @@ package Model;
 
 import Model.Tortue.TortueG;
 
+/*
+ * Cette classe créée des objets actions, contenant la tortue et l'action à réaliser.
+ * Elle a pour but de dessiner la tortue sur un canvas.
+ */
+
 public class Action {
 	
-	private TortueG turtleType;
+	private TortueG turtle;
 	private String command; // La commande de l'action (avancer, tourner etc)
 	
 	public Action(String pcommand, TortueG pturtle) {
-		setCommand(pcommand);
-		setTurtleType(pturtle);
+		command = pcommand;
+		turtle = pturtle;
 	}
 
 	/*
@@ -22,15 +27,8 @@ public class Action {
 	/**
 	 * @return the turtleType
 	 */
-	public TortueG getTurtleType() {
-		return turtleType;
-	}
-
-	/**
-	 * @param turtleType the turtleType to set
-	 */
-	public void setTurtleType(TortueG turtleType) {
-		this.turtleType = turtleType;
+	public TortueG getTurtle() {
+		return turtle;
 	}
 
 	/**
@@ -38,13 +36,6 @@ public class Action {
 	 */
 	public String getCommand() {
 		return command;
-	}
-
-	/**
-	 * @param command the command to set
-	 */
-	public void setCommand(String command) {
-		this.command = command;
 	}
 
 }

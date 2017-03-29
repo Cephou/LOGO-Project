@@ -6,6 +6,7 @@ import javax.swing.*;
  * User is an abstract class that creates a user with the required information.
  *
  */
+
 public abstract class User {
     protected String firstName; // The first name of the user
     protected String lastName; // The last name of the user
@@ -19,6 +20,8 @@ public abstract class User {
      * @param pLastName The last name of the user
      * @param pAge The age of the user
      * @param pPicture The picture of the user
+     * Controle la taille du prénom (entre 1 et 50 caractères)
+	 * Controle la taille du nom (entre 1 et 50 caractères)
      */
     public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
         firstName = pFirstName;

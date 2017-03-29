@@ -5,36 +5,34 @@ import javax.swing.ImageIcon;
 
 /**
  * @author Groupe 7
- * Cette classe décrit l'objet enfant, un élève qui réalise des tentatives et complète des exercices
+ * Cette classe décrit l'objet enfant, un élève qui réalise des tentatives.
  */
 
 public class Child extends User {
 
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
 	
+	/*
+	 * Créé un enfant.
+	 * Controle l'age (entre 3 et 12 ans).
+	 * 
+	 */
 	public Child(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
 		super(pFirstName, pLastName, pAge, pPicture);
-		// TODO Auto-generated constructor stub
+		assays = new ArrayList<Assay>();
 	}
 
 	/**
-	 * Ajoute une tentative dans l'enfant
+	 * Crée une tentative vide
+	 * Ajoute la tentative dans la liste des tentative de l'enfant
+	 * @param l'exercice sur lequel faire la tentative
+	 * @return la tentative crée (permet la manipulation future de la tentative crée)
 	 */
 	
-	public void addAssay() {
-		createAssay();
-	}
-	
-	/**
-	 * @params
-	 * @params
-	 * @params
-	 * @params
-	 * Ajoute une tentative dans l'enfant
-	 */
-	
-	private void createAssay() {
-		
+	public Assay createAssay(Exercise pexercise) {
+		Assay newAssay = new Assay(this, pexercise);
+		assays.add(newAssay);
+		return newAssay;
 	}
 	
 	/**
