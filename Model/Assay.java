@@ -29,11 +29,20 @@ public class Assay {
 		
 	}
 	
+	/*
+	 * Ajouter une action réalisée par un élève à une tentive
+	 * @param a action réalisée par l'élève
+	 */
 	public void addAction(Action a){
-		lsitAction.add(a)
+		listAction.add(a)
 	}
 	
-	public void evaluateAssay(comment, grade){
+	/**
+	 * Evaluer une tentative
+	 * Une evaluation de tentive est réalisée par un professeur
+	 * Il laisse un petit texte, le commentaire et un note (un des 3 smileys disponible).
+	 */
+	public void evaluateAssay(String c,Grade g){
 		this.comment = comment;
 		this.grade = grade;
 	}

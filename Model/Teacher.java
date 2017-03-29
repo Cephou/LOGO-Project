@@ -9,8 +9,8 @@ public class Teacher extends User {
 
     String password;
 
-    public Teacher(String firstName, String lastName, int age, ImageIcon picture, String pPassword) {
-        super(firstName, lastName, age, picture);
+    public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
+        super(pFirstName, pLastName, pAge, pPicture);
         password = pPassword;
     }
 
