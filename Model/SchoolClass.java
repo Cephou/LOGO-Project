@@ -70,6 +70,7 @@ public class SchoolClass {
 	
 	/**
 	 * Remove child in childList
+	 * Method possible uniquement si la liste contient au moins 1 élève
 	 */
 	public void removeChild(Child oldChild) 
 	{
