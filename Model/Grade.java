@@ -1,8 +1,10 @@
 package Model;
 
-public enum Grades {
+public enum Grade {
 
-	  // Objets directement construits
+	  /**
+	   * Classe grade
+	   */
 
 	  NotGraded("Non notés"),
 	  InAcquisition("En cours d'acquisition"),
@@ -13,7 +15,7 @@ public enum Grades {
 
 	  //Constructeur
 
-	  Grades(String name){
+	  Grade(String name){
 	    this.name = name;
 	  }
 	  

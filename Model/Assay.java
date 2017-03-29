@@ -16,7 +16,7 @@ public class Assay {
 	private Child child;				//enfant qui effectue la tentative
 	private Exercice exercice;			//exercice associé à cette tentaive
 	private String comment;				//commentaire laisser par le professeur
-	private Grades grade;				//apprécialtion laissée par le prpofesseur
+	private Grade grade;				//apprécialtion laissée par le prpofesseur
  
 	/**
 	 * Constructeur de la classe Tentative
@@ -37,7 +37,7 @@ public class Assay {
 	 * @param a action réalisée par l'élève
 	 */
 	public void addAction(Action a){
-		listAction.add(a)
+		listAction.add(a);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class Assay {
 	 * @param c le commentaire à laisser
 	 * @param g la note à laisser
 	 */
-	public void evaluateAssay(Teacher t, String c,Grade g){
+	public void evaluateAssay(Teacher teacher, String comment,Grade grade){
 		//Control teacher ? regarder si child.getTeacher() == this.teacher
 		this.comment = comment;
 		this.grade = grade;
