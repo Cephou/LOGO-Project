@@ -16,7 +16,7 @@ public class Teacher extends User {
         password = pPassword;
     }
 
-    //////////////////// GETTERS ////////////////////
+    //////////////////// PASSWORD ////////////////////
 
     public String getPassword() {
         return password;
@@ -26,13 +26,11 @@ public class Teacher extends User {
         this.password = password;
     }
 
-    //////////////////// SETTERS ////////////////////
+    //////////////////// CLASSES ////////////////////
 
     public ArrayList<SchoolClass> getClasses() {
         return classes;
     }
-
-    //////////////////// METHODS ////////////////////
 
     public void addClass(SchoolClass schoolClass) {
         classes.add(schoolClass);

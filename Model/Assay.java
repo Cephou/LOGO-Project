@@ -13,19 +13,19 @@ import java.util.ArrayList;
  */
 public class Assay {
 	
-	private ArrayList<Action> listAction;
-	private Child child;
-	private Exercice exercice;
-	private String comment;
-	private Grades grade;
-
+	private ArrayList<Action> listAction; //liste des actions à réalisées par l'eleves
+	private Child child;				//enfant qui effectue la tentative
+	private Exercice exercice;			//exercice associé à cette tentaive
+	private String comment;				//commentaire laisser par le professeur
+	private Grades grade;				//apprécialtion laissée par le prpofesseur
+ 
 	/**
 	 * Constructeur de la classe Tentative
-	 * lors de la création d'une tentative, cette derniere prend le statut "non noté"
+	 * Lors de la création d'une tentative, cette derniere prend le statut "non noté"
 	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
-	public Assay(Child child, exercice){
+	public Assay(Child child,Exercice exercice){
 		this.child = child;
 		this.exercice = exercice;
 		listAction = new ArrayList<Action>();
@@ -45,9 +45,12 @@ public class Assay {
 	 * Evaluer une tentative
 	 * Une evaluation de tentive est réalisée par un professeur
 	 * Il laisse un petit texte, le commentaire et un note (un des 3 smileys disponible).
+	 * @param teacher le professeur qui rélise l'évaluation (on restreint l'avluation d'un eleve a un professeur)
+	 * @param c le commentaire à laisser
+	 * @param g la note à laisser
 	 */
 	public void evaluateAssay(Teacher t, String c,Grade g){
-		//Control teacher ?
+		//Control teacher ? regarder si child.getTeacher() == this.teacher
 		this.comment = comment;
 		this.grade = grade;
 	}
