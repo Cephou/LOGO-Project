@@ -11,6 +11,9 @@ public class Teacher extends User {
     private String password; // The password of the teacher
     private ArrayList<SchoolClass> classes; // The list of the classes of the teacher
 
+    /**
+     * Constructor of the class Teacher.
+     */
     public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
         super(pFirstName, pLastName, pAge, pPicture);
         password = pPassword;
