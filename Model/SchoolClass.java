@@ -18,8 +18,8 @@ public class SchoolClass {
 	
 	/**
 	 * Constructeur
-	 * @param newClassName = nom attribué à la classes
-	 * @param newTeacher = objet "Teacher" associé à la classe	 *
+	 * @param newClassName = nom attribué à la classe qui doit etre renseigné à la création
+	 * @param newTeacher = objet "Teacher" associé à la classe qui doit etre renseigné lors de la création de la classe	 *
 	 */
 	public SchoolClass(String newClassName, Teacher newTeacher)
 	{
@@ -70,6 +70,7 @@ public class SchoolClass {
 	
 	/**
 	 * Remove child in childList
+	 * Method possible uniquement si la liste contient au moins 1 élève
 	 */
 	public void removeChild(Child oldChild) 
 	{

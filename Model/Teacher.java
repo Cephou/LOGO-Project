@@ -32,16 +32,34 @@ public class Teacher extends User {
         return password;
     }
 
+    /**
+     * setPassword can modify the password of the teacher.
+     * Minimum 6 characters.
+     *
+     * @param password is the new password.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+
     //////////////////// CLASSES ////////////////////
 
+    /**
+     * getClass is a method that returns the teacher's classes list.
+     *
+     * @return the list classes
+     */
     public ArrayList<SchoolClass> getClasses() {
         return classes;
     }
 
+    /**
+     * addClass is a method that add a class to the teacher's classes list.
+     * A class cannot be added only one time to the list.
+     *
+     * @param schoolClass is the added class
+     */
     public void addClass(SchoolClass schoolClass) {
         classes.add(schoolClass);
     }
