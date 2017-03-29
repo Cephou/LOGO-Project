@@ -8,10 +8,10 @@ import javax.swing.*;
  */
 
 public abstract class User {
-    String firstName; // The first name of the user
-    String lastName; // The last name of the user
-    int age; // The age of the user
-    ImageIcon picture; // The icon associated to the user
+    protected String firstName; // The first name of the user
+    protected String lastName; // The last name of the user
+    protected int age; // The age of the user
+    protected ImageIcon picture; // The icon associated to the user
 
     public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
         firstName = pFirstName;
@@ -19,6 +19,8 @@ public abstract class User {
         age = pAge;
         picture = pPicture;
     }
+
+    //////////////////// GETTERS ////////////////////
 
     public String getFirstName() {
         return firstName;
@@ -35,6 +37,8 @@ public abstract class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    //////////////////// SETTERS ////////////////////
 
     public int getAge() {
         return age;
