@@ -3,15 +3,15 @@ package Model;
 import javax.swing.*;
 
 /**
- * @author Groupe 7
+ * User is an abstract class that creates a user with the required information.
  *
  */
 
 public abstract class User {
-    String firstName;
-    String lastName;
-    int age;
-    ImageIcon picture;
+    String firstName; // The first name of the user
+    String lastName; // The last name of the user
+    int age; // The age of the user
+    ImageIcon picture; // The icon associated to the user
 
     public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
         firstName = pFirstName;
