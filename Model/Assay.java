@@ -67,14 +67,20 @@ public class Assay {
 	 *            le commentaire à laisser, il peut être vide.
 	 * @param g
 	 *            la note à laisser, la note a laisser ne pas etre "à évaluer"
+	 * @throws WrongGradeException 
+	 * @throws WrongTeacherException 
 	 */
-	public void evaluateAssay(Teacher teacher, String comment, Grade grade) {
+	public void evaluateAssay(Teacher teacher, String comment, Grade grade) throws WrongGradeException, WrongTeacherException {
 
 		if (teacher == child.getSchoolClass().getTeacher()) {
 			if (grade != Grade.NotGraded) {
 				this.comment = comment;
 				this.grade = grade;
+			}else{
+				throw new WrongGradeException();
 			}
+		}else{
+			throw new WrongTeacherException();
 		}
 		// TODO Else
 	}
