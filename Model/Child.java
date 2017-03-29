@@ -22,7 +22,7 @@ public class Child extends User {
 	 */
 	
 	public void addAssay() {
-		
+		createAssay();
 	}
 	
 	/**
