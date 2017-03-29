@@ -4,10 +4,10 @@ public enum Grades {
 
 	  // Objets directement construits
 
-	  NN("Non notés"),
-	  ECA("En cours d'acquisition"),
-	  A("Acquis"),
-	  NA("Non acquis");
+	  NotGraded("Non notés"),
+	  InAcquisition("En cours d'acquisition"),
+	  Acquired("Acquis"),
+	  NotAcquired("Non acquis");
 	
 	  private String name = "";
 
