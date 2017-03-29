@@ -8,6 +8,4 @@ public class Teacher extends User {
         super(firstName, lastName, age, picture);
     }
 
-
-
 }
