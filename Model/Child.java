@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  * @author Groupe 7
@@ -8,69 +9,46 @@ import java.util.ArrayList;
  */
 
 public class Child extends User {
-	
-	private String firstname;
-	private String lastname;
-	private int age;
-	private String icon; // L'icone de l'enfant
+
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
 	
+	public Child(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
+		super(pFirstName, pLastName, pAge, pPicture);
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
-	 * @return the firstname
+	 * Ajoute une tentative dans l'enfant
 	 */
-	public String getFirstname() {
-		return firstname;
+	
+	public void addAssay() {
+		
 	}
 	
 	/**
-	 * @param firstname the firstname to set
+	 * @params
+	 * @params
+	 * @params
+	 * @params
+	 * Ajoute une tentative dans l'enfant
 	 */
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	
+	private void createAssay() {
+		
 	}
 	
 	/**
-	 * @return the lastname
+	 * @return the assays
 	 */
-	public String getLastname() {
-		return lastname;
+	public ArrayList<Assay> getAssays() {
+		return assays;
 	}
-	
+
 	/**
-	 * @param lastname the lastname to set
+	 * @param assays the assays to set
 	 */
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setAssays(ArrayList<Assay> assays) {
+		this.assays = assays;
 	}
-	
-	/**
-	 * @return the age
-	 */
-	public int getAge() {
-		return age;
-	}
-	
-	/**
-	 * @param age the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	/**
-	 * @return the icon
-	 */
-	public String getIcon() {
-		return icon;
-	}
-	
-	/**
-	 * @param icon the icon to set
-	 */
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
-	
-	
 
 }
