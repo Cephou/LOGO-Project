@@ -15,6 +15,7 @@ public class SchoolClass {
 	private String className;
 	private Teacher teacher;
 	private ArrayList<Child> childList;
+	private ArrayList<Exercise> exerciseList;
 	
 	/**
 	 * Constructeur
@@ -25,7 +26,8 @@ public class SchoolClass {
 	{
 		this.className = newClassName;
 		this.teacher = newTeacher;
-		this.childList = new ArrayList<Child>();		
+		this.childList = new ArrayList<Child>();
+		this.exerciseList = new ArrayList<Exercise>();
 	}
 	
 	/**s
@@ -54,6 +56,7 @@ public class SchoolClass {
 	
 	/**
 	 * Setter teacher
+	 * @param changement de professor
 	 */
 	public void setTeacher(Teacher newTeacher)
 	{
@@ -61,20 +64,49 @@ public class SchoolClass {
 	}
 	
 	/**
-	 * Add child in childList
+	 * Ajout eleve dans childList et modification de la classe de l'élève dans la classe Child
+	 * @param Ajout de l'élève --> pas d'ajout possible de la meme personne 2 fois
 	 */
 	public void addChild(Child newChild)
 	{
+		newChild.setSchoolClass(this);
 		childList.add(newChild);
+		
 	}
 	
 	/**
 	 * Remove child in childList
-	 * Method possible uniquement si la liste contient au moins 1 élève
+	 * @param eleve que l'on veut ajouter dans la classe --> method possible uniquement si la liste contient au moins 1 élève
 	 */
 	public void removeChild(Child oldChild) 
 	{
 		childList.remove(oldChild);
 	}
+	
+	/**
+	 * Getter exerciseList
+	 */
 
+	public ArrayList<Exercise> getExerciseList()
+	{
+		return exerciseList;
+	}
+	
+	/**
+	 * Add Exercise in exerciseList
+	 * @param  exercice que l'on ajoute --> pas d'ajout du meme exercice possible
+	 */
+	public void addExercice(Exercise exercise)
+	{
+		exerciseList.add(exercise);
+	}
+	
+	/**
+	 * Remove child in childList
+	 * @param exercice que l'on veut enlever --> method possible uniquement si la liste contient au moins 1 exercice
+	 */
+	public void removeChild(Exercise exercise) 
+	{
+		exerciseList.remove(exercise);
+	}
 }
