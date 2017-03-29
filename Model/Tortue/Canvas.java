@@ -17,6 +17,7 @@ import java.util.*;
  * 
  * @version février 2013
  */
+@SuppressWarnings("serial")
 public class Canvas extends JFrame
 {
     // Note: The implementation of this class (specifically the handling of
@@ -67,7 +68,7 @@ public class Canvas extends JFrame
     private Canvas(String title, int width, int height, Color bgColor)
     {
         canvass = new CanvasPane();
-        Container c = this.getContentPane();
+        // Container c = this.getContentPane();
         this.add (canvass, BorderLayout.CENTER);
         this.setTitle(title);
         this.setLocation(30, 30);
