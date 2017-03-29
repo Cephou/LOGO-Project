@@ -3,6 +3,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  * Classe tentative
  * Cette classe permet de stocker pour chaque eleve et pour chaque exercice une tentativr
@@ -15,7 +17,7 @@ public class Assay {
 	private Child child;
 	private Exercice exercice;
 	private String comment;
-	private Grade grade;
+	private Grades grade;
 
 	/**
 	 * Constructeur de la classe Tentative
@@ -23,7 +25,7 @@ public class Assay {
 	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
-	public Assay(child, exercice){
+	public Assay(Child child, exercice){
 		this.child = child;
 		this.exercice = exercice;
 		listAction = new ArrayList<Action>();
