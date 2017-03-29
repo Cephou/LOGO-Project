@@ -1,5 +1,5 @@
 package Model;
 
-public class Teacher {
+public class Teacher extends User {
 
 }
