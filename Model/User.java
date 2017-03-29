@@ -4,7 +4,6 @@ import javax.swing.*;
 
 /**
  * User is an abstract class that creates a user with the required information.
- *
  */
 
 public abstract class User {
@@ -17,11 +16,11 @@ public abstract class User {
      * Constructor of the class User.
      *
      * @param pFirstName The first name of the user
-     * @param pLastName The last name of the user
-     * @param pAge The age of the user
-     * @param pPicture The picture of the user
-     * Controle la taille du prénom (entre 1 et 50 caractères)
-	 * Controle la taille du nom (entre 1 et 50 caractères)
+     * @param pLastName  The last name of the user
+     * @param pAge       The age of the user
+     * @param pPicture   The picture of the user
+     *                   Controle la taille du prï¿½nom (entre 1 et 50 caractï¿½res)
+     *                   Controle la taille du nom (entre 1 et 50 caractï¿½res)
      */
     public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
         firstName = pFirstName;
@@ -36,10 +35,16 @@ public abstract class User {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    /**
+     * setFirstName can modify the first name of the user.
+     * Minimum 1 character, maximum 50 characters.
+     *
+     * @param firstName is the new first name
+     */
+    protected void setFirstName(String firstName) {
+        if (firstName.length() >= 1 && firstName.length() <= 50)
+            this.firstName = firstName;
     }
-
 
     //////////////////// LAST NAME ////////////////////
 
@@ -47,10 +52,16 @@ public abstract class User {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    /**
+     * setLastName can modify the last name of the user.
+     * Minimum 1 character, maximum 50 characters.
+     *
+     * @param lastName is the new last name
+     */
+    protected void setLastName(String lastName) {
+        if (lastName.length() >= 1 && lastName.length() <= 50)
+            this.lastName = lastName;
     }
-
 
     //////////////////// AGE ////////////////////
 
@@ -58,11 +69,9 @@ public abstract class User {
         return age;
     }
 
-
-    public void setAge(int age) {
+    protected void setAge(int age) {
         this.age = age;
     }
-
 
     //////////////////// PICTURE ////////////////////
 
@@ -70,7 +79,7 @@ public abstract class User {
         return picture;
     }
 
-    public void setPicture(ImageIcon picture) {
+    protected void setPicture(ImageIcon picture) {
         this.picture = picture;
     }
 

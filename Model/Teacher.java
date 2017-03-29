@@ -14,6 +14,9 @@ public class Teacher extends User {
 
     /**
      * Constructor of the class Teacher.
+     * The first and last name must be between 1 and 50 characters.
+     * The age must be between 20 and 80 years old.
+     * The password must be at least 6 characters.
      *
      * @param pFirstName The first name of the teacher
      * @param pLastName The last name of the teacher
@@ -23,30 +26,39 @@ public class Teacher extends User {
      */
     public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
         super(pFirstName, pLastName, pAge, pPicture);
-        password = pPassword;
+        setAge(pAge);
+        setPassword(pPassword);
     }
 
-    //////////////////// PASSWORD ////////////////////
+    //////////////////// SETTERS ////////////////////
 
-    public String getPassword() {
-        return password;
+    /**
+     * setAge can modify the age of the teacher.
+     * The age must be between 20 and 70.
+     *
+     * @param age is the new age
+     */
+    @Override
+    protected void setAge(int age) {
+        if (age >= 20 && age <= 70)
+            super.setAge(age);
     }
 
     /**
      * setPassword can modify the password of the teacher.
      * Minimum 6 characters.
      *
-     * @param password is the new password.
+     * @param password is the new password
      */
     public void setPassword(String password) {
-        this.password = password;
+        if (password.length() > 6)
+            this.password = password;
     }
-
 
     //////////////////// CLASSES ////////////////////
 
     /**
-     * getClass is a method that returns the teacher's classes list.
+     * getClasses is a method that returns the teacher's classes list.
      *
      * @return the list classes
      */
@@ -61,7 +73,13 @@ public class Teacher extends User {
      * @param schoolClass is the added class
      */
     public void addClass(SchoolClass schoolClass) {
-        classes.add(schoolClass);
+        boolean found = false;
+        for (int i = 0; i < classes.size(); i++) {
+            if (classes.get(i) == schoolClass)
+                found = true;
+        }
+        if (!found)
+            classes.add(schoolClass);
     }
 
 }
