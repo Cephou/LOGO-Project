@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  * @author Groupe 7
@@ -8,8 +9,13 @@ import java.util.ArrayList;
  */
 
 public class Child extends User {
-	
+
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
+	
+	public Child(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
+		super(pFirstName, pLastName, pAge, pPicture);
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * Ajoute une tentative dans l'enfant
