@@ -20,38 +20,36 @@ public abstract class User {
         picture = pPicture;
     }
 
-    //////////////////// GETTERS ////////////////////
-
+    //////////////////// FIRST NAME ////////////////////
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+
+    //////////////////// LAST NAME ////////////////////
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    //////////////////// SETTERS ////////////////////
-
+    //////////////////// AGE ////////////////////
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
 
+
+    //////////////////// PICTURE ////////////////////
     public ImageIcon getPicture() {
         return picture;
     }
-
     public void setPicture(ImageIcon picture) {
         this.picture = picture;
     }
