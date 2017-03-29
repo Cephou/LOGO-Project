@@ -37,4 +37,5 @@ public class Teacher extends User {
     public void addClass(SchoolClass schoolClass) {
         classes.add(schoolClass);
     }
+
 }
