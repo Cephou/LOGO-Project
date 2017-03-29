@@ -41,5 +41,21 @@ public class Class {
 	{
 		return childList;
 	}
+	
+	public Teacher setTeacher(Teacher newTeacher)
+	{
+		teacher = newTeacher;
+	}
+	
+	public void addChild(Child newChild)
+	{
+		childList.add(newChild);
+	}
+	
+	public void removeChild(Child oldChild)
+	{
+		childList.remove(oldChild);
+	}
+	
 
 }
