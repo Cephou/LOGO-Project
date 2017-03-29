@@ -5,33 +5,34 @@ import javax.swing.ImageIcon;
 /**
  * @author Groupe 7
  * Cette classe décrit l'objet exercice.
+ * Un exercice est forcément créé par un professeur.
  */
 
 public class Exercise {
-	private String name;
+	private String title;
 	private String instruction;
-	private String description;
-	private ImageIcon icon;
+	private ImageIcon icon; //L'icône est une miniature du dessin final.
+	private Teacher teacher;
 
-	public Exercise(String name, String instruction, String description, ImageIcon icon) {
-		this.name = name;
+	/**
+	 * Constructeur pour la classe Exercice.
+	 * @param title est le titre de l'exercice
+	 * @param instruction est la consigne de l'exercice
+	 * @param icon est la miniature l'exercice.
+	 * @param teacher est le professeur auteur de l'exercice. Un exercice est toujours associé à l'exercice qu'il a écrit.
+	 */
+	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher) {
+		this.title = title;
 		this.instruction = instruction;
-		this.description = description;
 		this.icon = icon;
+		this.teacher = teacher;
 	}
 
 	/**
-	 * @return the name
+	 * @return the title
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
+	public String gettitle() {
+		return title;
 	}
 
 	/**
@@ -49,20 +50,6 @@ public class Exercise {
 	}
 
 	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
 	 * @return the icon
 	 */
 	public ImageIcon getIcon() {
@@ -74,6 +61,13 @@ public class Exercise {
 	 */
 	public void setIcon(ImageIcon icon) {
 		this.icon = icon;
+	}
+	
+	/**
+	 * @return teacher
+	 */
+	public Teacher getTeacher() {
+		return teacher;
 	}
 	
 }
