@@ -53,5 +53,40 @@ public class Assay {
 		this.comment = comment;
 		this.grade = grade;
 	}
+
+	/**
+	 * @return the listAction
+	 */
+	public ArrayList<Action> getListAction() {
+		return listAction;
+	}
+
+	/**
+	 * @return the child
+	 */
+	public Child getChild() {
+		return child;
+	}
+
+	/**
+	 * @return the exercise
+	 */
+	public Exercise getExercise() {
+		return exercise;
+	}
+
+	/**
+	 * @return the comment
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * @return the grade
+	 */
+	public Grade getGrade() {
+		return grade;
+	}
 	
 }
