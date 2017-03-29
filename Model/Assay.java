@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class Assay {	
 	private ArrayList<Action> listAction; //liste des actions à réalisées par l'eleves
 	private Child child;				//enfant qui effectue la tentative
-	private Exercice exercice;			//exercice associé à cette tentaive
+	private Exercise exercise;			//exercice associé à cette tentaive
 	private String comment;				//commentaire laisser par le professeur
-	private Grades grade;				//apprécialtion laissée par le prpofesseur
+	private Grade grade;				//apprécialtion laissée par le prpofesseur
  
 	/**
 	 * Constructeur de la classe Tentative
@@ -24,9 +24,9 @@ public class Assay {
 	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
-	public Assay(Child child,Exercice exercice){
+	public Assay(Child child,Exercise exercise){
 		this.child = child;
-		this.exercice = exercice;
+		this.exercise = exercise;
 		listAction = new ArrayList<Action>();
 		this.grade = Grade.NotGraded;
 		
@@ -37,7 +37,7 @@ public class Assay {
 	 * @param a action réalisée par l'élève
 	 */
 	public void addAction(Action a){
-		listAction.add(a)
+		listAction.add(a);
 	}
 	
 	/**
@@ -48,10 +48,45 @@ public class Assay {
 	 * @param c le commentaire à laisser
 	 * @param g la note à laisser
 	 */
-	public void evaluateAssay(Teacher t, String c,Grade g){
+	public void evaluateAssay(Teacher teacher, String comment,Grade grade){
 		//Control teacher ? regarder si child.getTeacher() == this.teacher
 		this.comment = comment;
 		this.grade = grade;
+	}
+
+	/**
+	 * @return the listAction
+	 */
+	public ArrayList<Action> getListAction() {
+		return listAction;
+	}
+
+	/**
+	 * @return the child
+	 */
+	public Child getChild() {
+		return child;
+	}
+
+	/**
+	 * @return the exercise
+	 */
+	public Exercise getExercise() {
+		return exercise;
+	}
+
+	/**
+	 * @return the comment
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * @return the grade
+	 */
+	public Grade getGrade() {
+		return grade;
 	}
 	
 }

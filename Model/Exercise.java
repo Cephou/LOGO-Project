@@ -11,5 +11,8 @@ public class Exercise {
 	private String description;
 	private ImageIcon icon;
 
-	public  
+	public Exercise(String name, String instruction, String description, ImageIcon icon) {
+		this.name = name;
+		this.
+	}
 }
