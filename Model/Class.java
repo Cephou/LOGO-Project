@@ -17,8 +17,7 @@ public class Class {
 	/**
 	 * Constructeur
 	 * @param newClassName = nom attribué à la classe
-	 * @param newTeacher = objet "Teacher" associé à la classe
-	 *
+	 * @param newTeacher = objet "Teacher" associé à la classe	 *
 	 */
 	public Classe(String newClassName, Teacher newTeacher)
 	{
@@ -27,35 +26,56 @@ public class Class {
 		childList = new ArrayList<Child>();		
 	}
 	
+	/**
+	 * Getter className
+	 */
 	public String getClassName()
 	{
 		return classname;
 	}
-	
+
+	/**
+	 * Getter teacher
+	 */
 	public Teacher getTeacher()
 	{
 		return teacher;
 	}
 	
+	/**
+	 * Getter childList
+	 */
 	public ArrayList<Child> getChildList()
 	{
 		return childList;
 	}
 	
+	/**
+	 * Setter teacher
+	 */
 	public Teacher setTeacher(Teacher newTeacher)
 	{
 		teacher = newTeacher;
 	}
 	
+	/**
+	 * Add child in childList
+	 */
 	public void addChild(Child newChild)
 	{
 		childList.add(newChild);
 	}
 	
+	/**
+	 * Remove child in childList
+	 */
 	public void removeChild(Child oldChild)
 	{
 		childList.remove(oldChild);
 	}
+	
+	
+	
 	
 
 }
