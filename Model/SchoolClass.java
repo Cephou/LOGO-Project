@@ -26,6 +26,7 @@ public class SchoolClass {
 		this.childList = new ArrayList<Child>();		
 	}
 	
+	
 	/**s
 	 * Getter className
 	 */
