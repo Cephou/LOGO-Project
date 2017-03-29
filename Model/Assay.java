@@ -5,10 +5,16 @@ package Model;
 
 import java.util.ArrayList;
 
+import Model.Tortue.TortueG;
+
 /**
  * Classe tentative
- * Cette classe permet de stocker pour chaque eleve et pour chaque exercice une tentativr
+ * Cette classe permet de stocker pour chaque eleve et pour chaque exercice une tentative
  * Une tentative  comprend une suite d'actions,un commentaire et une appréciation.
+ * Une evaluation de tentive est réalisée par un professeur
+ * Il laisse un petit texte (le commentaire) et une note (un des 3 smileys disponible).
+ * Cette action ne peut etre effectuée qu'une et une seule fois par tentative.
+ * La tentative d'un eleve ne peut être évaluée que par son professeur.
  *
  */
 public class Assay {	
@@ -20,7 +26,7 @@ public class Assay {
  
 	/**
 	 * Constructeur de la classe Tentative
-	 * Lors de la création d'une tentative, cette derniere prend le statut "non noté"
+	 * Lors de la création d'une tentative, cette derniere prend le statut "non noté".
 	 * @param child l'enfant qui effectue la tentative
 	 * @param  exercice l'exercice sur le quel la tentative est exercée
 	 */
@@ -34,6 +40,7 @@ public class Assay {
 	
 	/*
 	 * Ajouter une action réalisée par un élève à une tentive
+	 * Le nombre d'action n'est pas borné.
 	 * @param a action réalisée par l'élève
 	 */
 	public void addAction(Action a){
@@ -43,15 +50,29 @@ public class Assay {
 	/**
 	 * Evaluer une tentative
 	 * Une evaluation de tentive est réalisée par un professeur
-	 * Il laisse un petit texte, le commentaire et un note (un des 3 smileys disponible).
-	 * @param teacher le professeur qui rélise l'évaluation (on restreint l'avluation d'un eleve a un professeur)
-	 * @param c le commentaire à laisser
-	 * @param g la note à laisser
+	 * Il laisse un petit texte (le commentaire) et une note (un des 3 smileys disponible).
+	 * Cette action ne peut etre effectuée qu'une et une seule fois par tentative.
+	 * La tentative d'un eleve ne peut être évaluée que par son professeur.
+	 * 
+	 * @param teacher le professeur qui réalise l'évaluation (on restreint l'avluation d'un eleve a un professeur)
+	 * @param c le commentaire à laisser, il peut être  vide.
+	 * @param g la note à laisser, la note a laisser ne pas etre "à évaluer"
 	 */
 	public void evaluateAssay(Teacher teacher, String comment,Grade grade){
 		//Control teacher ? regarder si child.getTeacher() == this.teacher
 		this.comment = comment;
 		this.grade = grade;
+	}
+	
+	/**
+	 * Methode permettant de rejouer la liste d'actions enregistrées
+	 * On suppose que la position initiale de la tortue est toujours la même
+	 * 
+	 * @param tortue la tortue (G, Rapide, Couleur) utilisée par l'eleves lors de sa tentative
+	 */
+	public void replay(TortueG tortueG){
+		
+		
 	}
 
 	/**
