@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Teacher is a class extends User class. A teacher is a user who has a password.
+ *
  */
 public class Teacher extends User {
 
@@ -13,6 +14,12 @@ public class Teacher extends User {
 
     /**
      * Constructor of the class Teacher.
+     *
+     * @param pFirstName The first name of the teacher
+     * @param pLastName The last name of the teacher
+     * @param pAge The age of the teacher
+     * @param pPicture The picture of the teacher
+     * @param pPassword The password of the teacher
      */
     public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
         super(pFirstName, pLastName, pAge, pPicture);

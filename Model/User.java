@@ -14,6 +14,11 @@ public abstract class User {
 
     /**
      * Constructor of the class User.
+     *
+     * @param pFirstName The first name of the user
+     * @param pLastName The last name of the user
+     * @param pAge The age of the user
+     * @param pPicture The picture of the user
      */
     public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
         firstName = pFirstName;
