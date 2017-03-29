@@ -11,5 +11,5 @@ public class Exercise {
 	private String description;
 	private ImageIcon icon;
 
-	public
+	public 
 }
