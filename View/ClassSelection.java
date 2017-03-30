@@ -10,19 +10,14 @@ public class ClassSelection {
 	
 	public ClassSelection() {
 		classSelection = new JPanel();
-		classSelection.setLayout(new GridLayout(1, 0, 0, 0));
+		classSelection.setLayout(new GridLayout(0,3));
 		// Boucle qui parcoure la liste des classes et crée les panel des classes et les ajoute
-		//for(int i=0; i<3; i++) {
+		for(int i=0; i<6; i++) {
 			JPanel ClassItem = new JPanel();
 			JLabel lblClass = new JLabel("CLASSE");
 			ClassItem.add(lblClass);
 			classSelection.add(ClassItem);
-			
-			JPanel ClassItem2 = new JPanel();
-			JLabel lblClass2 = new JLabel("CLASSE");
-			ClassItem2.add(lblClass2);
-			classSelection.add(ClassItem2);
-		//}
+		}
 	}
 	
 	public JPanel getClassSelection() {
