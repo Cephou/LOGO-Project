@@ -1,4 +1,4 @@
-package Exception;
+package Exception; 
 
 public class OutOfRangeAgeTeacherException extends Exception {
     public OutOfRangeAgeTeacherException() {
