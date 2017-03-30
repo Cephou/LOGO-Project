@@ -37,11 +37,15 @@ public class Teacher extends User {
      * The age must be between 20 and 70.
      *
      * @param age is the new age
+     * @throws Exception.OutOfRangeAgeTeacherException
      */
     @Override
     protected void setAge(int age) {
         if (age >= 20 && age <= 70)
             super.setAge(age);
+        else {
+            throw new Exception.OutOfRangeAgeTeacherException();
+        }
     }
 
     /**

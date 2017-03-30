@@ -3,37 +3,41 @@
  */
 package Model;
 
+import Model.Tortue.TortueG;
+
 import java.util.ArrayList;
 
-import Model.Tortue.TortueG;
+import Exception.WrongGradeException;
+import Exception.WrongTeacherException;
 
 /**
  * Classe tentative Cette classe permet de stocker pour chaque eleve et pour
  * chaque exercice une tentative Une tentative comprend une suite d'actions,un
- * commentaire et une appréciation. Une evaluation de tentive est réalisée par
- * un professeur Il laisse un petit texte (le commentaire) et une note (un des 3
- * smileys disponible). Cette action ne peut etre effectuée qu'une et une seule
- * fois par tentative. La tentative d'un eleve ne peut être évaluée que par son
- * professeur. Cette classe propose aussi la fonction replay(). Cette fonction
- * permet de rejouer une tentative.
+ * commentaire et une apprï¿½ciation. Une evaluation de tentive est rï¿½alisï¿½e
+ * par un professeur Il laisse un petit texte (le commentaire) et une note (un
+ * des 3 smileys disponible). Cette action ne peut etre effectuï¿½e qu'une et
+ * une seule fois par tentative. La tentative d'un eleve ne peut ï¿½tre
+ * ï¿½valuï¿½e que par son professeur. Cette classe propose aussi la fonction
+ * replay(). Cette fonction permet de rejouer une tentative.
  *
  */
 public class Assay {
-	private ArrayList<Action> listAction; // liste des actions à réalisées par
+	private ArrayList<Action> listAction; // liste des actions ï¿½ rï¿½alisï¿½es
+											// par
 											// l'eleves
 	private Child child; // enfant qui effectue la tentative
-	private Exercise exercise; // exercice associé à cette tentaive
+	private Exercise exercise; // exercice associï¿½ ï¿½ cette tentaive
 	private String comment; // commentaire laisser par le professeur
-	private Grade grade; // apprécialtion laissée par le prpofesseur
+	private Grade grade; // apprï¿½cialtion laissï¿½e par le prpofesseur
 
 	/**
-	 * Constructeur de la classe Tentative Lors de la création d'une tentative,
-	 * cette derniere prend le statut "non noté".
+	 * Constructeur de la classe Tentative Lors de la crï¿½ation d'une
+	 * tentative, cette derniere prend le statut "non notï¿½".
 	 * 
 	 * @param child
 	 *            l'enfant qui effectue la tentative
 	 * @param exercice
-	 *            l'exercice sur le quel la tentative est exercée
+	 *            l'exercice sur le quel la tentative est exercï¿½e
 	 */
 	public Assay(Child child, Exercise exercise) {
 		this.child = child;
@@ -44,54 +48,57 @@ public class Assay {
 	}
 
 	/*
-	 * Ajouter une action réalisée par un élève à une tentative Le nombre
-	 * d'actions n'est pas borné.
+	 * Ajouter une action rï¿½alisï¿½e par un ï¿½lï¿½ve ï¿½ une tentative Le
+	 * nombre d'actions n'est pas bornï¿½.
 	 * 
-	 * @param a action réalisée par l'élève/le professeur
+	 * @param a action rï¿½alisï¿½e par l'ï¿½lï¿½ve/le professeur
 	 */
 	public void addAction(Action a) {
 		listAction.add(a);
 	}
 
 	/**
-	 * Evaluer une tentative Une evaluation de tentive est réalisée par un
+	 * Evaluer une tentative Une evaluation de tentive est rï¿½alisï¿½e par un
 	 * professeur Il laisse un petit texte (le commentaire) et une note (un des
-	 * 3 smileys disponible). Cette action ne peut etre effectuée qu'une et une
-	 * seule fois par tentative. La tentative d'un eleve ne peut être évaluée
-	 * que par son professeur.
+	 * 3 smileys disponible). Cette action ne peut etre effectuï¿½e qu'une et
+	 * une seule fois par tentative. La tentative d'un eleve ne peut ï¿½tre
+	 * ï¿½valuï¿½e que par son professeur.
 	 * 
 	 * @param teacher
-	 *            le professeur qui réalise l'évaluation (on restreint
+	 *            le professeur qui rï¿½alise l'ï¿½valuation (on restreint
 	 *            l'avluation d'un eleve a un professeur)
 	 * @param c
-	 *            le commentaire à laisser, il peut être vide.
+	 *            le commentaire ï¿½ laisser, il peut ï¿½tre vide.
 	 * @param g
-	 *            la note à laisser, la note a laisser ne pas etre "à évaluer"
-	 * @throws WrongGradeException 
-	 * @throws WrongTeacherException 
+	 *            la note ï¿½ laisser, la note a laisser ne pas etre "ï¿½
+	 *            ï¿½valuer"
+	 * @throws WrongGradeException
+	 * @throws WrongTeacherException
 	 */
-	public void evaluateAssay(Teacher teacher, String comment, Grade grade) throws WrongGradeException, WrongTeacherException {
+	public void evaluateAssay(Teacher teacher, String comment, Grade grade)
+			throws WrongGradeException, WrongTeacherException {
 
 		if (teacher == child.getSchoolClass().getTeacher()) {
 			if (grade != Grade.NotGraded) {
 				this.comment = comment;
 				this.grade = grade;
-			}else{
+			} else {
 				throw new WrongGradeException();
 			}
-		}else{
+
+		} else {
 			throw new WrongTeacherException();
 		}
 		// TODO Else
 	}
 
 	/**
-	 * Methode permettant de rejouer la liste d'actions enregistrées On suppose
-	 * que la position initiale de la tortue est toujours la même. TODO Pas plus
-	 * de controle sur cette fonction ?
+	 * Methode permettant de rejouer la liste d'actions enregistrï¿½es On
+	 * suppose que la position initiale de la tortue est toujours la mï¿½me.
+	 * TODO Pas plus de controle sur cette fonction ?
 	 * 
 	 * @param tortue
-	 *            la tortue (G, Rapide, Couleur) utilisée par l'eleves lors de
+	 *            la tortue (G, Rapide, Couleur) utilisï¿½e par l'eleves lors de
 	 *            sa tentative
 	 */
 	public void replay(TortueG tortueG) {
