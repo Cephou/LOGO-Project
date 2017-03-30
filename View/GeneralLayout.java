@@ -15,7 +15,7 @@ import javax.swing.SwingConstants;
 public class GeneralLayout {
 
 	private JFrame frame;
-	private ClassSelection classSelection;
+	private ClassSelectionView classSelection;
 
 	/**
 	 * Launch the application.
@@ -56,7 +56,7 @@ public class GeneralLayout {
 		frame.getContentPane().add(body, BorderLayout.CENTER);
 		body.setLayout(new BorderLayout(0, 0));
 		
-		classSelection = new ClassSelection();
+		classSelection = new ClassSelectionView();
 		body.add(classSelection.getClassSelection(), BorderLayout.CENTER);
 		
 		JPanel footer = new JPanel();
