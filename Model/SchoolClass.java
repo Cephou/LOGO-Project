@@ -85,7 +85,7 @@ public class SchoolClass{
 			childList.add(newChild);
 		}else
 		{
-			throws new ObjectAlreadyHereException();
+			//throws new ObjectAlreadyHereException();
 		}
 
 	}
@@ -98,7 +98,7 @@ public class SchoolClass{
 	 */
 	public void removeChild(Child oldChild) {
 		if (childList.size() > 0) childList.remove(oldChild);
-		else throw new EmptyListException();
+		//else throw new EmptyListException();
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class SchoolClass{
 			exerciseList.add(newExercise);
 		}else
 		{
-			throw new ObjectAlreadyHereException();
+			//throw new ObjectAlreadyHereException();
 		}
 		
 	}
@@ -139,6 +139,6 @@ public class SchoolClass{
 	 */
 	public void removeChild(Exercise newExercise) {
 		if(exerciseList.size()>0) exerciseList.remove(newExercise);
-		else throw new EmptyListException();
+		//else throw new EmptyListException();
 	}
 }
