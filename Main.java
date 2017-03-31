@@ -14,8 +14,9 @@ import Model.*;
 
 public class Main {
 	private User user; //le type d'utilisateur
-	private DatabaseLoader databaseLoader; //chargement des données
-	private DatabaseRecorder databaseRecorder; //enregistremment de sodnénes
+	private DatabaseLoader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
+	private DatabaseRecorder databaseRecorder; //enregistremment des données
+	private DatabaseCreation datbaseCreation; // creation SSI BDD invexistante; 
 
 	public static void main(String[] args) {
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
