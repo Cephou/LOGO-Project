@@ -68,7 +68,7 @@ public class Teacher extends User {
     }
 
     /**
-     * addClass is a method that add a class to the teacher's classes list.
+     * addClass is a method that adds a class to the teacher's classes list.
      * A class cannot be added only one time to the list.
      *
      * @param schoolClass is the added class
