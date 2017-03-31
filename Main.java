@@ -1,6 +1,11 @@
 import javax.swing.ImageIcon;
 
 import Model.*;
+/**
+ * Main, cette classe instancie l layout general et les sous-main.
+ * @author pc
+ *
+ */
 
 public class Main {
 
