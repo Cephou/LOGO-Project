@@ -1,6 +1,3 @@
-/**
- * 
- */
 package Exception;
 
 public class WrongGradeException extends Exception {
