@@ -1,9 +1,11 @@
 import javax.swing.ImageIcon;
 
+import Database.DatabaseLoader;
+import Database.DatabaseRecorder;
 import Model.*;
 /**
  * Main, cette classe gere les reltions  entre toutes les classes de l'application.
- * Elle  instancie layout general et les sous-main.
+ * Elle  instancie layout general et les sous-main. Ce layout est rempli en fonction du type d'utilisateur et de l'action choisit
  * Elle stock le type d'utilisateur actiellement sur l'application, et lance le sous main correspondant
  * Elle assure le chargemment des données à son lancemment
  * Elle assure l'enregistremment des données lorsqu'on quitte l'application.

@@ -1,4 +1,6 @@
 
-public class SubMainTeacher {
-
+public class SubMainTeacher extends Main {
+/**
+ * 
+ */
 }
