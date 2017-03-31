@@ -17,7 +17,8 @@ public class SubMainTeacher extends Main {
 	public SubMainTeacher(Teacher teacher){
 		this.currentTeacher = currentTeacher;
 		//creation du layout
-		//
+		
+		//ajout des lsiteners
 		
 	}
 }
