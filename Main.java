@@ -11,7 +11,7 @@ import Model.*;
  */
 
 public class Main {
-	private Object userAgent;
+	private User user; //le type d'utilisateur
 	private DatabaseLoader databaseLoader; //chargement des données
 	private DatabaseRecorder databaseRecorder; //enregistremment de sodnénes
 
