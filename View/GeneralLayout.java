@@ -1,6 +1,6 @@
 package View;
 import View.*;
-import View.Login.ClassSelectionView;
+import View.Login.ClassLoginView;
 import View.Modules.Header;
 
 import java.awt.EventQueue;
@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 public class GeneralLayout {
 
 	private JFrame frame;
-	private ClassSelectionView classSelection;
+	private ClassLoginView classSelection;
 
 	/**
 	 * Launch the application.
@@ -59,7 +59,7 @@ public class GeneralLayout {
 		frame.getContentPane().add(body, BorderLayout.CENTER);
 		body.setLayout(new BorderLayout(0, 0));
 		
-		classSelection = new ClassSelectionView();
+		classSelection = new ClassLoginView();
 		body.add(classSelection.getClassSelection(), BorderLayout.CENTER);
 		
 		JPanel footer = new JPanel();

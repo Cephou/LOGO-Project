@@ -13,11 +13,11 @@ import java.awt.event.ActionEvent;
  * Le choix d'une classe déclenche la procédure de création ChildSelection qui prend en paramètre la classe choisie.
  */
 
-public class ClassSelectionView {
+public class ClassLoginView {
 
 	private JPanel classSelection;
 	
-	public ClassSelectionView() {
+	public ClassLoginView() {
 		classSelection = new JPanel();
 		classSelection.setLayout(new GridLayout(0,3));
 		// Boucle qui parcoure la liste des classes et crée les panel des classes et les ajoute
