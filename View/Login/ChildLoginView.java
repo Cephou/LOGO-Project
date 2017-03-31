@@ -1,4 +1,4 @@
-package View;
+package View.Login;
 
 import javax.swing.JPanel;
 
@@ -11,9 +11,9 @@ import Model.SchoolClass;
  * Les boutons permettent à un élève de s'authentifier de d'ouvrir une session.
  */
 
-public class ChildSelectionView {
+public class ChildLoginView {
 
-	public ChildSelectionView(SchoolClass pclass) {
+	public ChildLoginView(SchoolClass pclass) {
 		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.		
 	}
 	

@@ -1,4 +1,4 @@
-package View;
+package View.Login;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;

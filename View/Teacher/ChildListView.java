@@ -1,7 +1,7 @@
 /**
  * 
  */
-package View;
+package View.Teacher;
 
 import Model.SchoolClass;
 

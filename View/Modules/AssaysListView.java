@@ -1,4 +1,4 @@
-package View;
+package View.Modules;
 
 import Model.Child;
 import Model.Exercise;

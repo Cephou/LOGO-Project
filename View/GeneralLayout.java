@@ -1,4 +1,7 @@
 package View;
+import View.*;
+import View.Login.ClassSelectionView;
+import View.Modules.Header;
 
 import java.awt.EventQueue;
 
