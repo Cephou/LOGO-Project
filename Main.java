@@ -11,7 +11,9 @@ import Model.*;
  */
 
 public class Main {
-	
+	private Object userAgent;
+	private DatabaseLoader databaseLoader; //chargement des données
+	private DatabaseRecorder databaseRecorder; //enregistremment de sodnénes
 
 	public static void main(String[] args) {
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
