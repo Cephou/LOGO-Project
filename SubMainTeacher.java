@@ -7,7 +7,17 @@ public class SubMainTeacher extends Main {
 	 * On y stock les varaibles courantes.
 	 */
 	
-	public SubMainTeacher(){
+	
+	private Teacher currentTeacher;
+	
+	/**
+	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Teacher
+	 * @param teacher
+	 */
+	public SubMainTeacher(Teacher teacher){
+		this.currentTeacher = currentTeacher;
+		//creation du layout
+		//
 		
 	}
 }

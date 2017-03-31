@@ -1,18 +1,25 @@
 import Model.Child;
 
-public class SubMainChild {
+public class SubMainChild extends Main {
 	/**
-	 * Ce main est appele le layout lorsque l'utilisateuer choisi est un eleve.
+	 * Ce main est appele par le layout lorsque l'utilisateuer choisi est un eleve.
+	 * Il peut 
 	 * Il permet de sauvergarder les varaibles "session" comme l'eleve couant
 	 * par exemple.
+	 * 
 	 */
 
 	private Child currentChild;
 
 	/**
-	 * 	Constructeur
+	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Child
+	 * @param Child current child
 	 */
-	public SubMainChild(){
+	public SubMainChild(Child child){
+		this.currentChild = child;
+		//creation layout
+		
+		//ajout des listenner
 	}
 
 }
