@@ -25,7 +25,7 @@ public class Action {
 	public void drawTurtle() {
 		switch (command) {
 		  case MoveForward:
-		    /*Action*/;
+		    turtle.avancer();
 		    break;
 		  case Turn:
 			/* Action */
