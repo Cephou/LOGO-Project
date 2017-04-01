@@ -44,6 +44,11 @@ public class Main extends JFrame {
         
         Action action = new Action(PossibleAction.MoveForward, myColorTurtle);
         action.drawTurtle();
+        Action action2 = new Action(PossibleAction.ChangeColor, myColorTurtle, "blue");
+        action2.drawTurtle();
+        Action action3 = new Action(PossibleAction.MoveForward, myColorTurtle);
+        action3.drawTurtle();
+        
 	}
 	
 	public static void main(String[] args) {
