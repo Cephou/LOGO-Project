@@ -1,3 +1,4 @@
+import Model.Teacher;
 
 public class SubMainTeacher extends Main {
 	/**

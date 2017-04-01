@@ -1,5 +1,8 @@
 package Database;
 
+import java.sql.*;
+import Model.User;
+
 /**
  * Contient le code permettant de creer la base de donnée et de générer le tables définies par le MPD
  */
@@ -41,6 +44,4 @@ public class DatabaseCreation {
 		    }
 		    System.out.println("Table created successfully");
 		  }
-	}
-	
 }
