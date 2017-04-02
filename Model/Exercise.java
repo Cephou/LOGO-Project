@@ -1,6 +1,8 @@
 package Model;
+import Model.Tortue.*;
 
 import javax.swing.ImageIcon;
+
 
 /**
  * @author Groupe 7
@@ -11,6 +13,7 @@ import javax.swing.ImageIcon;
 public class Exercise {
 	private String title;
 	private String instruction;
+	private TortueG turtle;
 	private ImageIcon icon; //L'icône est une miniature du dessin final.
 	private Teacher teacher;
 
@@ -22,9 +25,10 @@ public class Exercise {
 	 * @param teacher est le professeur auteur de l'exercice.
 	 * Un exercice est toujours associé à l'exercice qu'il a écrit.
 	 */
-	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher) {
+	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) {
 		this.title = title;
 		this.instruction = instruction;
+		this.turtle = turtle;
 		this.icon = icon;
 		this.teacher = teacher;
 	}
@@ -32,7 +36,7 @@ public class Exercise {
 	/**
 	 * @return the title
 	 */
-	public String gettitle() {
+	public String getTitle() {
 		return title;
 	}
 
@@ -69,6 +73,20 @@ public class Exercise {
 	 */
 	public Teacher getTeacher() {
 		return teacher;
+	}
+
+	/**
+	 * @return the turtle
+	 */
+	public TortueG getTurtle() {
+		return turtle;
+	}
+
+	/**
+	 * @param turtle the turtle to set
+	 */
+	public void setTurtle(TortueG turtle) {
+		this.turtle = turtle;
 	}
 	
 }
