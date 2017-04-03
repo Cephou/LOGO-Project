@@ -11,19 +11,25 @@ import java.awt.*;
  * Elle nécessite qu'on lui donne une classe pour quelle puisse afficher son contenu dans des boutons cliquables
  * Les boutons permettent à un élève de s'authentifier de d'ouvrir une session.
  */
-
 public class ChildLoginView {
 
+	JPanel childrenPanel; // Panel contenant les images de chaque élève
+
+	/**
+	 * Constructeur de la classe ChildLoginView
+	 *
+	 * @param schoolClass
+	 */
 	public ChildLoginView(SchoolClass schoolClass) {
-		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.
+		setChildrenPanel(schoolClass);
 	}
 
 	/**
-	 * Créer un panel contenant des boutons permettant à chaque élève de s'identifier
+	 * Créer un JPanel contenant des JButton, eux-mêmes contenant des icones,
+	 * permettant à chaque élève de cliquer sur sa photo pour s'identifier.
 	 */
-	public JPanel setChildrenPanel(SchoolClass schoolClass) {
+	public void setChildrenPanel(SchoolClass schoolClass) {
 
-		JPanel childrenPanel = new JPanel();
 		childrenPanel.setLayout(new GridLayout(2, 5)); // Classes de 10 élèves
         JButton itemButton[] = new JButton[schoolClass.getChildList().size()]; // Autant de JButton que d'élèves
 
@@ -36,7 +42,5 @@ public class ChildLoginView {
 			childrenPanel.add(itemButton[i]);
 
 		}
-
-		return childrenPanel;
 	}
 }
