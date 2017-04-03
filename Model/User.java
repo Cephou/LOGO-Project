@@ -2,85 +2,122 @@ package Model;
 
 import javax.swing.*;
 
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
+
 /**
  * User is an abstract class that creates a user with the required information.
  */
 
 public abstract class User {
-    protected String firstName; // The first name of the user
-    protected String lastName; // The last name of the user
-    protected int age; // The age of the user
-    protected ImageIcon picture; // The icon associated to the user
+	protected String firstName; // The first name of the user
+	protected String lastName; // The last name of the user
+	protected int age; // The age of the user
+	protected ImageIcon picture; // The icon associated to the user
 
-    /**
-     * Constructor of the class User.
-     *
-     * @param pFirstName The first name of the user
-     * @param pLastName  The last name of the user
-     * @param pAge       The age of the user
-     * @param pPicture   The picture of the user
-     *                   Controle la taille du pr�nom (entre 1 et 50 caract�res)
-     *                   Controle la taille du nom (entre 1 et 50 caract�res)
-     */
-    public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
-        firstName = pFirstName;
-        lastName = pLastName;
-        age = pAge;
-        picture = pPicture;
-    }
+	/**
+	 * Constructor of the class User.
+	 *
+	 * @param pFirstName
+	 *            The first name of the user
+	 * @param pLastName
+	 *            The last name of the user
+	 * @param pAge
+	 *            The age of the user >0
+	 * @param pPicture
+	 *            The picture of the user Controle la taille du pr�nom (entre
+	 *            1 et 50 caract�res) Controle la taille du nom (entre 1 et 50
+	 *            caract�res)
+	 * @throws StringSizeException
+	 */
+	public User(String pFirstName, String pLastName, int pAge,
+			ImageIcon pPicture) throws EmptyStringException,
+			NegativeIntegerException, StringSizeException {
 
-    //////////////////// FIRST NAME ////////////////////
+		this.setFirstName(pFirstName);
+		this.setLastName(pLastName);
+		this.setAge(pAge);
+		picture = pPicture;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	//////////////////// FIRST NAME ////////////////////
 
-    /**
-     * setFirstName can modify the first name of the user.
-     * Minimum 1 character, maximum 50 characters.
-     *
-     * @param firstName is the new first name
-     */
-    protected void setFirstName(String firstName) {
-        if (firstName.length() >= 1 && firstName.length() <= 50)
-            this.firstName = firstName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    //////////////////// LAST NAME ////////////////////
+	/**
+	 * setFirstName can modify the first name of the user. Minimum 1 character,
+	 * maximum 50 characters.
+	 *
+	 * @param firstName
+	 *            is the new first name
+	 * @throws StringSizeException
+	 */
+	protected void setFirstName(String firstName)
+			throws EmptyStringException, StringSizeException {
+		if (firstName.length() >= 1 && firstName.length() <= 50) {
+			this.firstName = firstName;
+		} else {
+			throw new StringSizeException();
+		}
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	//////////////////// LAST NAME ////////////////////
 
-    /**
-     * setLastName can modify the last name of the user.
-     * Minimum 1 character, maximum 50 characters.
-     *
-     * @param lastName is the new last name
-     */
-    protected void setLastName(String lastName) {
-        if (lastName.length() >= 1 && lastName.length() <= 50)
-            this.lastName = lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    //////////////////// AGE ////////////////////
+	/**
+	 * setLastName can modify the last name of the user. Minimum 1 character,
+	 * maximum 50 characters.
+	 *
+	 * @param lastName
+	 *            is the new last name
+	 * @throws StringSizeException
+	 */
+	protected void setLastName(String lastName) throws StringSizeException {
+		if (lastName.length() >= 1 && lastName.length() <= 50)
+			this.lastName = lastName;
+		else {
+			throw new StringSizeException();
+		}
+	}
 
-    public int getAge() {
-        return age;
-    }
+	//////////////////// AGE ////////////////////
 
-    protected void setAge(int age) {
-        this.age = age;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    //////////////////// PICTURE ////////////////////
+	/*
+	 * Set age can modify the age of the user
+	 * This ge have to be > 0
+	 * @param age the age of the user
+	 */
+	protected void setAge(int age) throws NegativeIntegerException {
+		if (age > 0) {
+			this.age = age;
+		} else {
+			throw new NegativeIntegerException();
+		}
 
-    public ImageIcon getPicture() {
-        return picture;
-    }
+	}
 
-    protected void setPicture(ImageIcon picture) {
-        this.picture = picture;
-    }
+	//////////////////// PICTURE ////////////////////
+
+	public ImageIcon getPicture() {
+		return picture;
+	}
+
+	/**
+	 * TODO CONTRAINTES ??????
+	 * @param picture
+	 */
+	protected void setPicture(ImageIcon picture) {
+		this.picture = picture;
+	}
 
 }
