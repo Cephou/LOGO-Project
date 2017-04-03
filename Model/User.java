@@ -2,6 +2,9 @@ package Model;
 
 import javax.swing.*;
 
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+
 /**
  * User is an abstract class that creates a user with the required information.
  */
@@ -17,13 +20,23 @@ public abstract class User {
      *
      * @param pFirstName The first name of the user
      * @param pLastName  The last name of the user
-     * @param pAge       The age of the user
+     * @param pAge       The age of the user >0
      * @param pPicture   The picture of the user
      *                   Controle la taille du pr�nom (entre 1 et 50 caract�res)
      *                   Controle la taille du nom (entre 1 et 50 caract�res)
+     * @throws EmptyStringException 
+     * @throws NegativeIntegerException 
      */
-    public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) {
-        firstName = pFirstName;
+    public User(String pFirstName, String pLastName, int pAge, ImageIcon pPicture) throws EmptyStringException, NegativeIntegerException {
+        if (pAge<=0){
+        	throw new NegativeIntegerException();
+        }
+        if (firstName.isEmpty() || lastName.isEmpty()){
+        	throw new EmptyStringException();
+        }
+        
+        
+    	firstName = pFirstName;
         lastName = pLastName;
         age = pAge;
         picture = pPicture;
