@@ -35,7 +35,7 @@ public class Main {
 		
 		loadDatas(); // Charge des données
 		GeneralLayout layout = new GeneralLayout();
-		ClassLoginView classSelection = new ClassLoginView(schoolClasses); // Crée le panel de liste de classes
+		ClassLoginView classSelection = new ClassLoginView(schoolClasses, layout); // Crée le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
         
 	}

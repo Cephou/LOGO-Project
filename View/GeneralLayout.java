@@ -57,5 +57,7 @@ public class GeneralLayout {
 	public void changeBodyContent(JPanel object) {
 		body.removeAll(); // Vide le contenu existant
 		body.add(object, BorderLayout.CENTER); // Ajoute le nouveau contenu
+		frame.setVisible(false);
+		frame.setVisible(true);
 	}
 }

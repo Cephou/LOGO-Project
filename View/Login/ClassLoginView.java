@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import Controler.SchoolClassSelection;
 import Model.SchoolClass;
+import View.GeneralLayout;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -22,8 +23,10 @@ import java.awt.event.ActionEvent;
 public class ClassLoginView {
 
 	private JPanel classSelection;
+	private GeneralLayout layout;
 	
-	public ClassLoginView(ArrayList<SchoolClass> schoolClasses) {
+	public ClassLoginView(ArrayList<SchoolClass> schoolClasses, GeneralLayout layout) {
+		this.layout = layout;
 		classSelection = new JPanel();
 		classSelection.setLayout(new GridLayout(0,3)); // 3 colonnes max, le reste formera des lignes
 		// Boucle qui parcoure la liste des classes et crée les panel des classes et les ajoute
@@ -39,7 +42,7 @@ public class ClassLoginView {
 	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
 		JButton ClassButton = new JButton(schoolClass.getClassName());
-		ClassButton.addMouseListener(new SchoolClassSelection(schoolClass));
+		ClassButton.addMouseListener(new SchoolClassSelection(schoolClass, layout));
 		ClassItem.add(ClassButton);
 		classSelection.add(ClassItem);
 	}

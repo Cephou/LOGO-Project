@@ -1,5 +1,6 @@
 package View.Login;
 
+import Model.Child;
 import Model.SchoolClass;
 
 import javax.swing.*;
@@ -32,17 +33,22 @@ public class ChildLoginView {
 
 		childLogin = new JPanel();
 		childLogin.setLayout(new GridLayout(2, 5)); // Classes de 10 élèves
-        JButton itemButton[] = new JButton[schoolClass.getChildList().size()]; // Autant de JButton que d'élèves
 
-		for (int i = 0; i < schoolClass.getChildList().size(); i++) {
-
-			Icon picture = new ImageIcon((getClass().getResource("/images/" + schoolClass.getChildList().get(i).getPicture())));
-			itemButton[i] = new JButton(picture);
-            itemButton[i].setEnabled(true);
-            itemButton[i].setPreferredSize(new Dimension(100, 100));
-			childLogin.add(itemButton[i]);
-
+		for(Child child : schoolClass.getChildList()) {
+			createChildItem(child);
 		}
+
+	}
+	
+	public void createChildItem(Child child) {	
+	
+//		Icon picture = new ImageIcon((getClass().getResource("/images/" + schoolClass.getChildList().get(i).getPicture())));
+//		itemButton[i] = new JButton(picture);
+//	    itemButton[i].setEnabled(true);
+//	    itemButton[i].setPreferredSize(new Dimension(100, 100));
+		JButton test = new JButton(child.getFirstName());
+		childLogin.add(test);
+
 	}
 	
 	public JPanel getChildLogin() {

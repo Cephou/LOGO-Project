@@ -19,8 +19,9 @@ public class SchoolClassSelection implements MouseListener {
 	private SchoolClass schoolClass; // Récupère la classe cliquée
 	private GeneralLayout layout; // Le body a changer
 
-	public SchoolClassSelection(SchoolClass schoolClass) {
+	public SchoolClassSelection(SchoolClass schoolClass, GeneralLayout layout) {
 		this.schoolClass = schoolClass;
+		this.layout = layout;
 	}
 
 	@Override
@@ -29,7 +30,7 @@ public class SchoolClassSelection implements MouseListener {
 		ChildLoginView childLogin = new ChildLoginView(schoolClass);
 		JPanel childLoginPanel = childLogin.getChildLogin();
 		// Change le body avec le nouveau panel d'élèves
-		//layout.changeBodyContent(childLoginPanel);
+		layout.changeBodyContent(childLoginPanel);
 		
 	}
 
