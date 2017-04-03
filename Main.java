@@ -6,6 +6,9 @@ import javax.swing.*;
 import Database.DatabaseCreation;
 import Database.DatabaseLoader;
 import Database.DatabaseRecorder;
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 import Model.*;
 import Model.Action;
 import Model.Tortue.*;
@@ -28,7 +31,7 @@ public class Main {
 	private DatabaseRecorder databaseRecorder; //enregistremment des données
 	private DatabaseCreation databaseCreation; // creation SSI BDD invexistante; 
     
-	public Main() {
+	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		
 		loadDatas(); // Charge des données
 		GeneralLayout layout = new GeneralLayout();
@@ -39,8 +42,11 @@ public class Main {
 	
 	/**
 	 * Charge un jeu de données
+	 * @throws StringSizeException 
+	 * @throws NegativeIntegerException 
+	 * @throws EmptyStringException 
 	 */
-	public void loadDatas() {
+	public void loadDatas() throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		schoolClasses = new ArrayList<SchoolClass>();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
@@ -48,7 +54,7 @@ public class Main {
 		schoolClasses.add(classe1);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		new Main();
 	}
 
