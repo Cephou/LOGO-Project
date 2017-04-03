@@ -25,7 +25,7 @@ public class ChildLoginView {
 
 		JPanel childrenPanel = new JPanel();
 		childrenPanel.setLayout(new GridLayout(2, 5)); // Classes de 10 élèves
-		JButton itemButton[] = new JButton[schoolClass.getChildList().size()];
+		JButton itemButton[] = new JButton[schoolClass.getChildList().size()]; // Autant de JButtons que d'élèves
 
 		for (int i = 0; i < schoolClass.getChildList().size(); i++) {
 
