@@ -88,23 +88,13 @@ public class SchoolClass {
 	 * @param Ajout
 	 *            de l'élève --> pas d'ajout possible de la meme personne 2
 	 *            fois
-	 * @throws ObjectAlreadyHereException
 	 */
-	public void addChild(Child newChild) {
+	public void addChild(Child child) {
 
-		boolean check = false;
-
-		for (Child child : childList) {
-			if (child == newChild)
-				check = true;
+		if (this.childList.contains(child)){
+			// TODO
 		}
-
-		if (check) {
-			newChild.setSchoolClass(this);
-			childList.add(newChild);
-		} else {
-			// throws new ObjectAlreadyHereException();
-		}
+		else childList.add(child);
 
 	}
 
