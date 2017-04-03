@@ -2,6 +2,9 @@ package Model;
 
 import javax.swing.*;
 
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 import Model.Tortue.TortueG;
 
 import java.util.ArrayList;
@@ -27,11 +30,14 @@ public class Teacher extends User {
      * @param pAge The age of the teacher
      * @param pPicture The picture of the teacher
      * @param pPassword The password of the teacher
+     * @throws StringSizeException 
+     * @throws NegativeIntegerException 
+     * @throws EmptyStringException 
      */
-    public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) {
-        super(pFirstName, pLastName, pAge, pPicture);
-        setAge(pAge);
-        setPassword(pPassword);
+    public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+        super(pFirstName, pLastName,  pAge, pPicture);
+        this.setAge(pAge);
+        this.setPassword(pPassword);
     }
 
     //////////////////// SETTERS ////////////////////
@@ -44,8 +50,9 @@ public class Teacher extends User {
      */
     @Override
     protected void setAge(int age) {
-        if (age >= 20 && age <= 70)
-            super.setAge(age);
+        if (age >= 20 && age <= 70){
+            this.age = age;
+        }
         else System.out.println("Exception : l'âge doit être compris entre 20 et 70 ans.");
     }
 

@@ -11,7 +11,7 @@ public enum PossibleAction {
 	  Draw("Trace"),
 	  UnDraw("Trace pas"),
 	  ChangeColor("Change la couleur"),
-	  Faster("Accéler"),
+	  Faster("Accélerer"),
 	  Slower("Ralentir"),
 	  ChangeSpeed("Changer la vitesse");
 	  

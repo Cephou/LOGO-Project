@@ -3,6 +3,10 @@ package Model;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
+
 /**
  * @author Groupe 7 Cette classe décrit l'objet enfant, un élève qui réalise des
  *         tentatives. Un enfant fait partie d'une classe et peut realiser
@@ -27,25 +31,23 @@ public class Child extends User {
 	 * 
 	 */
 	public Child(String pFirstName, String pLastName, int pAge,
-			ImageIcon pPicture) {
+			ImageIcon pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		super(pFirstName, pLastName, pAge, pPicture);
 		assays = new ArrayList<Assay>();
 	}
 
 	/**
-	 * Crée une tentative vide Ajoute la tentative dans la liste des tentative
+	 * Crée une tentative vide pour un exercice donné,
+	 * Ajoute la tentative dans la liste des tentative
 	 * de l'enfant
 	 * 
 	 * @param l'exercice
-	 *            sur lequel faire la tentative
-	 * @return la tentative crée (permet la manipulation future de la tentative
-	 *         crée)
+	 *            sur lequel faire la tentative, il doit exister
 	 */
 
-	public Assay createAssay(Exercise pexercise) {
+	public void createAssay(Exercise pexercise) {
 		Assay newAssay = new Assay(this, pexercise);
 		assays.add(newAssay);
-		return newAssay;
 	}
 
 	/**
