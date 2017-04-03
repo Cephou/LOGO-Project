@@ -3,6 +3,8 @@ import Model.Tortue.*;
 
 import javax.swing.ImageIcon;
 
+import Exception.EmptyStringException;
+
 
 /**
  * @author Groupe 7
@@ -26,11 +28,24 @@ public class Exercise {
 	 * Un exercice est toujours associé à l'exercice qu'il a écrit.
 	 */
 	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) {
-		this.title = title;
-		this.instruction = instruction;
-		this.turtle = turtle;
-		this.icon = icon;
-		this.teacher = teacher;
+		this.setTitle(title);
+		this.set(instruction);
+		this.setTurtle(turtle);
+		this.setIcon(icon);
+		this.setTeacher(teacher);
+	}
+
+	/**
+	 * Permet la saisie d'un titre pour un exercice
+	 * @param title2
+	 * @throws EmptyStringException 
+	 */
+	private void setTitle(String title) throws EmptyStringException {
+		if (title.isEmpty()){
+			throw new EmptyStringException();
+		}
+		else this.title = title;
+		
 	}
 
 	/**
