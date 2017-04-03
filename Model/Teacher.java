@@ -2,6 +2,7 @@ package Model;
 
 import javax.swing.*;
 
+import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -103,12 +104,12 @@ public class Teacher extends User {
      * @param title : the title of the exercise
      * @param instruction : instructions of the exercise
      * @param icon : l'icone de l'exercice (image)
-     * @param teacher : le professeur référent
      * @param turtle : la tortue choisie (3 choix)
      * @throws tooLongStringException 
      * @throws EmptyStringException 
+     * @throws AlreadyInListException 
      */
-    public void createExercise(SchoolClass schoolClass, String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) throws EmptyStringException, tooLongStringException {
+    public void createExercise(SchoolClass schoolClass, String title, String instruction, ImageIcon icon, TortueG turtle) throws EmptyStringException, tooLongStringException, AlreadyInListException {
     	Exercise newExercise = new Exercise(title, instruction, icon, this, turtle);
     	schoolClass.addExercice(newExercise);    	
     }
