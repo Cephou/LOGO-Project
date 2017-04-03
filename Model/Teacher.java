@@ -5,6 +5,7 @@ import javax.swing.*;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
+import Exception.tooLongStringException;
 import Model.Tortue.TortueG;
 
 import java.util.ArrayList;
@@ -104,8 +105,10 @@ public class Teacher extends User {
      * @param icon : l'icone de l'exercice (image)
      * @param teacher : le professeur référent
      * @param turtle : la tortue choisie (3 choix)
+     * @throws tooLongStringException 
+     * @throws EmptyStringException 
      */
-    public void createExercise(SchoolClass schoolClass, String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) {
+    public void createExercise(SchoolClass schoolClass, String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) throws EmptyStringException, tooLongStringException {
     	Exercise newExercise = new Exercise(title, instruction, icon, this, turtle);
     	schoolClass.addExercice(newExercise);    	
     }
