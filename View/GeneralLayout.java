@@ -1,5 +1,4 @@
 package View;
-import View.*;
 import View.Login.ClassLoginView;
 import View.Modules.Header;
 
@@ -12,58 +11,46 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 public class GeneralLayout {
 
 	private JFrame frame;
+	private Header header;
+	private JPanel body, footer;
 	private ClassLoginView classSelection;
 
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					GeneralLayout window = new GeneralLayout();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-//
-//	/**
-//	 * Create the application.
-//	 */
-//	public GeneralLayout() {
-//		initialize();
-//	}
+	/**
+	 * Create the application.
+	 */
+	public GeneralLayout() {
+		initialize();
+	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 801, 466);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		frame.setVisible(true);
 		
-		Header header = new Header();
+		header = new Header();
 		frame.getContentPane().add(header.getHeader(), BorderLayout.NORTH);
 		
-		JPanel body = new JPanel();		
+		body = new JPanel();		
 		frame.getContentPane().add(body, BorderLayout.CENTER);
 		body.setLayout(new BorderLayout(0, 0));
 		
-		classSelection = new ClassLoginView();
-		body.add(classSelection.getClassSelection(), BorderLayout.CENTER);
-		
-		JPanel footer = new JPanel();
+		footer = new JPanel();
 		frame.getContentPane().add(footer, BorderLayout.SOUTH);
 	}
-
+	
+	public void changeBodyContent(JPanel object) {
+		body.add(object, BorderLayout.CENTER);	
+	}
 }

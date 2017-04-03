@@ -3,8 +3,12 @@ package View.Login;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import Model.SchoolClass;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /*
@@ -17,7 +21,7 @@ public class ClassLoginView {
 
 	private JPanel classSelection;
 	
-	public ClassLoginView() {
+	public ClassLoginView(ArrayList<SchoolClass> schoolClasses) {
 		classSelection = new JPanel();
 		classSelection.setLayout(new GridLayout(0,3));
 		// Boucle qui parcoure la liste des classes et crée les panel des classes et les ajoute
@@ -33,7 +37,7 @@ public class ClassLoginView {
 		return classSelection;
 	}
 	
-	public void createClassItem() {
+	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
 		classSelection.add(ClassItem);
 	}
