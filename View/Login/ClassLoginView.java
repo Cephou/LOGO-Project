@@ -9,6 +9,7 @@ import Model.SchoolClass;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -38,7 +39,7 @@ public class ClassLoginView {
 	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
 		JButton ClassButton = new JButton(schoolClass.getClassName());
-		ClassButton.addActionListener(new SchoolClassSelection());
+		ClassButton.addMouseListener(new SchoolClassSelection());
 		ClassItem.add(ClassButton);
 		classSelection.add(ClassItem);
 	}
