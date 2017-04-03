@@ -4,15 +4,36 @@ import java.sql.*;
 // Chargement des données contenu dans la base de données afin de les utiliser dans l'application
 
 public class DatabaseLoader {
+
+	/*
+	 * Exemple de syntaxe de connexion de BDD JDBC/SQLite :
+	 * 
+	 * 
+	 */
+	  public static void main( String args[] )
+	  {
+	    Connection c = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:test.db");
+	    } catch ( Exception e ) {
+	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      System.exit(0);
+	    }
+	    System.out.println("Opened database successfully");
+  }
+}
+
+/*public class DatabaseLoader {
 	 
 	/**
 	 *
 	 * @author sqlitetutorial.net
-	 */
+	 
 
 	     /**
 	     * Connect to a sample database
-	     */
+	     
 	    public static void connect() {
 	        Connection conn = null;
 	        try {
@@ -37,10 +58,11 @@ public class DatabaseLoader {
 	    }
 	    /**
 	     * @param args the command line arguments
-	     */
+	     
 	    public static void main(String[] args) {
 	        connect();
 	    }
-}
+	    
+}*/
 	
 
