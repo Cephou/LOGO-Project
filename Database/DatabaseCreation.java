@@ -36,4 +36,4 @@ public class DatabaseCreation {
 	    public static void main(String[] args) {
 	    	databaseCreation("logo-project.db");
 	    }
-	}
+	} 
