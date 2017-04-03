@@ -13,18 +13,22 @@ import java.awt.*;
  */
 
 public class ChildLoginView {
+	
+	private JPanel childLogin;
 
 	public ChildLoginView(SchoolClass schoolClass) {
 		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.
+		setChildrenPanel(schoolClass);
 	}
 
 	/**
 	 * Créer un panel contenant des boutons permettant à chaque élève de s'identifier
+	 * @return 
 	 */
-	public JPanel setChildrenPanel(SchoolClass schoolClass) {
+	public void setChildrenPanel(SchoolClass schoolClass) {
 
-		JPanel childrenPanel = new JPanel();
-		childrenPanel.setLayout(new GridLayout(2, 5)); // Classes de 10 élèves
+		childLogin = new JPanel();
+		childLogin.setLayout(new GridLayout(2, 5)); // Classes de 10 élèves
         JButton itemButton[] = new JButton[schoolClass.getChildList().size()]; // Autant de JButton que d'élèves
 
 		for (int i = 0; i < schoolClass.getChildList().size(); i++) {
@@ -33,10 +37,13 @@ public class ChildLoginView {
 			itemButton[i] = new JButton(picture);
 			itemButton[i].setEnabled(false);
 			itemButton[i].setPreferredSize(new Dimension(100, 100));
-			childrenPanel.add(itemButton[i]);
+			childLogin.add(itemButton[i]);
 
 		}
 
-		return childrenPanel;
+	}
+	
+	public JPanel getChildLogin() {
+		return childLogin;
 	}
 }

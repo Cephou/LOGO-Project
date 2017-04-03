@@ -27,7 +27,7 @@ public class SchoolClassSelection implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		// Crée un nouveau panel d'élève avec la classe
 		ChildLoginView childLogin = new ChildLoginView(schoolClass);
-		childLoginPanel = childLogin.getChildLogin();
+		JPanel childLoginPanel = childLogin.getChildLogin();
 		// Change le body avec le nouveau panel d'élèves
 		layout.changeBodyContent(childLoginPanel);
 		
