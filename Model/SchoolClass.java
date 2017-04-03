@@ -5,12 +5,16 @@ package Model;
 
 import java.util.ArrayList;
 
+import Exception.AlreadyInListException;
+import Exception.EmptyStringException;
+import Exception.StringSizeException;
+
 /**
  * @author grp7 Cette classe crée l'object classe définie par un nom, un
  *         professeur et une liste d'élève
  *
  */
-public class SchoolClass{
+public class SchoolClass {
 
 	private String className;
 	private Teacher teacher;
@@ -24,14 +28,33 @@ public class SchoolClass{
 	 *            = nom attribué à la classe qui doit etre renseigné à la
 	 *            création
 	 * @param newTeacher
-	 *            = objet "Teacher" associé à la classe qui doit etre renseigné
-	 *            lors de la création de la classe *
+	 *            = objet "Teacher" associé à la classe qui doit etre
+	 *            renseigné lors de la création de la classe
+	 * @throws StringSizeException
+	 * @throws EmptyStringException
+	 * *
 	 */
-	public SchoolClass(String newClassName, Teacher newTeacher) {
-		this.className = newClassName;
+	public SchoolClass(String newClassName, Teacher newTeacher)
+			throws EmptyStringException, StringSizeException {
+		this.setClassName(newClassName);
 		this.teacher = newTeacher;
 		this.childList = new ArrayList<Child>();
 		this.exerciseList = new ArrayList<Exercise>();
+	}
+
+	/**
+	 * @param newClassName
+	 *            have to be > 0 and <50
+	 * @throws EmptyStringException
+	 * @throws StringSizeException
+	 */
+	private void setClassName(String className)
+			throws EmptyStringException, StringSizeException {
+		if (className.isEmpty()) {
+			throw new EmptyStringException();
+		} else if (className.length() < 50) {
+			throw new StringSizeException();
+		}
 	}
 
 	/**
@@ -56,36 +79,28 @@ public class SchoolClass{
 	}
 
 	/**
-	 * Setter teacher
-	 * 
-	 * @param changement
-	 *            de professor
-	 */
-	public void setTeacher(Teacher newTeacher) {
-		teacher = newTeacher;
-	}
-
-	/**
 	 * Ajout eleve dans childList et modification de la classe de l'élève dans
 	 * la classe Child
 	 * 
-	 * @param Ajout de l'élève --> pas d'ajout possible de la meme personne 2 fois
+	 * @param Ajout
+	 *            de l'élève --> pas d'ajout possible de la meme personne 2
+	 *            fois
 	 * @throws ObjectAlreadyHereException
 	 */
 	public void addChild(Child newChild) {
-		
+
 		boolean check = false;
-		
+
 		for (Child child : childList) {
-			if (child == newChild) check = true;
+			if (child == newChild)
+				check = true;
 		}
-		
-		if (check){
+
+		if (check) {
 			newChild.setSchoolClass(this);
 			childList.add(newChild);
-		}else
-		{
-			//throws new ObjectAlreadyHereException();
+		} else {
+			// throws new ObjectAlreadyHereException();
 		}
 
 	}
@@ -93,12 +108,15 @@ public class SchoolClass{
 	/**
 	 * Remove child in childList
 	 * 
-	 * @param eleve que l'on veut ajouter dans la classe --> method possible uniquement si la liste contient au moins 1 élève	
-	 * @throws EmptyListException			
+	 * @param eleve
+	 *            que l'on veut supprimer dans la classe --> method possible
+	 *            uniquement si l'eleve fait partie de la classe
+	 * @throws EmptyListException
 	 */
 	public void removeChild(Child oldChild) {
-		if (childList.size() > 0) childList.remove(oldChild);
-		//else throw new EmptyListException();
+		if (childList.contains(oldChild)) {
+			childList.remove(oldChild);
+		}
 	}
 
 	/**
@@ -112,33 +130,28 @@ public class SchoolClass{
 	/**
 	 * Add Exercise in exerciseList
 	 * 
-	 * @param exercice que l'on ajoute --> pas d'ajout du meme exercice possible
+	 * @param exercice
+	 *            que l'on ajoute, un exercice ne peut pas etre present 2 fois
+	 * @throws AlreadyInListException
 	 * @throws ObjectAlreadyHereException
 	 */
-	public void addExercice(Exercise newExercise) {
-		boolean check = false;
-		
-		for (Exercise exercise : exerciseList) {
-			if (exercise == newExercise) check = true;
-		}
-		
-		if (check){
-			exerciseList.add(newExercise);
-		}else
-		{
-			//throw new ObjectAlreadyHereException();
-		}
-		
+	public void addExercice(Exercise exercise) throws AlreadyInListException {
+		if (exerciseList.contains(exercise)) {
+			throw new AlreadyInListException();
+		} else
+			exerciseList.add(exercise);
 	}
 
 	/**
 	 * Remove child in childList
 	 * 
-	 * @param exercice que l'on veut enlever --> method possible uniquement si la liste contient au moins 1 exercice
+	 * @param exercice
+	 *            que l'on veut enlever --> method possible uniquement si la
+	 *            liste contient au moins 1 exercice
 	 * @throws EmptyListException
 	 */
-	public void removeChild(Exercise newExercise) {
-		if(exerciseList.size()>0) exerciseList.remove(newExercise);
-		//else throw new EmptyListException();
+	public void removeChild(Exercise exercise) {
+		if (exerciseList.contains(exercise))
+			exerciseList.remove(exercise);
 	}
 }
