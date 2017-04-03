@@ -29,7 +29,7 @@ public class SchoolClassSelection implements MouseListener {
 		ChildLoginView childLogin = new ChildLoginView(schoolClass);
 		JPanel childLoginPanel = childLogin.getChildLogin();
 		// Change le body avec le nouveau panel d'élèves
-		layout.changeBodyContent(childLoginPanel);
+		//layout.changeBodyContent(childLoginPanel);
 		
 	}
 
