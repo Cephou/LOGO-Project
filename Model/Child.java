@@ -1,25 +1,24 @@
 package Model;
 
-import java.util.ArrayList;
-import javax.swing.ImageIcon;
-
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 
+import java.util.ArrayList;
+
 /**
- * @author Groupe 7 Cette classe décrit l'objet enfant, un élève qui réalise des
+ * @author Groupe 7 Cette classe dï¿½crit l'objet enfant, un ï¿½lï¿½ve qui rï¿½alise des
  *         tentatives. Un enfant fait partie d'une classe et peut realiser
- *         plusieur actions: faire une tentative pour un exercice donné.
+ *         plusieur actions: faire une tentative pour un exercice donnï¿½.
  */
 
 public class Child extends User {
 
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
-	private SchoolClass schoolClass; // La classe de l'élève.
+	private SchoolClass schoolClass; // La classe de l'ï¿½lï¿½ve.
 
 	/*
-	 * Créé un enfant. Controle l'age (entre 3 et 12 ans).
+	 * Crï¿½ï¿½ un enfant. Controle l'age (entre 3 et 12 ans).
 	 * 
 	 * @param pFirstName prenom
 	 * 
@@ -31,19 +30,19 @@ public class Child extends User {
 	 * 
 	 */
 	public Child(String pFirstName, String pLastName, int pAge,
-			ImageIcon pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
-		super(pFirstName, pLastName, pAge, pPicture);
-		assays = new ArrayList<Assay>();
-	}
+                 String pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+        super(pFirstName, pLastName, pAge, pPicture);
+        assays = new ArrayList<Assay>();
+    }
 
 	/**
-	 * Crée une tentative vide pour un exercice donné,
+	 * Crï¿½e une tentative vide pour un exercice donnï¿½,
 	 * Ajoute la tentative dans la liste des tentative
 	 * de l'enfant
-	 * 
-	 * @param l'exercice
-	 *            sur lequel faire la tentative, il doit exister
-	 */
+     *
+     * l'exercice
+     *            sur lequel faire la tentative, il doit exister
+     */
 
 	public void createAssay(Exercise pexercise) {
 		Assay newAssay = new Assay(this, pexercise);

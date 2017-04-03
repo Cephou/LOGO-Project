@@ -1,26 +1,42 @@
 package View.Login;
 
-import javax.swing.JPanel;
-
 import Model.SchoolClass;
 
-/*
- * Cette classe gËre l'aspect graphique de l'affichage de la liste d'ÈlËve lors de la sÈlection d'une classe
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Cette classe g√®re l'aspect graphique de l'affichage de la liste d'√©l√®ve lors de la s√©lection d'une classe
  * Elle affiche le nom de la classe choisie ainsi que son professeur
- * Elle nÈcessite qu'on lui donne une classe pour quelle puisse afficher son contenu dans des boutons cliquables
- * Les boutons permettent ‡ un ÈlËve de s'authentifier de d'ouvrir une session.
+ * Elle n√©cessite qu'on lui donne une classe pour quelle puisse afficher son contenu dans des boutons cliquables
+ * Les boutons permettent √† un √©l√®ve de s'authentifier de d'ouvrir une session.
  */
 
 public class ChildLoginView {
 
-	public ChildLoginView(SchoolClass pclass) {
-		// ProcÈdure de boucle qui pioche dans la classe choisie pour afficher les enfants.		
+	public ChildLoginView(SchoolClass schoolClass) {
+		// Proc√©dure de boucle qui pioche dans la classe choisie pour afficher les enfants.
 	}
-	
-	/*
-	 * CrÈe un bouton qui permet ‡ un enfant de s'authentifier
+
+	/**
+	 * Cr√©er un panel contenant des boutons permettant √† chaque √©l√®ve de s'identifier
 	 */
-	public JPanel createChildItem() {
-		return null;
+	public JPanel setChildrenPanel(SchoolClass schoolClass) {
+
+		JPanel childrenPanel = new JPanel();
+		childrenPanel.setLayout(new GridLayout(2, 5)); // Classes de 10 √©l√®ves
+		JButton itemButton[] = new JButton[schoolClass.getChildList().size()];
+
+		for (int i = 0; i < schoolClass.getChildList().size(); i++) {
+
+			Icon picture = new ImageIcon((getClass().getResource("/images/" + schoolClass.getChildList().get(i).getPicture())));
+			itemButton[i] = new JButton(picture);
+			itemButton[i].setEnabled(false);
+			itemButton[i].setPreferredSize(new Dimension(100, 100));
+			childrenPanel.add(itemButton[i]);
+
+		}
+
+		return childrenPanel;
 	}
 }
