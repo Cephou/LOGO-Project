@@ -1,8 +1,6 @@
-package Model;
+package src.Model;
 
-import Exception.EmptyStringException;
-import Exception.NegativeIntegerException;
-import Exception.StringSizeException;
+import src.Exception.*;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
-package View.Child;
+package src.View.Child;
 
-import Model.Child;
-import Model.Exercise;
+import src.Model.Child;
+import src.Model.Exercise;
 
 /**
  * Cette classe permet, après sélection d'un exercice par un enfant, de pouvoir rejouer l'exercice,

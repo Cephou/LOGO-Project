@@ -1,4 +1,4 @@
-package View.Modules;
+package src.View.Modules;
 
 /*
  * Cette classe permet de visualiser et de choisir un exercice. 

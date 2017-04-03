@@ -1,7 +1,4 @@
-/**
- * 
- */
-package Exception;
+package src.Exception;
 
 /**
  * @author pc

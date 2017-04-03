@@ -1,12 +1,12 @@
-package View.Login;
+package src.View.Login;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Controler.SchoolClassSelection;
-import Model.SchoolClass;
-import View.GeneralLayout;
+import src.Controler.SchoolClassSelection;
+import src.Model.SchoolClass;
+import src.View.GeneralLayout;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;

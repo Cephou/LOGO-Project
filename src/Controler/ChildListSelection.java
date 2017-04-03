@@ -1,5 +1,4 @@
-
-package Controler;
+package src.Controler;
 
 /**
  *Controller permettant d'ecouter une  ChildListView dans la vue professeur d'évaluation des eleves.

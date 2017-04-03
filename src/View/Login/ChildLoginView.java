@@ -1,7 +1,7 @@
-package View.Login;
+package src.View.Login;
 
-import Model.Child;
-import Model.SchoolClass;
+import src.Model.Child;
+import src.Model.SchoolClass;
 
 import javax.swing.*;
 import java.awt.*;

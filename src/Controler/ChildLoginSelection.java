@@ -1,4 +1,4 @@
-package Controler;
+package src.Controler;
 
 /*
  * Cette classe est le controleur des boutons issus de ChildSelectionView.

@@ -1,4 +1,4 @@
-package Model.Tortue;
+package src.Model.Tortue;
 
 import javax.swing.*;
 import java.awt.*;

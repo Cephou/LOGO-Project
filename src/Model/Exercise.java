@@ -1,10 +1,8 @@
-package Model;
-import Model.Tortue.*;
+package src.Model;
+import src.Model.Tortue.*;
+import src.Exception.*;
 
 import javax.swing.ImageIcon;
-
-import Exception.EmptyStringException;
-import Exception.tooLongStringException;
 
 /**
  * @author Groupe 7 Cette classe décrit l'objet exercice. Un exercice est

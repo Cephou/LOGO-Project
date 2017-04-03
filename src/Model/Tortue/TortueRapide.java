@@ -1,4 +1,4 @@
-package Model.Tortue;
+package src.Model.Tortue;
 
 /**
  * Tortue LOGO capable de faire de la vitesse

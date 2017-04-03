@@ -1,7 +1,7 @@
-package Model;
+package src.Model;
 
-import Exception.*;
-import Model.Tortue.TortueG;
+import src.Exception.*;
+import src.Model.Tortue.*;
 
 import javax.swing.*;
 import java.util.ArrayList;

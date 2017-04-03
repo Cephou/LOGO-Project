@@ -1,4 +1,4 @@
-package Controler;
+package src.Controler;
 
 /*
  * Cette classe permet de choisir un exercice. Elle permet d'afficher le module ExerciceSelectionView

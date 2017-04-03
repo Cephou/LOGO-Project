@@ -1,4 +1,4 @@
-import Model.Child;
+import src.Model.Child;
 
 public class SubMainChild extends Main {
 	/**

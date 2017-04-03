@@ -1,4 +1,4 @@
-package Exception;
+package src.Exception;
 
 public class WrongGradeException extends Exception {
 	public WrongGradeException(){

@@ -1,20 +1,16 @@
+package src;
+
 import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
 
-import Database.DatabaseCreation;
-import Database.DatabaseLoader;
-import Database.DatabaseRecorder;
-import Exception.EmptyStringException;
-import Exception.NegativeIntegerException;
-import Exception.StringSizeException;
-import Model.*;
-import Model.Action;
-import Model.Tortue.*;
-import View.*;
-import View.Login.ClassLoginView;
-import View.Modules.*;
+import src.View.Login.*;
+import src.Database.*;
+import src.Exception.*;
+import src.Model.*;
+import src.View.*;
+
 /**
  * Main, cette classe gere les reltions  entre toutes les classes de l'application.
  * Elle  instancie layout general et les sous-main. Ce layout est rempli en fonction du type d'utilisateur et de l'action choisit

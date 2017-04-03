@@ -1,4 +1,4 @@
-package View.Modules;
+package src.View.Modules;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;

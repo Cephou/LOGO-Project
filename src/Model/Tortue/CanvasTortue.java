@@ -1,4 +1,4 @@
-package Model.Tortue;
+package src.Model.Tortue;
 
 import java.awt.*;
 import java.awt.geom.*;

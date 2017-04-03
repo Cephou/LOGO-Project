@@ -1,6 +1,6 @@
-package View;
-import View.Login.ClassLoginView;
-import View.Modules.Header;
+package src.View;
+import src.View.Login.ClassLoginView;
+import src.View.Modules.Header;
 
 import java.awt.EventQueue;
 
