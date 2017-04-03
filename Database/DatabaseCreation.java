@@ -28,6 +28,7 @@ public class DatabaseCreation {
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
 	        }
+	        System.out.println("Opened database successfully");
 	    }
 	 
 	    /**
