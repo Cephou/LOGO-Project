@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.SchoolClassSelection;
 import Model.SchoolClass;
 
 import java.awt.GridLayout;
@@ -37,6 +38,7 @@ public class ClassLoginView {
 	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
 		JButton ClassButton = new JButton(schoolClass.getClassName());
+		ClassButton.addActionListener(new SchoolClassSelection());
 		ClassItem.add(ClassButton);
 		classSelection.add(ClassItem);
 	}
