@@ -1,12 +1,16 @@
 package Model;
 
 import javax.swing.*;
+
+import Model.Tortue.TortueG;
+
 import java.util.ArrayList;
 
 /**
  * Teacher is a class extends User class. A teacher is a user who has a password.
- *
+ * He can create an exercise.
  */
+
 public class Teacher extends User {
 
     private String password; // The password of the teacher
@@ -42,7 +46,7 @@ public class Teacher extends User {
     protected void setAge(int age) {
         if (age >= 20 && age <= 70)
             super.setAge(age);
-        else System.out.println("Exception : l'Ã¢ge doit Ãªtre compris entre 20 et 70 ans.");
+        else System.out.println("Exception : l'âge doit être compris entre 20 et 70 ans.");
     }
 
     /**
@@ -81,6 +85,22 @@ public class Teacher extends User {
         }
         if (!found)
             classes.add(schoolClass);
+    }
+    
+    /**
+     * createExercise allows a teacher to add a new exercise.
+     * The function will also add the exercise in the list of exercise of a given class
+     * 
+     * @param schoolClass : the class to add the exercise
+     * @param title : the title of the exercise
+     * @param instruction : instructions of the exercise
+     * @param icon : l'icone de l'exercice (image)
+     * @param teacher : le professeur référent
+     * @param turtle : la tortue choisie (3 choix)
+     */
+    public void createExercise(SchoolClass schoolClass, String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) {
+    	Exercise newExercise = new Exercise(title, instruction, icon, this, turtle);
+    	schoolClass.addExercice(newExercise);    	
     }
 
 }
