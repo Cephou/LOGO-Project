@@ -37,8 +37,8 @@ public class ChildLoginView {
 
 			Icon picture = new ImageIcon((getClass().getResource("/images/" + schoolClass.getChildList().get(i).getPicture())));
 			itemButton[i] = new JButton(picture);
-			itemButton[i].setEnabled(false);
-			itemButton[i].setPreferredSize(new Dimension(100, 100));
+            itemButton[i].setEnabled(true);
+            itemButton[i].setPreferredSize(new Dimension(100, 100));
 			childrenPanel.add(itemButton[i]);
 
 		}
