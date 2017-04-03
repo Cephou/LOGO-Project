@@ -39,7 +39,7 @@ public class ClassLoginView {
 	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
 		JButton ClassButton = new JButton(schoolClass.getClassName());
-		ClassButton.addMouseListener(new SchoolClassSelection());
+		ClassButton.addMouseListener(new SchoolClassSelection(schoolClass));
 		ClassItem.add(ClassButton);
 		classSelection.add(ClassItem);
 	}
