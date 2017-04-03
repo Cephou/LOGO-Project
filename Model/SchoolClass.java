@@ -52,8 +52,11 @@ public class SchoolClass {
 			throws EmptyStringException, StringSizeException {
 		if (className.isEmpty()) {
 			throw new EmptyStringException();
-		} else if (className.length() < 50) {
+		} else if (className.length() > 50) {
 			throw new StringSizeException();
+		}
+		else {
+			this.className = className;
 		}
 	}
 
