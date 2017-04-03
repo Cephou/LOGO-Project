@@ -4,6 +4,7 @@ import Model.Tortue.*;
 import javax.swing.ImageIcon;
 
 import Exception.EmptyStringException;
+import Exception.tooLongStringException;
 
 
 /**
@@ -64,8 +65,10 @@ public class Exercise {
 
 	/**
 	 * @param instruction the instruction to set
+	 * @throws EmptyStringException 
+	 * @throws tooLongStringException 
 	 */
-	public void setInstruction(String instruction) {
+	public void setInstruction(String instruction) throws EmptyStringException, tooLongStringException {
 		if (instruction.isEmpty()){
 			throw new EmptyStringException();
 		}
@@ -82,6 +85,7 @@ public class Exercise {
 	}
 
 	/**
+	 * TODO Control ?
 	 * @param icon the icon to set
 	 */
 	public void setIcon(ImageIcon icon) {
@@ -103,9 +107,12 @@ public class Exercise {
 	}
 
 	/**
+	 * Permet d'associer une tortue à un exercice
+	 * TODO control ?
 	 * @param turtle the turtle to set
 	 */
 	public void setTurtle(TortueG turtle) {
+		
 		this.turtle = turtle;
 	}
 	
