@@ -29,7 +29,7 @@ public class Exercise {
 	 */
 	public Exercise(String title, String instruction, ImageIcon icon, Teacher teacher, TortueG turtle) {
 		this.setTitle(title);
-		this.set(instruction);
+		this.setInstruction(instruction);
 		this.setTurtle(turtle);
 		this.setIcon(icon);
 		this.setTeacher(teacher);
@@ -66,7 +66,12 @@ public class Exercise {
 	 * @param instruction the instruction to set
 	 */
 	public void setInstruction(String instruction) {
-		this.instruction = instruction;
+		if (instruction.isEmpty()){
+			throw new EmptyStringException();
+		}
+		else if(instruction.length()>500){
+			throw new tooLongStringException();
+		}
 	}
 
 	/**
