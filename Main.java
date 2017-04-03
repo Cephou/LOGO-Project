@@ -30,10 +30,10 @@ public class Main {
     
 	public Main() {
 		
-		loadDatas();
+		loadDatas(); // Charge des données
 		GeneralLayout layout = new GeneralLayout();
-		ClassLoginView classSelection = new ClassLoginView(schoolClasses);
-		layout.changeBodyContent(classSelection.getClassSelection());
+		ClassLoginView classSelection = new ClassLoginView(schoolClasses); // Crée le panel de liste de classes
+		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
         
 	}
 	
@@ -41,6 +41,7 @@ public class Main {
 	 * Charge un jeu de données
 	 */
 	public void loadDatas() {
+		schoolClasses = new ArrayList<SchoolClass>();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
 		SchoolClass classe1 = new SchoolClass("CE1", teacher1);

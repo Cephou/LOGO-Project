@@ -23,23 +23,29 @@ public class ClassLoginView {
 	
 	public ClassLoginView(ArrayList<SchoolClass> schoolClasses) {
 		classSelection = new JPanel();
-		classSelection.setLayout(new GridLayout(0,3));
+		classSelection.setLayout(new GridLayout(0,3)); // 3 colonnes max, le reste formera des lignes
 		// Boucle qui parcoure la liste des classes et crée les panel des classes et les ajoute
-		for(int i=0; i<6; i++) { // A IMPLEMENTER (exemple ici avec 6 classes)
-			JButton btnClassItem = new JButton();
-			JLabel lblClass = new JLabel("CLASSE");
-			btnClassItem.add(lblClass);
-			classSelection.add(btnClassItem);
+		for(SchoolClass schoolClass : schoolClasses) {
+			createClassItem(schoolClass);
 		}
 	}
 	
-	public JPanel getClassSelection() {
-		return classSelection;
-	}
-	
+	/**
+	 * Crée un item classe et est ajouté à la liste des classes à afficher
+	 * @param schoolClass la classe à ajouter
+	 */
 	public void createClassItem(SchoolClass schoolClass) {
 		JPanel ClassItem = new JPanel();
+		JButton ClassButton = new JButton(schoolClass.getClassName());
+		ClassItem.add(ClassButton);
 		classSelection.add(ClassItem);
+	}
+	
+	/**
+	 * @return La liste de classes
+	 */
+	public JPanel getClassSelection() {
+		return classSelection;
 	}
 	
 }

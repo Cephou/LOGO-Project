@@ -20,13 +20,12 @@ public class GeneralLayout {
 	private JFrame frame;
 	private Header header;
 	private JPanel body, footer;
-	private ClassLoginView classSelection;
 
 	/**
 	 * Create the application.
 	 */
 	public GeneralLayout() {
-		initialize();
+		initialize(); // Génère le header, body et footer
 	}
 
 	/**
@@ -37,7 +36,6 @@ public class GeneralLayout {
 		frame.setBounds(100, 100, 801, 466);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
-		frame.setVisible(true);
 		
 		header = new Header();
 		frame.getContentPane().add(header.getHeader(), BorderLayout.NORTH);
@@ -48,9 +46,16 @@ public class GeneralLayout {
 		
 		footer = new JPanel();
 		frame.getContentPane().add(footer, BorderLayout.SOUTH);
+		
+		frame.setVisible(true);
 	}
 	
+	/**
+	 * Permet de changer dynamiquement le contenu du body
+	 * @param object JPanel à ajouter dans le body
+	 */
 	public void changeBodyContent(JPanel object) {
-		body.add(object, BorderLayout.CENTER);	
+		body.removeAll(); // Vide le contenu existant
+		body.add(object, BorderLayout.CENTER); // Ajoute le nouveau contenu
 	}
 }
