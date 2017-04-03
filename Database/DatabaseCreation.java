@@ -9,39 +9,31 @@ import Model.User;
 
 
 public class DatabaseCreation {
-
-	/*Exemple de synthaxe pour la création d'une table SQLite/JSBC
-	 * 
-	 * import java.sql.*;
-
-	public class SQLiteJDBC
-	{
-	  public static void main( String args[] )
-	  {
-	   
-	}*/
-	public DatabaseCreation(User user){
-		 Connection c = null;
-		    Statement stmt = null;
-		    try {
-		      Class.forName("org.sqlite.JDBC");
-		      c = DriverManager.getConnection("jdbc:sqlite:test.db");
-		      System.out.println("Opened database successfully");
-
-		      stmt = c.createStatement();
-		      String sql = "CREATE TABLE COMPANY " +
-		                   "(ID INT PRIMARY KEY     NOT NULL," +
-		                   " NAME           TEXT    NOT NULL, " + 
-		                   " AGE            INT     NOT NULL, " + 
-		                   " ADDRESS        CHAR(50), " + 
-		                   " SALARY         REAL)"; 
-		      stmt.executeUpdate(sql);
-		      stmt.close();
-		      c.close();
-		    } catch ( Exception e ) {
-		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-		      System.exit(0);
-		    }
-		    System.out.println("Table created successfully");
-		  }
-}
+	   /**
+	     * Connect to a sample database
+	     *
+	     * @param fileName the database file name
+	     */
+	    public static void databaseCreation(String fileName) {
+	 
+	        String url = "jdbc:sqlite:C:/sqlite/db/" + fileName;
+	 
+	        try (Connection conn = DriverManager.getConnection(url)) {
+	            if (conn != null) {
+	                DatabaseMetaData meta = conn.getMetaData();
+	                System.out.println("The driver name is " + meta.getDriverName());
+	                System.out.println("A new database has been created.");
+	            }
+	 
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
+	 
+	    /**
+	     * @param args the command line arguments
+	     */
+	    public static void main(String[] args) {
+	    	databaseCreation("logo-project.db");
+	    }
+	}
