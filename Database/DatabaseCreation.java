@@ -14,27 +14,26 @@ public class DatabaseCreation {
 	     *
 	     * @param fileName the database file name
 	     */
-	    public static void databaseCreation(String fileName) {
+	    public static void databaseCreation() {
 	 
-	        String url = "jdbc:sqlite:" + fileName;
+	        Connection c = null;
 	 
-	        try (Connection conn = DriverManager.getConnection(url)) {
-	            if (conn != null) {
-	                DatabaseMetaData meta = conn.getMetaData();
-	                System.out.println("The driver name is " + meta.getDriverName());
-	                System.out.println("A new database has been created.");
-	            }
-	 
-	        } catch (SQLException e) {
-	            System.out.println(e.getMessage());
-	        }
-	        System.out.println("Opened database successfully");
+	        try {
+	            Class.forName("org.sqlite.JDBC");
+	            c = DriverManager.getConnection("jdbc:sqlite:logo-project.db");
+	          } catch ( Exception e ) {
+	            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	            System.exit(0);
+	          }
+	          System.out.println("Opened database successfully");
+	          
 	    }
+	          
 	 
 	    /**
 	     * @param args the command line arguments
 	     */
 	    public static void main(String[] args) {
-	    	databaseCreation("logo-project.db");
+	    	databaseCreation();
 	    }
 	} 
