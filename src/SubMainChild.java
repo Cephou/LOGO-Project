@@ -1,3 +1,6 @@
+package src;
+
+import src.Exception.*;
 import src.Model.Child;
 
 public class SubMainChild extends Main {
@@ -15,7 +18,7 @@ public class SubMainChild extends Main {
 	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Child
 	 * @param Child current child
 	 */
-	public SubMainChild(Child child){
+	public SubMainChild(Child child) throws EmptyStringException, NegativeIntegerException, StringSizeException{
 		this.child = child;
 		//creation layout
 		

@@ -1,7 +1,9 @@
 package src.View.Login;
 
+import src.Controler.ChildLoginSelection;
 import src.Model.Child;
 import src.Model.SchoolClass;
+import src.View.GeneralLayout;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,15 +17,17 @@ import java.awt.*;
 public class ChildLoginView {
 	
 	private JPanel childLogin;
+	private GeneralLayout layout;
 
 	/**
 	 * Constructeur de la classe ChildLoginView
 	 *
 	 * @param schoolClass
 	 */
-	public ChildLoginView(SchoolClass schoolClass) {
+	public ChildLoginView(SchoolClass schoolClass, GeneralLayout layout) {
 		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.
         setChildrenPanel(schoolClass);
+        this.layout = layout;
 	}
 
 	/**
@@ -46,8 +50,9 @@ public class ChildLoginView {
 //		itemButton[i] = new JButton(picture);
 //	    itemButton[i].setEnabled(true);
 //	    itemButton[i].setPreferredSize(new Dimension(100, 100));
-		JButton test = new JButton(child.getFirstName());
-		childLogin.add(test);
+		JButton childBtn = new JButton(child.getFirstName());
+		childBtn.addMouseListener(new ChildLoginSelection(child, this.layout));
+		childLogin.add(childBtn);
 
 	}
 	
