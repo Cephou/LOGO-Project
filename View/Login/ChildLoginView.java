@@ -40,7 +40,7 @@ public class ChildLoginView {
 			itemButton[i] = new JButton(picture);
             itemButton[i].setEnabled(true);
             itemButton[i].setPreferredSize(new Dimension(100, 100));
-			childrenPanel.add(itemButton[i]);
+			childLogin.add(itemButton[i]);
 
 		}
 	}
