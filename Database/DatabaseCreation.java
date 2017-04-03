@@ -16,7 +16,7 @@ public class DatabaseCreation {
 	     */
 	    public static void databaseCreation(String fileName) {
 	 
-	        String url = "jdbc:sqlite:C:/sqlite/db/" + fileName;
+	        String url = "jdbc:sqlite:" + fileName;
 	 
 	        try (Connection conn = DriverManager.getConnection(url)) {
 	            if (conn != null) {
