@@ -25,8 +25,8 @@ public class ChildLoginView {
 	}
 
 	/**
-	 * Créer un JPanel contenant des JButton, eux-mêmes contenant des icones,
-	 * permettant à chaque élève de cliquer sur sa photo pour s'identifier.
+     * Ajoute des JButton au JPanel, qui contiennent des icones,
+     * permettant à chaque élève de cliquer sur sa photo pour s'identifier.
 	 */
 	public void setChildrenPanel(SchoolClass schoolClass) {
 
