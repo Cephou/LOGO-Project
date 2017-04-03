@@ -1,14 +1,9 @@
 package Model;
 
-import javax.swing.*;
-
-import Exception.AlreadyInListException;
-import Exception.EmptyStringException;
-import Exception.NegativeIntegerException;
-import Exception.StringSizeException;
-import Exception.tooLongStringException;
+import Exception.*;
 import Model.Tortue.TortueG;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +31,7 @@ public class Teacher extends User {
      * @throws NegativeIntegerException 
      * @throws EmptyStringException 
      */
-    public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+    public Teacher(String pFirstName, String pLastName, int pAge, String pPicture, String pPassword) throws EmptyStringException, NegativeIntegerException, StringSizeException {
         super(pFirstName, pLastName,  pAge, pPicture);
         this.setAge(pAge);
         this.setPassword(pPassword);
@@ -55,7 +50,7 @@ public class Teacher extends User {
         if (age >= 20 && age <= 70){
             this.age = age;
         }
-        else System.out.println("Exception : l'âge doit être compris entre 20 et 70 ans.");
+        else System.out.println("Exception : l'ï¿½ge doit ï¿½tre compris entre 20 et 70 ans.");
     }
 
     /**

@@ -9,14 +9,14 @@ public class SubMainChild extends Main {
 	 * 
 	 */
 
-	private Child currentChild;
+	private Child child;
 
 	/**
 	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Child
 	 * @param Child current child
 	 */
 	public SubMainChild(Child child){
-		this.currentChild = child;
+		this.child = child;
 		//creation layout
 		
 		//ajout des listenner

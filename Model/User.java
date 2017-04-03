@@ -1,7 +1,5 @@
 package Model;
 
-import javax.swing.*;
-
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -14,7 +12,7 @@ public abstract class User {
 	protected String firstName; // The first name of the user
 	protected String lastName; // The last name of the user
 	protected int age; // The age of the user
-	protected ImageIcon picture; // The icon associated to the user
+	protected String picture; // The icon associated to the user
 
 	/**
 	 * Constructor of the class User.
@@ -32,7 +30,7 @@ public abstract class User {
 	 * @throws StringSizeException
 	 */
 	public User(String pFirstName, String pLastName, int pAge,
-			ImageIcon pPicture) throws EmptyStringException,
+				String pPicture) throws EmptyStringException,
 			NegativeIntegerException, StringSizeException {
 
 		this.setFirstName(pFirstName);
@@ -108,7 +106,7 @@ public abstract class User {
 
 	//////////////////// PICTURE ////////////////////
 
-	public ImageIcon getPicture() {
+	public String getPicture() {
 		return picture;
 	}
 
@@ -116,7 +114,7 @@ public abstract class User {
 	 * TODO CONTRAINTES ??????
 	 * @param picture
 	 */
-	protected void setPicture(ImageIcon picture) {
+	protected void setPicture(String picture) {
 		this.picture = picture;
 	}
 
