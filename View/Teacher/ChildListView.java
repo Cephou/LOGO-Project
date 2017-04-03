@@ -3,6 +3,8 @@
  */
 package View.Teacher;
 
+import javax.swing.JList;
+
 import Model.SchoolClass;
 
 /**
@@ -21,5 +23,6 @@ public class ChildListView {
 	 */
     public ChildListView(SchoolClass schoolClass) {
         // Proc�dure de boucle qui pioche dans la classe choisie pour afficher les enfants.
-		}	
+    	JList list = new JList(schoolClass.getChildList().toArray());
+    }	
 }
