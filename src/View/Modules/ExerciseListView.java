@@ -53,19 +53,10 @@ public class ExerciseListView extends JPanel {
 	
 		JPanel panelView = new JPanel();
 		scrollPane.setViewportView(panelView);
-		panelView.setLayout(new GridLayout(50, 3, 0, 0));
+		panelView.setLayout(new GridLayout(listExercises.size(), 3, 0, 0));
 		
 		
 		
-
-		Map<String, String> details = new HashMap<>();
-		for (int i = 1; i < 101; i++) {
-			if (i < 60) {
-				details.put("person" + i, "female");
-			} else {
-				details.put("person" + i, "male");
-			}
-		}
 
 		for (Exercise exercise : listExercises) {
 			System.out.println(exercise.getTitle());
