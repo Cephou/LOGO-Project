@@ -5,6 +5,7 @@ package Model;
 
 import Model.Tortue.TortueG;
 
+
 import java.util.ArrayList;
 
 import Exception.WrongGradeException;
@@ -115,6 +116,10 @@ public class Assay {
 	public Child getChild() {
 		return child;
 		
+	}
+
+	public Grade getGrade() {
+		return grade;
 	}
 
 }
