@@ -111,4 +111,10 @@ public class Main {
 		new Main();
 	}
 
+	public void test() {
+		System.out.println("test");
+		// TODO Auto-generated method stub
+		
+	}
+
 }

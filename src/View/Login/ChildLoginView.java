@@ -26,8 +26,8 @@ public class ChildLoginView {
 	 */
 	public ChildLoginView(SchoolClass schoolClass, Main main) {
 		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.
-        setChildrenPanel(schoolClass);
         this.main = main;
+        setChildrenPanel(schoolClass);
 	}
 
 	/**
