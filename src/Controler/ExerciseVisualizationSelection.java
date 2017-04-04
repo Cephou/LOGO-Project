@@ -3,6 +3,7 @@ package Controler;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import Main.Main;
 import Main.SubMainChild;
 import Model.Exercise;
 
@@ -11,18 +12,18 @@ import Model.Exercise;
  */
 public class ExerciseVisualizationSelection implements MouseListener {
 
-	private SubMainChild main;
+	private Main main;
 	private Exercise exercise;
 	
 	
-	public ExerciseVisualizationSelection(Exercise exercise, SubMainChild main) {
+	public ExerciseVisualizationSelection(Exercise exercise, Main main) {
 		this.main = main;
 		this.exercise = exercise;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		main.generateExerciseVisualisation(exercise);	
+		((SubMainChild) main).generateExerciseVisualisation(exercise);	
 	}
 
 	@Override
