@@ -73,13 +73,13 @@ public class DatabaseObj {
      * @param int age
      * @param url picture
      */
-    public void insert_child(String firstName, String lastName, int age,URL picture) {
+    public void insertChild(String firstName, String lastName, int age,URL picture) {
         if (this.connection == null) {
             this.connect();
         }
  
         try {
-            String SQL = "INSERT INTO Child VALUES(?,?,?,?);";
+            String SQL = "INSERT INTO CHILD(Firstname_Child,Lastname_Child,Age_Child,Pic_Child) VALUES(?,?,?,?);";
             PreparedStatement ins_stmt = connection.prepareStatement(SQL);
  
             ins_stmt.setString(1, firstName);
@@ -102,13 +102,13 @@ public class DatabaseObj {
      * @param password String
      * @param picture url
      */
-    public void insert_professor(String firstName, String lastName, int age, String password, URL picture) {
+    public void insertProfessor(String firstName, String lastName, int age, String password, URL picture) {
         if (this.connection == null) {
             this.connect();
         }
  
         try {
-            String SQL = "INSERT INTO Teacher VALUES(?,?,?,?,?);";
+            String SQL = "INSERT INTO TEACHER(Fisrtname_Teaher,Lastname_Teacher,Age_Tacher,Pass_Teacher,Pic_teacher) VALUES(?,?,?,?,?);";
             PreparedStatement ins_stmt = connection.prepareStatement(SQL);
  
             ins_stmt.setString(1, firstName);
@@ -124,29 +124,64 @@ public class DatabaseObj {
     }
  
     /**
-     * Sélectionner 
+     * Select a child
      */
-    public void select_Cats() {
+    public void selectChilds() {
         if (this.connection == null) {
             this.connect();
         }
  
         try {
-            String SQL="SELECT * FROM TB_ANIMALS WHERE ANI_KIND=?";
-            PreparedStatement stmt = connection.prepareStatement(SQL);
-            stmt.setString(1, "chat");
-            ResultSet rs = stmt.executeQuery();
- 
-            System.out.println("Les animaux de race chat:");
+            String SQL="SELECT * FROM CHILD";
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            /*System.out.println("Les animaux de race chat:");
             while (rs.next()) {
                 System.out.println("nom:"+rs.getString("ANI_NAME")+" age:"+rs.getInt("ANI_AGE"));
-            }
- 
+            }*/
             stmt.close();
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
         }
  
-    }         
+    } 
+    
+    /**
+     * Select a professor
+     */
+    public void selectProfessors() {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL="SELECT * FROM TEACHER";
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    } 
+    
+    /**
+     * Select a class
+     */
+    public void selectSchoolClass() {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL="SELECT * FROM SCHOOLCLASS";
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    }   
 	 
 } 
