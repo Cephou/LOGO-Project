@@ -33,6 +33,7 @@ public class DatabaseObj {
         try {
             Class.forName("org.sqlite.JDBC");
             this.connection = DriverManager.getConnection("jdbc:sqlite:res/logo-project.db");
+            System.out.println("database opened or created");
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
             this.connection = null;
