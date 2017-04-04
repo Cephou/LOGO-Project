@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Container;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -63,5 +65,9 @@ public class GeneralLayout {
 	
 	public Header getHeader() {
 		return header;
+	}
+
+	public JPanel getBody() {
+		return body;
 	}
 }

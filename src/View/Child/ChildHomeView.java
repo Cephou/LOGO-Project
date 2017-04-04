@@ -1,5 +1,8 @@
 package View.Child;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -15,6 +18,7 @@ public class ChildHomeView {
 
 	public ChildHomeView() {
 		childHomeView = new JPanel();
+		childHomeView.setLayout(new GridLayout(1,3));
 	}
 	
 	public JPanel getChildHomeView() {

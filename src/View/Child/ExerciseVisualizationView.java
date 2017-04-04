@@ -1,5 +1,8 @@
 package View.Child;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 import Model.Child;
 import Model.Exercise;
 
@@ -10,13 +13,21 @@ import Model.Exercise;
  * Cette classe construit les différents éléments de l'interface à partir d'autres classes.
  */
 public class ExerciseVisualizationView {
+	
+	private JPanel exerciseVisualisation;
 
     /**
      * Constructeur de la classe ExerciseVisualizationView.
      *
-     * @param child    est l'enfant qui sélectionne l'exercice
      * @param exercise est l'exercice sélectionné par l'enfant
      */
-    public ExerciseVisualizationView(Child child, Exercise exercise) {
+    public ExerciseVisualizationView(Exercise exercise) {
+    	exerciseVisualisation = new JPanel();
+    	JButton test = new JButton("test");
+    	exerciseVisualisation.add(test);
     }
+
+	public JPanel getExerciseVisualisation() {
+		return exerciseVisualisation;
+	}
 }

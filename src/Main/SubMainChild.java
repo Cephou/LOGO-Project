@@ -9,10 +9,12 @@ import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 import Exception.tooLongStringException;
 import Model.Child;
+import Model.Exercise;
 import Model.SchoolClass;
 import Model.User;
 import View.GeneralLayout;
 import View.Child.ChildHomeView;
+import View.Child.ExerciseVisualizationView;
 import View.Modules.ExerciseListView;
 
 public class SubMainChild extends Main {
@@ -52,6 +54,18 @@ public class SubMainChild extends Main {
 	
 	public void changeHeader(User user, String pageTitle) {
 		layout.getHeader().setHeader(user, pageTitle);
+	}
+
+	/**
+	 * Génère la vue rapide de l'exercice
+	 * @param exercise
+	 */
+	public void generateExerciseVisualisation(Exercise exercise) {
+		// Générer la vue exercice
+		ExerciseVisualizationView exerciseVisualisation = new ExerciseVisualizationView(exercise);
+		JPanel exerciseVisualisationPanel = exerciseVisualisation.getExerciseVisualisation();
+		// Ajoute la vue
+		layout.getBody().add(exerciseVisualisationPanel);
 	}
 
 }
