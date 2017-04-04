@@ -4,6 +4,7 @@ import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +17,7 @@ public class Child extends User {
 
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
 	private SchoolClass schoolClass; // La classe de l'�l�ve.
+	private URL pPicture;
 
 	/*
 	 * Cr�� un enfant. Controle l'age (entre 3 et 12 ans).
@@ -30,7 +32,7 @@ public class Child extends User {
 	 * 
 	 */
 	public Child(String pFirstName, String pLastName, int pAge,
-                 String pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+                 URL pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
         super(pFirstName, pLastName, pAge, pPicture);
         assays = new ArrayList<Assay>();
     }
