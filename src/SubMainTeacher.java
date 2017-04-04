@@ -1,3 +1,6 @@
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 import Model.Teacher;
 
 public class SubMainTeacher extends Main {
@@ -8,7 +11,7 @@ public class SubMainTeacher extends Main {
 	 * @param teacher
 	 */
 	
-	public SubMainTeacher(Teacher teacher){
+	public SubMainTeacher(Teacher teacher)throws EmptyStringException, NegativeIntegerException, StringSizeException{
 		this.teacher = teacher;
 		//ajout des lsiteners
 		
