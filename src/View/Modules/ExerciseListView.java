@@ -6,10 +6,12 @@ package View.Modules;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import Controler.ExerciseVisualizationSelection;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 import Exception.tooLongStringException;
+import Main.Main;
 import Model.Assay;
 import Model.Child;
 import Model.Exercise;
@@ -42,7 +44,7 @@ public class ExerciseListView extends JPanel {
 	/**
 	 * 
 	 */
-	public ExerciseListView(Child child) {
+	public ExerciseListView(Child child, Main main) {
 
 		this.child = child;
 		this.classe = this.child.getSchoolClass();
@@ -70,6 +72,7 @@ public class ExerciseListView extends JPanel {
 			for (Exercise exercise : listExercises) {
 				System.out.println(exercise.getTitle());
 				JButton btnNewButton = new JButton(exercise.getTitle());
+				btnNewButton.addMouseListener(new ExerciseVisualizationSelection(exercice, main));
 				//coloration en fonction de la tentative eleve
 				for (Assay assay : assays){
 					//on compare si la tentative correspond ben a cet exercice
