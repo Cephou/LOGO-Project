@@ -29,10 +29,10 @@ import javax.swing.JFrame;
  */
 public class ExerciseListView extends JPanel {
 
-	private JScrollPane scrollPane;
 	private SchoolClass classe;
 	private Child child;
 	private ArrayList<Exercise> listExercises;
+	private JScrollPane scrollPane;
 
 
 	/**
@@ -42,20 +42,19 @@ public class ExerciseListView extends JPanel {
 	
 		
 		this.child = child;
-		
-		// surround with a scroll pan
-		scrollPane = new JScrollPane();
-		this.add(scrollPane);
-		
-		// creation of our panel
-		JPanel panel = new JPanel();
-		scrollPane.setViewportView(panel);
-		panel.setLayout(new GridLayout(50, 3, 0, 0));
-
-		// getting the list of exercise and the status of each exercise for the
-		// student
 		this.classe = this.child.getSchoolClass();
 		listExercises = classe.getExerciseList();
+		
+		 scrollPane = new JScrollPane();
+		add(scrollPane);
+	
+		JPanel panelView = new JPanel();
+		scrollPane.setViewportView(panelView);
+		panelView.setLayout(new GridLayout(50, 3, 0, 0));
+		
+		JButton btnNewButton = new JButton("New button");
+		panelView.add(btnNewButton);
+		
 
 		Map<String, String> details = new HashMap<>();
 		for (int i = 1; i < 101; i++) {
@@ -68,10 +67,12 @@ public class ExerciseListView extends JPanel {
 
 		for (Exercise exercise : listExercises) {
 			System.out.println(exercise.getTitle());
+			JButton btnExercise= new JButton(exercise.getTitle());
+			
 		}
+		
 
-		JButton btnExercise = new JButton("New button");
-		panel.add(btnExercise);
+
 	}
 
 	public JScrollPane getExerciseListView() {
@@ -106,7 +107,8 @@ public class ExerciseListView extends JPanel {
 				null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits",
 				null, teacher1, null);
-
+		
+		
 		ExerciseListView view = new ExerciseListView(child1);
 		frame.add(view);
 		frame.setVisible(true);
