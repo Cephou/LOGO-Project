@@ -1,15 +1,11 @@
 package View.Login;
 
 import Controler.ChildLoginSelection;
+import Main.Main;
 import Model.Child;
 import Model.SchoolClass;
-import View.GeneralLayout;
 
 import javax.swing.*;
-
-import Controler.ChildLoginSelection;
-import Main.Main;
-
 import java.awt.*;
 
 /**
@@ -50,7 +46,7 @@ public class ChildLoginView {
 	
 	public void createChildItem(Child child) {
 
-        Icon picture = new ImageIcon((getClass().getResource("/images/" + child.getPicture())));
+        Icon picture = new ImageIcon((getClass().getResource("/image/child" + child.getPicture())));
         JButton childBtn = new JButton(picture);
         childBtn.addMouseListener(new ChildLoginSelection(child, this.layout));
 		childLogin.add(childBtn);
