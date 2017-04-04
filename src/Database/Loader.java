@@ -3,7 +3,7 @@ import java.sql.*;
 
 // Chargement des données contenu dans la base de données afin de les utiliser dans l'application
 
-public class DatabaseLoader {
+public class Loader {
 
 	/*
 	 * Exemple de syntaxe de connexion de BDD JDBC/SQLite :

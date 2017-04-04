@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import Database.DatabaseCreation;
-import Database.DatabaseLoader;
-import Database.DatabaseRecorder;
+import Database.DatabaseObj;
+import Database.Loader;
+import Database.Recorder;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -28,9 +28,9 @@ import View.Modules.*;
 public class Main {
 	private ArrayList<SchoolClass> schoolClasses; // Liste des classes
 	private User user; //le type d'utilisateur
-	private DatabaseLoader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
-	private DatabaseRecorder databaseRecorder; //enregistremment des donn�es
-	private DatabaseCreation databaseCreation; // creation SSI BDD invexistante; 
+	private Loader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
+	private Recorder databaseRecorder; //enregistremment des donn�es
+	private DatabaseObj databaseCreation; // creation SSI BDD invexistante; 
     
 	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		
