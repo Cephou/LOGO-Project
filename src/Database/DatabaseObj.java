@@ -1,5 +1,6 @@
 package Database;
 
+import java.net.URL;
 import java.sql.*;
 
 import java.sql.Connection;
@@ -52,12 +53,11 @@ public class DatabaseObj {
     /**
      * Créer une table
      */
-    public void createTable() {
+    public void createTable(String query) {
         this.connect();
         if (this.connection != null) {
             try {
-                String SQL = "CREATE TABLE TB_ANIMALS (ANI_NAME TEXT NOT NULL"
-                        + ",ANI_KIND TEXT,ANI_AGE NUMERIC);";
+                String SQL = query;
                 Statement stt = this.connection.createStatement();
                 stt.executeUpdate(SQL);
             } catch (SQLException ex) {
@@ -67,23 +67,55 @@ public class DatabaseObj {
     }
  
     /**
-     * Insérer une ligne dans la table
-     * @param name String
-     * @param kind String
-     * @param age int
+     * Insérer un eleve dans la table
+     * @param firstname String
+     * @param lastname String
+     * @param int age
+     * @param url picture
      */
-    public void insert(String name, String kind, int age) {
+    public void insert_child(String firstName, String lastName, int age,URL picture) {
         if (this.connection == null) {
             this.connect();
         }
  
         try {
-            String SQL = "INSERT INTO TB_ANIMALS VALUES(?,?,?);";
+            String SQL = "INSERT INTO Child VALUES(?,?,?,?);";
             PreparedStatement ins_stmt = connection.prepareStatement(SQL);
  
-            ins_stmt.setString(1, name);
-            ins_stmt.setString(2, kind);
+            ins_stmt.setString(1, firstName);
+            ins_stmt.setString(2, lastName);
             ins_stmt.setInt(3, age);
+            ins_stmt.setURL(4, picture);          
+ 
+            ins_stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    /**
+     * Insérer un professeur dans la table
+     * @param firstname String
+     * @param lastname String
+     * @param age int
+     * @param password String
+     * @param picture url
+     */
+    public void insert_professor(String firstName, String lastName, int age, String password, URL picture) {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL = "INSERT INTO Teacher VALUES(?,?,?,?,?);";
+            PreparedStatement ins_stmt = connection.prepareStatement(SQL);
+ 
+            ins_stmt.setString(1, firstName);
+            ins_stmt.setString(2, lastName);
+            ins_stmt.setInt(3, age);
+            ins_stmt.setString(4, password);
+            ins_stmt.setURL(5, picture);          
  
             ins_stmt.executeUpdate();
         } catch (SQLException ex) {
