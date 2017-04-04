@@ -6,12 +6,13 @@ package View.Modules;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-
-
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 import Model.Child;
 import Model.Exercise;
 import Model.SchoolClass;
-import Main.Main;
+import Model.Teacher;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -29,7 +30,8 @@ public class ExerciseListView extends JPanel {
 
 	private SchoolClass classe;
 	private ArrayList<Exercise> listExercises;
-	private Main main;
+	private JScrollPane scrollPane;
+
 
 	/**
 	 * Create the panel.
@@ -37,9 +39,9 @@ public class ExerciseListView extends JPanel {
 	/**
 	 * @param child
 	 */
-	public ExerciseListView(Main main, Child child) {
+	public ExerciseListView(Child child) {
 		//surround with a scroll pan
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		add(scrollPane);
 		//creation of our panel
 		JPanel panel = new JPanel();
@@ -81,9 +83,31 @@ public class ExerciseListView extends JPanel {
 
 	}
 	
-	public static void main(String [] args)
+	
+	public JScrollPane getExerciseListView(){
+		return scrollPane;
+	}
+	
+	public static void main(String [] args) throws EmptyStringException, NegativeIntegerException, StringSizeException
 	{
 		JFrame frame = new JFrame();
+		//crea data
+		
+		Teacher teacher1 = 
+		new Teacher("Patrick", "Girard", 25, null, "azerty");;
+		Child child1 = new Child("Alexis", "Amiand", 12, null);
+		Child child2 = new Child("Laurent", "L'abricot", 13, null);
+		Child child3 = new Child("Severin", "Chargeur", 11, null);
+		//Create classes
+		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
+		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
+		//add eleve to classes
+		classe1.addChild(child1);
+		classe1.addChild(child2);
+		classe2.addChild(child3);;
+		ExerciseListView view = new ExerciseListView(child1);
+		frame.add(view);
+		frame.setVisible(true);
 		
 	}	
 
