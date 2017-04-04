@@ -2,8 +2,12 @@ package View.Login;
 
 import Model.Child;
 import Model.SchoolClass;
+import View.GeneralLayout;
 
 import javax.swing.*;
+
+import Controler.ChildLoginSelection;
+
 import java.awt.*;
 
 /**
