@@ -39,7 +39,7 @@ public class ExerciseListView extends JPanel {
 	 * 
 	 */
 	public ExerciseListView(Child child) {
-		System.out.println(child.getSchoolClass());
+	
 		
 		this.child = child;
 		
@@ -102,6 +102,8 @@ public class ExerciseListView extends JPanel {
 		classe2.addChild(child3);
 		// crea exo
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
+				null, teacher1, null);
+		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits",
 				null, teacher1, null);
 
 		ExerciseListView view = new ExerciseListView(child1);
