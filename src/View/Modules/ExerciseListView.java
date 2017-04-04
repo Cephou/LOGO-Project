@@ -15,6 +15,7 @@ import Main.Main;
 import Model.Assay;
 import Model.Child;
 import Model.Exercise;
+import Model.Grade;
 import Model.SchoolClass;
 import Model.Teacher;
 
@@ -29,6 +30,7 @@ import javax.swing.JLabel;
 
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 /**
  * @author pc
@@ -72,18 +74,35 @@ public class ExerciseListView extends JPanel {
 			for (Exercise exercise : listExercises) {
 				System.out.println(exercise.getTitle());
 				JButton btnNewButton = new JButton(exercise.getTitle());
-				btnNewButton.addMouseListener(new ExerciseVisualizationSelection(exercice, main));
+				btnNewButton.addMouseListener(new ExerciseVisualizationSelection(exercise, main));
 				//coloration en fonction de la tentative eleve
 				for (Assay assay : assays){
 					//on compare si la tentative correspond ben a cet exercice
 					if(assay.getExercise().equals(exercise)){
-						status = assay.getGrade();
+
+						//on change la couleur du bouton en focntion du grade
+						switch (assay.getGrade()) {
+						case Acquired:
+							btnNewButton.setBackground(Color.GREEN);
+							break;
+						case InAcquisition:
+							btnNewButton.setBackground(Color.YELLOW);
+							break;
+						case NotAcquired:
+							btnNewButton.setBackground(Color.RED);
+							break;
+						case NotGraded:
+							btnNewButton.setBackground(Color.CYAN);
+							break;
+						default:
+							break;
+						}
 					};
 					
 				}
 				
 				
-				setBackground(Color.RED);
+				
 				
 				//ajout de l'image de l'exercice en arriere plan
 				
