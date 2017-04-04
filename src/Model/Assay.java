@@ -107,4 +107,14 @@ public class Assay {
 		}
 	}
 
+	public Exercise getExercise() {
+		return exercise;
+		
+	}
+
+	public Child getChild() {
+		return child;
+		
+	}
+
 }
