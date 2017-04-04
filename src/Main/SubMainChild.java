@@ -43,7 +43,7 @@ public class SubMainChild extends Main {
 
 		// Cr�e un nouveau panel d'�l�ve avec la classe
 		ChildHomeView childHome = new ChildHomeView();
-		ExerciseListView exerciseList = new ExerciseListView(child);
+		ExerciseListView exerciseList = new ExerciseListView(child, this);
 		JPanel childHomePanel = childHome.getChildHomeView();
 		childHomePanel.add(exerciseList);
 		// Change le body avec le nouveau panel d'exercices
