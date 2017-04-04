@@ -1,9 +1,7 @@
-package src.View.Login;
+package View.Login;
 
-import src.Controler.ChildLoginSelection;
-import src.Model.Child;
-import src.Model.SchoolClass;
-import src.View.GeneralLayout;
+import Model.Child;
+import Model.SchoolClass;
 
 import javax.swing.*;
 import java.awt.*;

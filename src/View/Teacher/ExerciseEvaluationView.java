@@ -1,4 +1,4 @@
-package src.View.Teacher;
+package View.Teacher;
 
 // Affiche le nom de l'élève.
 // Affiche le model de l'exercice, la réponse de l'élève (suite d'actions contenu dans l'élève). 

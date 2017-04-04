@@ -1,5 +1,8 @@
-package src.Model;
-import src.Exception.*;
+package Model;
+
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 
 /**
  * User is an abstract class that creates a user with the required information.

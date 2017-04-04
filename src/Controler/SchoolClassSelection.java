@@ -1,7 +1,7 @@
-package src.Controler;
-import src.View.*;
-import src.View.Login.*;
-import src.Model.*;
+package Controler;
+import View.*;
+import View.Login.*;
+import Model.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

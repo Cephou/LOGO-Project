@@ -1,9 +1,14 @@
-package src.Model;
+/**
+ * 
+ */
+package Model;
 
-import src.Model.Tortue.TortueG;
-import src.Exception.*;
+import Model.Tortue.TortueG;
 
 import java.util.ArrayList;
+
+import Exception.WrongGradeException;
+import Exception.WrongTeacherException;
 
 /**
  * Classe tentative Cette classe permet de stocker pour chaque eleve et pour

@@ -1,7 +1,13 @@
-package src.Model;
-import src.Exception.*;
+/**
+ * 
+ */
+package Model;
 
 import java.util.ArrayList;
+
+import Exception.AlreadyInListException;
+import Exception.EmptyStringException;
+import Exception.StringSizeException;
 
 /**
  * @author grp7 Cette classe crée l'object classe définie par un nom, un

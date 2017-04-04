@@ -1,7 +1,7 @@
-package src.View.Modules;
+package View.Modules;
 
-import src.Model.Child;
-import src.Model.Exercise;
+import Model.Child;
+import Model.Exercise;
 
 /**
  * Cette classe permet de créer une liste de tentatives d'un exercice particulier pour un enfant particulier.

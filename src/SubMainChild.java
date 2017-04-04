@@ -1,7 +1,4 @@
-package src;
-
-import src.Exception.*;
-import src.Model.Child;
+import Model.Child;
 
 public class SubMainChild extends Main {
 	/**

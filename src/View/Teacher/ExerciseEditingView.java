@@ -1,4 +1,4 @@
-package src.View.Teacher;
+package View.Teacher;
 
 /**
  * Créer un nouvel exercice ou remplace un ancien.

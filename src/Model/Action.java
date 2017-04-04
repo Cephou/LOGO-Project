@@ -1,6 +1,6 @@
-package src.Model;
+package Model;
 
-import src.Model.Tortue.*;
+import Model.Tortue.*;
 
 /*
  * Cette classe créée des objets actions, contenant la tortue et l'action à réaliser.

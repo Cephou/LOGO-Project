@@ -1,4 +1,4 @@
-package src.Database;
+package Database;
 
 // Enregistrement dans la base de données 
 

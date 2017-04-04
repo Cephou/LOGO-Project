@@ -1,4 +1,4 @@
-package src.View.Child;
+package View.Child;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;

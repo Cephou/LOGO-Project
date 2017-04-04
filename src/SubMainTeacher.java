@@ -1,4 +1,4 @@
-import src.Model.Teacher;
+import Model.Teacher;
 
 public class SubMainTeacher extends Main {
 	private Teacher teacher;

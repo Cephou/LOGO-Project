@@ -1,4 +1,4 @@
-package src.Exception;
+package Exception;
 
 public class WrongTeacherException extends Exception {
 	public WrongTeacherException(){

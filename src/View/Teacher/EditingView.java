@@ -1,4 +1,4 @@
-package src.View.Teacher;
+package View.Teacher;
 
 /**
  * Créer deux objets : ExerciseEditionListView et ExerciseEditionView

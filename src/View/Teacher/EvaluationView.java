@@ -1,4 +1,4 @@
-package src.View.Teacher;
+package View.Teacher;
 
 /*
  * Cette classe affiche la page d'évaluation du professeur. Elle affiche les panneaux ChildListView dans un premier temps

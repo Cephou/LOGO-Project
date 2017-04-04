@@ -1,4 +1,4 @@
-package src.Model.Tortue;
+package Model.Tortue;
 
 /**
 * La tortue du programme LOGO. Graphique !

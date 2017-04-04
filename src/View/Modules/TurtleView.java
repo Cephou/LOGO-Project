@@ -1,8 +1,8 @@
-package src.View.Modules;
-import src.Model.Tortue.Canvas;
+package View.Modules;
 
 import javax.swing.JPanel;
 
+import Model.Tortue.Canvas;
 
 /*
  * Cette classe prend en paramètre une tortue et affiche le canvas avec la tortue en 0,0 dans un panel

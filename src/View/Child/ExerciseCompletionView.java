@@ -1,4 +1,4 @@
-package src.View.Child;
+package View.Child;
 
 /**
  * Prend en paramètre un exercice, click sur bouton valider envoie tout vers database

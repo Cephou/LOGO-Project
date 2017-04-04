@@ -1,7 +1,7 @@
-package src.Database;
+package Database;
 
 import java.sql.*;
-import src.Model.User;
+import Model.User;
 
 /**
  * Contient le code permettant de creer la base de donnée et de générer le tables définies par le MPD
