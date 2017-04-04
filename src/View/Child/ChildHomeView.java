@@ -3,6 +3,8 @@ package View.Child;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import View.Modules.ExerciseListView;
+
 /*
  * Cette classe affiche la liste des exercices de l'élève d'une part, mais aussi la visualisation d'un exercice au clic
  */
@@ -13,8 +15,6 @@ public class ChildHomeView {
 
 	public ChildHomeView() {
 		childHomeView = new JPanel();
-		JButton test = new JButton("lol");
-		childHomeView.add(test);
 	}
 	
 	public JPanel getChildHomeView() {

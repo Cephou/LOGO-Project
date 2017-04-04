@@ -11,6 +11,7 @@ import Model.SchoolClass;
 import Model.User;
 import View.GeneralLayout;
 import View.Child.ChildHomeView;
+import View.Modules.ExerciseListView;
 
 public class SubMainChild extends Main {
 	/**
@@ -35,10 +36,12 @@ public class SubMainChild extends Main {
 		this.child = child;
 		this.layout = layout;
 		this.schoolClasses = schoolClasses;
-		//creation layout
+
 		// Cr�e un nouveau panel d'�l�ve avec la classe
 		ChildHomeView childHome = new ChildHomeView();
+		ExerciseListView exerciseList = new ExerciseListView(child);
 		JPanel childHomePanel = childHome.getChildHomeView();
+		childHomePanel.add(exerciseList);
 		// Change le body avec le nouveau panel d'exercices
 		layout.changeBodyContent(childHomePanel);
 		changeHeader(child, "Ma liste d'exercices");

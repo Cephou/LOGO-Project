@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Model.Child;
 import Model.User;
 
 public class Header {
@@ -97,7 +98,9 @@ public class Header {
 	public void setHeader(User user, String pageTitle) {
 		lblFirstName.setText(user.getFirstName());
 		lblLastName.setText(user.getLastName());
-		lblClass.setText(user.getClass().getName());
+		if(user instanceof Child) {
+			lblClass.setText(((Child) user).getSchoolClass().getClassName());
+		}
 		lblPageTitle.setText(pageTitle);
 	}
 	
