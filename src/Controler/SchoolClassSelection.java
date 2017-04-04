@@ -28,7 +28,7 @@ public class SchoolClassSelection implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		this.main.generateChildSelectionContent(schoolClass);		
+		this.main.generateChildSelectionContent(schoolClass);
 	}
 
 	@Override

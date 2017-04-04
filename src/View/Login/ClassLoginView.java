@@ -26,7 +26,7 @@ public class ClassLoginView {
 	private JPanel classSelection;
 	private Main main;
 	
-	public ClassLoginView(ArrayList<SchoolClass> schoolClasses, GeneralLayout layout) {
+	public ClassLoginView(ArrayList<SchoolClass> schoolClasses, Main main) {
 		this.main = main;
 		classSelection = new JPanel();
 		classSelection.setLayout(new GridLayout(0,3)); // 3 colonnes max, le reste formera des lignes
