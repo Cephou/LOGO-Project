@@ -10,6 +10,7 @@ import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 import Exception.tooLongStringException;
+import Model.Assay;
 import Model.Child;
 import Model.Exercise;
 import Model.SchoolClass;
@@ -46,6 +47,7 @@ public class ExerciseListView extends JPanel {
 		this.child = child;
 		this.classe = this.child.getSchoolClass();
 		listExercises = classe.getExerciseList();
+		ArrayList<Assay> assays = child.getAssays();
 		setLayout(new BorderLayout(0, 0));
 
 		scrollPane = new JScrollPane();
@@ -62,13 +64,35 @@ public class ExerciseListView extends JPanel {
 
 		}
 
-		else {
+		else {//Il y a des exos, on se charge de les afficher
+			
+			//creation des boutons, et ajout de leur nom
 			for (Exercise exercise : listExercises) {
 				System.out.println(exercise.getTitle());
 				JButton btnNewButton = new JButton(exercise.getTitle());
+				//coloration en fonction de la tentative eleve
+				for (Assay assay : assays){
+					//on compare si la tentative correspond ben a cet exercice
+					if(assay.getExercise().equals(exercise)){
+						status = assay.getGrade();
+					};
+					
+				}
+				
+				
+				setBackground(Color.RED);
+				
+				//ajout de l'image de l'exercice en arriere plan
+				
+				//ajout des listenner
+				
+				//btnNewButton.setBackground();
+				
 				panelView.add(btnNewButton);
-
+				
 			}
+			
+			
 		}
 
 	}
