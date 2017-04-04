@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import Controler.ExerciseVisualizationSelection;
+import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -75,6 +76,7 @@ public class ExerciseListView extends JPanel {
 				System.out.println(exercise.getTitle());
 				JButton btnNewButton = new JButton(exercise.getTitle());
 				btnNewButton.addMouseListener(new ExerciseVisualizationSelection(exercise, main));
+				
 				//coloration en fonction de la tentative eleve
 				for (Assay assay : assays){
 					//on compare si la tentative correspond ben a cet exercice
@@ -132,6 +134,13 @@ public class ExerciseListView extends JPanel {
 	 */
 	public static void main(String[] args)
 			throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException {
+	
+		try {
+			Main main = new Main();
+		} catch (AlreadyInListException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Frame frame = new JFrame();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
@@ -149,7 +158,7 @@ public class ExerciseListView extends JPanel {
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
 
-		ExerciseListView view = new ExerciseListView(child1);
+		ExerciseListView view = new ExerciseListView(child1, main);
 		frame.add(view);
 		frame.setVisible(true);
 	}
