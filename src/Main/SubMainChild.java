@@ -43,7 +43,7 @@ public class SubMainChild extends Main {
 		JPanel childHomePanel = childHome.getChildHomeView();
 		childHomePanel.add(exerciseList);
 		// Change le body avec le nouveau panel d'exercices
-		layout.changeBodyContent(childHomePanel);
+		layout.changeBodyContent(childHomePanel); 
 		changeHeader(child, "Ma liste d'exercices");
 		//ajout des listenner
 	}
