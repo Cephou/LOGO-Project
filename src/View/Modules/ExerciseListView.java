@@ -131,16 +131,12 @@ public class ExerciseListView extends JPanel {
 	 * @throws NegativeIntegerException
 	 * @throws EmptyStringException
 	 * @throws tooLongStringException
+	 * @throws AlreadyInListException 
 	 */
 	public static void main(String[] args)
-			throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException {
+			throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
 	
-		try {
-			Main main = new Main();
-		} catch (AlreadyInListException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		Frame frame = new JFrame();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
@@ -158,6 +154,7 @@ public class ExerciseListView extends JPanel {
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
 
+		Main main = null;
 		ExerciseListView view = new ExerciseListView(child1, main);
 		frame.add(view);
 		frame.setVisible(true);
