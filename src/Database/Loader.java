@@ -23,6 +23,14 @@ public class Loader {
 			Child  child = new Child(rs.getString("Firstname_Child"),rs.getString("Lastname_Child"),rs.getInt("Age_Child"),new URL(rs.getString("Pic_Child")));
 			childList.add(child);		
 		}
+		for(Child c : childList){
+			System.out.println(c.getFirstName());
+		}
+	}
+	
+	public static void main(String[] args) throws MalformedURLException, SQLException, EmptyStringException, NegativeIntegerException, StringSizeException{
+		new Loader();
+		
 	}
 }
 
