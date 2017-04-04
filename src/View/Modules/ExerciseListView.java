@@ -100,6 +100,7 @@ public class ExerciseListView extends JPanel {
 		classe1.addChild(child1);
 		classe1.addChild(child2);
 		classe2.addChild(child3);
+		
 		// crea exo
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
 				null, teacher1, null);
