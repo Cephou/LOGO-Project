@@ -12,6 +12,8 @@ import java.awt.Container;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -69,5 +71,9 @@ public class GeneralLayout {
 
 	public JPanel getBody() {
 		return body;
+	}
+
+	public JFrame getFrame() {
+		return frame;
 	}
 }
