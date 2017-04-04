@@ -124,9 +124,9 @@ public class DatabaseObj {
     }
  
     /**
-     * Select a child
+     * Select children
      */
-    public void selectChilds() {
+    public ResultSet selectChildren() {
         if (this.connection == null) {
             this.connect();
         }
@@ -135,21 +135,18 @@ public class DatabaseObj {
             String SQL="SELECT * FROM CHILD";
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQL);
-            /*System.out.println("Les animaux de race chat:");
-            while (rs.next()) {
-                System.out.println("nom:"+rs.getString("ANI_NAME")+" age:"+rs.getInt("ANI_AGE"));
-            }*/
-            stmt.close();
+            return rs;
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
- 
+        
     } 
     
     /**
      * Select a professor
      */
-    public void selectProfessors() {
+    public  ResultSet selectProfessors() {
         if (this.connection == null) {
             this.connect();
         }
@@ -158,9 +155,10 @@ public class DatabaseObj {
             String SQL="SELECT * FROM TEACHER";
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQL);
-            stmt.close();
+            return rs;
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
  
     } 
@@ -168,7 +166,7 @@ public class DatabaseObj {
     /**
      * Select a class
      */
-    public void selectSchoolClass() {
+    public ResultSet selectSchoolClass() {
         if (this.connection == null) {
             this.connect();
         }
@@ -177,9 +175,10 @@ public class DatabaseObj {
             String SQL="SELECT * FROM SCHOOLCLASS";
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQL);
-            stmt.close();
+            return rs;
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
  
     }   
