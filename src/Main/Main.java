@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import Database.DatabaseCreation;
-import Database.DatabaseLoader;
-import Database.DatabaseRecorder;
+import Database.DatabaseObj;
+import Database.Loader;
+import Database.Recorder;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -29,11 +29,11 @@ import View.Modules.*;
 
 public class Main {
 	private ArrayList<SchoolClass> schoolClasses; // Liste des classes
-	private User user; // L'utilisateur connecté
-	private GeneralLayout layout; // Le layout général
-	private DatabaseLoader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
-	private DatabaseRecorder databaseRecorder; //enregistremment des donnï¿½es
-	private DatabaseCreation databaseCreation; // creation SSI BDD invexistante; 
+	private User user; //le type d'utilisateur
+	private GeneralLayout layout; // Le layout gï¿½nï¿½ral
+	private Loader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
+	private Recorder databaseRecorder; //enregistremment des donnï¿½es
+	private DatabaseObj databaseCreation; // creation SSI BDD invexistante; 
     
 	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		loadDatas(); // Charge des donnï¿½es
@@ -71,19 +71,19 @@ public class Main {
 	}
 
 	/**
-	 * Génère le panel de sélection d'élève, actualise le header
+	 * Gï¿½nï¿½re le panel de sï¿½lection d'ï¿½lï¿½ve, actualise le header
 	 * @param schoolClass
 	 */
 	public void generateChildSelectionContent(SchoolClass schoolClass) {
-		// Crée un nouveau panel d'élève avec la classe
+		// Crï¿½e un nouveau panel d'ï¿½lï¿½ve avec la classe
 		ChildLoginView childLogin = new ChildLoginView(schoolClass, this);
 		JPanel childLoginPanel = childLogin.getChildLogin();
-		// Change le body avec le nouveau panel d'élèves
+		// Change le body avec le nouveau panel d'ï¿½lï¿½ves
 		this.layout.changeBodyContent(childLoginPanel);
 	}
 	
 	/**
-	 * Génère le home de l'élève
+	 * Gï¿½nï¿½re le home de l'ï¿½lï¿½ve
 	 * @param child
 	 */
 	public void generateChildExerciseContent(Child child) {

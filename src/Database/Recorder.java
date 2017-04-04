@@ -2,9 +2,9 @@ package Database;
 
 // Enregistrement dans la base de donnÃ©es 
 
-public class DatabaseRecorder {
+public class Recorder {
 
-	/*Exemple de syntaxe opération UPDATE SQLite/JDBC
+	/*Exemple de syntaxe opï¿½ration UPDATE SQLite/JDBC
 	 * 
 	 * import java.sql.*;
 

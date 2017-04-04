@@ -1,5 +1,6 @@
 package View.Login;
 
+import Controler.ChildLoginSelection;
 import Model.Child;
 import Model.SchoolClass;
 import View.GeneralLayout;
@@ -47,14 +48,11 @@ public class ChildLoginView {
 
 	}
 	
-	public void createChildItem(Child child) {	
-	
-//		Icon picture = new ImageIcon((getClass().getResource("/images/" + schoolClass.getChildList().get(i).getPicture())));
-//		itemButton[i] = new JButton(picture);
-//	    itemButton[i].setEnabled(true);
-//	    itemButton[i].setPreferredSize(new Dimension(100, 100));
-		JButton childBtn = new JButton(child.getFirstName());
-		childBtn.addMouseListener(new ChildLoginSelection(child, this.main));
+	public void createChildItem(Child child) {
+
+        Icon picture = new ImageIcon((getClass().getResource("/images/" + child.getPicture())));
+        JButton childBtn = new JButton(picture);
+        childBtn.addMouseListener(new ChildLoginSelection(child, this.layout));
 		childLogin.add(childBtn);
 
 	}
