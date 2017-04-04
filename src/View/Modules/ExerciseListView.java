@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 
@@ -57,7 +59,12 @@ public class ExerciseListView extends JPanel {
 		
 		
 		
-
+		//remplissage : 1 bouton par exercice
+		if (listExercises.isEmpty()){
+			JLabel label = new JLabel("Pas d'exercice disponible.");
+			panelView.add(label);
+			
+		}
 		for (Exercise exercise : listExercises) {
 			System.out.println(exercise.getTitle());
 			JButton btnNewButton = new JButton(exercise.getTitle());
