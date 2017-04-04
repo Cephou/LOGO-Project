@@ -48,6 +48,7 @@ public class Exercise {
 		this.teacher = teacher;
 		
 		ArrayList<SchoolClass> classes = teacher.getClasses();
+		
 		for (SchoolClass classe : classes){
 			try {
 				classe.addExercice(this);
