@@ -38,6 +38,7 @@ public class SchoolClass {
 			throws EmptyStringException, StringSizeException {
 		this.setClassName(newClassName);
 		this.teacher = newTeacher;
+		teacher.addClass(this);
 		this.childList = new ArrayList<Child>();
 		this.exerciseList = new ArrayList<Exercise>();
 	}
