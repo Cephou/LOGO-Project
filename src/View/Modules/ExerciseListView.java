@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import java.awt.FlowLayout;
+import java.awt.BorderLayout;
 
 /**
  * @author pc
@@ -44,6 +46,7 @@ public class ExerciseListView extends JPanel {
 		this.child = child;
 		this.classe = this.child.getSchoolClass();
 		listExercises = classe.getExerciseList();
+		 setLayout(new BorderLayout(0, 0));
 		
 		 scrollPane = new JScrollPane();
 		add(scrollPane);
@@ -52,8 +55,7 @@ public class ExerciseListView extends JPanel {
 		scrollPane.setViewportView(panelView);
 		panelView.setLayout(new GridLayout(50, 3, 0, 0));
 		
-		JButton btnNewButton = new JButton("New button");
-		panelView.add(btnNewButton);
+		
 		
 
 		Map<String, String> details = new HashMap<>();
@@ -67,7 +69,9 @@ public class ExerciseListView extends JPanel {
 
 		for (Exercise exercise : listExercises) {
 			System.out.println(exercise.getTitle());
-			JButton btnExercise= new JButton(exercise.getTitle());
+			JButton btnNewButton = new JButton(exercise.getTitle());
+			panelView.add(btnNewButton);
+			
 			
 		}
 		
