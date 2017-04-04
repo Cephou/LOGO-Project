@@ -53,7 +53,7 @@ public class ExerciseListView extends JPanel {
 	
 		JPanel panelView = new JPanel();
 		scrollPane.setViewportView(panelView);
-		panelView.setLayout(new GridLayout(listExercises.size(), 3, 0, 0));
+		panelView.setLayout(new GridLayout(20, 3, 0, 0));
 		
 		
 		
