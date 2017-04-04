@@ -74,7 +74,7 @@ public class DatabaseObj {
      * @param int age
      * @param url picture
      */
-    public void insertChild(String firstName, String lastName, int age,URL picture) {
+    public void insertChild(String firstName, String lastName, int age,String picture) {
         if (this.connection == null) {
             this.connect();
         }
@@ -86,7 +86,7 @@ public class DatabaseObj {
             ins_stmt.setString(1, firstName);
             ins_stmt.setString(2, lastName);
             ins_stmt.setInt(3, age);
-            ins_stmt.setURL(4, picture);          
+            ins_stmt.setString(4, picture);          
  
             ins_stmt.executeUpdate();
         } catch (SQLException ex) {
@@ -103,7 +103,7 @@ public class DatabaseObj {
      * @param password String
      * @param picture url
      */
-    public void insertProfessor(String firstName, String lastName, int age, String password, URL picture) {
+    public void insertProfessor(String firstName, String lastName, int age, String password, String picture) {
         if (this.connection == null) {
             this.connect();
         }
@@ -116,7 +116,7 @@ public class DatabaseObj {
             ins_stmt.setString(2, lastName);
             ins_stmt.setInt(3, age);
             ins_stmt.setString(4, password);
-            ins_stmt.setURL(5, picture);          
+            ins_stmt.setString(5, picture);          
  
             ins_stmt.executeUpdate();
         } catch (SQLException ex) {
