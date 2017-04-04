@@ -37,6 +37,7 @@ public class Teacher extends User {
         super(pFirstName, pLastName,  pAge, pPicture);
         this.setAge(pAge);
         this.setPassword(pPassword);
+        this.classes = new ArrayList<SchoolClass>();
     }
 
     //////////////////// SETTERS ////////////////////
@@ -82,15 +83,13 @@ public class Teacher extends User {
      * A class cannot be added only one time to the list.
      *
      * @param schoolClass is the added class
+     * @throws AlreadyInListException 
      */
-    public void addClass(SchoolClass schoolClass) {
-        boolean found = false;
-        for (int i = 0; i < classes.size(); i++) {
-            if (classes.get(i) == schoolClass)
-                found = true;
+    public void addClass(SchoolClass schoolClass) throws AlreadyInListException {
+        if (this.classes.contains(schoolClass)){
+        	throw new AlreadyInListException();
         }
-        if (!found)
-            classes.add(schoolClass);
+        else classes.add(schoolClass);
     }
     
     /**
