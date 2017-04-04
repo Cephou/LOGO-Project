@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Model.User;
+
 public class Header {
 	
 	private JPanel header, goBack;
@@ -90,6 +92,13 @@ public class Header {
 	
 	public JPanel getHeader() {
 		return header;
+	}
+	
+	public void setHeader(User user, String pageTitle) {
+		lblFirstName.setText(user.getFirstName());
+		lblLastName.setText(user.getLastName());
+		lblClass.setText(user.getClass().getName());
+		lblPageTitle.setText(pageTitle);
 	}
 	
 	/**

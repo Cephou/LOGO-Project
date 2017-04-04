@@ -31,7 +31,7 @@ public class ChildLoginSelection implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		main.generateChildExerciseContent(child);
+		main.loginChild(child);
 	}
 
 	@Override

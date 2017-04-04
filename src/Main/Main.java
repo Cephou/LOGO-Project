@@ -86,10 +86,10 @@ public class Main {
 	 * G�n�re le home de l'�l�ve
 	 * @param child
 	 */
-	public void generateChildExerciseContent(Child child) {
+	public void loginChild(Child child) {
 		// Cr�e le submain	
 		try {
-			new SubMainChild(child);
+			new SubMainChild(child, layout, schoolClasses);
 		} catch (EmptyStringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -99,14 +99,9 @@ public class Main {
 		} catch (StringSizeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		// Cr�e un nouveau panel d'�l�ve avec la classe
-		ChildHomeView childHome = new ChildHomeView();
-		JPanel childHomePanel = childHome.getChildHomeView();
-		// Change le body avec le nouveau panel d'exercices
-		layout.changeBodyContent(childHomePanel);		
+		}	
 	}
-	
+	 
 	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		new Main();
 	}

@@ -60,4 +60,8 @@ public class GeneralLayout {
 		frame.setVisible(false);
 		frame.setVisible(true);
 	}
+	
+	public Header getHeader() {
+		return header;
+	}
 }
