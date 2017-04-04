@@ -46,8 +46,8 @@ public class ChildLoginView {
 	
 	public void createChildItem(Child child) {
 
-        Icon picture = new ImageIcon((getClass().getResource("/image/child" + child.getPicture())));
-        JButton childBtn = new JButton(picture);
+        //Icon picture = new ImageIcon((getClass().getResource("/image/child" + child.getPicture())));
+        JButton childBtn = new JButton(child.getFirstName());
         childBtn.addMouseListener(new ChildLoginSelection(child, main));
 		childLogin.add(childBtn);
 
