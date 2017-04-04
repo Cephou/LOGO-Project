@@ -1,3 +1,6 @@
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
 import Model.Child;
 
 public class SubMainChild extends Main {
