@@ -38,42 +38,38 @@ public class ExerciseListView extends JPanel {
 	private ArrayList<Exercise> listExercises;
 	private JScrollPane scrollPane;
 
-
 	/**
 	 * 
 	 */
 	public ExerciseListView(Child child) {
-	
-		
+
 		this.child = child;
 		this.classe = this.child.getSchoolClass();
 		listExercises = classe.getExerciseList();
-		 setLayout(new BorderLayout(0, 0));
-		
-		 scrollPane = new JScrollPane();
+		setLayout(new BorderLayout(0, 0));
+
+		scrollPane = new JScrollPane();
 		add(scrollPane);
-	
+
 		JPanel panelView = new JPanel();
 		scrollPane.setViewportView(panelView);
 		panelView.setLayout(new GridLayout(20, 3, 0, 0));
-		
-		
-		
-		//remplissage : 1 bouton par exercice
-		if (listExercises.isEmpty()){
+
+		// remplissage : 1 bouton par exercice
+		if (listExercises.isEmpty()) {
 			JLabel label = new JLabel("Pas d'exercice disponible.");
 			panelView.add(label);
-			
-		}
-		for (Exercise exercise : listExercises) {
-			System.out.println(exercise.getTitle());
-			JButton btnNewButton = new JButton(exercise.getTitle());
-			panelView.add(btnNewButton);
-			
-			
-		}
-		
 
+		}
+
+		else {
+			for (Exercise exercise : listExercises) {
+				System.out.println(exercise.getTitle());
+				JButton btnNewButton = new JButton(exercise.getTitle());
+				panelView.add(btnNewButton);
+
+			}
+		}
 
 	}
 
@@ -89,8 +85,7 @@ public class ExerciseListView extends JPanel {
 	 * @throws tooLongStringException
 	 */
 	public static void main(String[] args)
-			throws EmptyStringException, NegativeIntegerException,
-			StringSizeException, tooLongStringException {
+			throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException {
 		Frame frame = new JFrame();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
@@ -103,14 +98,11 @@ public class ExerciseListView extends JPanel {
 		classe1.addChild(child1);
 		classe1.addChild(child2);
 		classe2.addChild(child3);
-		
+
 		// crea exo
-		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
-				null, teacher1, null);
-		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits",
-				null, teacher1, null);
-		
-		
+		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
+		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+
 		ExerciseListView view = new ExerciseListView(child1);
 		frame.add(view);
 		frame.setVisible(true);
