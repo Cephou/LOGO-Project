@@ -38,7 +38,12 @@ public class SchoolClass {
 			throws EmptyStringException, StringSizeException {
 		this.setClassName(newClassName);
 		this.teacher = newTeacher;
-		teacher.addClass(this);
+		try {
+			teacher.addClass(this);
+		} catch (AlreadyInListException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.childList = new ArrayList<Child>();
 		this.exerciseList = new ArrayList<Exercise>();
 	}
