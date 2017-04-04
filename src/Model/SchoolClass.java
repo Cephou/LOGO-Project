@@ -94,7 +94,10 @@ public class SchoolClass {
 		if (this.childList.contains(child)){
 			// TODO
 		}
-		else childList.add(child);
+		else {
+			childList.add(child);
+			child.setSchoolClass(this);
+		}
 
 	}
 

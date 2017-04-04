@@ -29,55 +29,24 @@ import javax.swing.JFrame;
  */
 public class ExerciseListView extends JPanel {
 
+	private JScrollPane scrollPane;
+	private SchoolClass classe;
+	private Child child;
+	private ArrayList<Exercise> listExercises;
+
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private SchoolClass classe;
-	private ArrayList<Exercise> listExercises;
-	private JScrollPane scrollPane;
-	
-	public static void main(String[] args)  {
-		try {
-			Frame frame = new JFrame();
-			Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null,"azerty");
-			Child child1 = new Child("Alexis", "Amiand", 12, null);
-			Child child2 = new Child("Laurent", "L'abricot", 13, null);
-			Child child3 = new Child("Severin", "Chargeur", 11, null);
-			// Create classes
-			SchoolClass classe1 = new SchoolClass("CE1", teacher1);
-			SchoolClass classe2 = new SchoolClass("CE2", teacher1);
-			// add eleve to classes
-			classe1.addChild(child1);
-			classe1.addChild(child2);
-			classe2.addChild(child3);
-			// crea exo
-			Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",null, teacher1, null);
-
-			ExerciseListView view = new ExerciseListView(child1);
-			frame.add(view);
-			frame.setVisible(true);
-		}
-		catch (Exception e) {
-			// TODO: handle exception
-		
-			
-		} finally {
-			// TODO: handle finally clause
-		}
-		
-	}
-
-	/**
-	 * Create the panel.
-	 */
-	/**
-	 * @param child
-	 */
 	public ExerciseListView(Child child) {
+		System.out.println(child.getSchoolClass());
+		
+		this.child = child;
+		
 		// surround with a scroll pan
 		scrollPane = new JScrollPane();
-		add(scrollPane);
+		this.add(scrollPane);
+		
 		// creation of our panel
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
@@ -85,7 +54,7 @@ public class ExerciseListView extends JPanel {
 
 		// getting the list of exercise and the status of each exercise for the
 		// student
-		classe = child.getSchoolClass();
+		this.classe = this.child.getSchoolClass();
 		listExercises = classe.getExerciseList();
 
 		Map<String, String> details = new HashMap<>();
@@ -98,7 +67,6 @@ public class ExerciseListView extends JPanel {
 		}
 
 		for (Exercise exercise : listExercises) {
-
 			System.out.println(exercise.getTitle());
 		}
 
@@ -108,5 +76,36 @@ public class ExerciseListView extends JPanel {
 
 	public JScrollPane getExerciseListView() {
 		return scrollPane;
+	}
+
+	/**
+	 * @param args
+	 * @throws StringSizeException
+	 * @throws NegativeIntegerException
+	 * @throws EmptyStringException
+	 * @throws tooLongStringException
+	 */
+	public static void main(String[] args)
+			throws EmptyStringException, NegativeIntegerException,
+			StringSizeException, tooLongStringException {
+		Frame frame = new JFrame();
+		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
+		Child child1 = new Child("Alexis", "Amiand", 12, null);
+		Child child2 = new Child("Laurent", "L'abricot", 13, null);
+		Child child3 = new Child("Severin", "Chargeur", 11, null);
+		// Create classes
+		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
+		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
+		// add eleve to classes
+		classe1.addChild(child1);
+		classe1.addChild(child2);
+		classe2.addChild(child3);
+		// crea exo
+		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
+				null, teacher1, null);
+
+		ExerciseListView view = new ExerciseListView(child1);
+		frame.add(view);
+		frame.setVisible(true);
 	}
 }
