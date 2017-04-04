@@ -57,13 +57,14 @@ public class Main {
 		schoolClasses = new ArrayList<SchoolClass>();
 		//Create Prof
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
+		Teacher teacher2 = new Teacher("Annie", "Geniet", 30, null, "azerty");
 		//create child
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
 		Child child2 = new Child("Laurent", "L'abricot", 13, null);
 		Child child3 = new Child("Severin", "Chargeur", 11, null);
 		//Create classes
 		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
-		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
+		SchoolClass classe2 = new SchoolClass("CE2", teacher2);
 		
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
 				null, teacher1, null);
