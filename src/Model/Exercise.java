@@ -1,8 +1,11 @@
 package Model;
 import Model.Tortue.*;
 
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 
+import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.tooLongStringException;
 
@@ -43,6 +46,15 @@ public class Exercise {
 		this.turtle = turtle;
 		this.icon = icon;
 		this.teacher = teacher;
+		
+		ArrayList<SchoolClass> classes = teacher.getClasses();
+		for (SchoolClass classe : classes){
+			try {
+				classe.addExercice(this);
+			} catch (AlreadyInListException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**
