@@ -1,3 +1,4 @@
+package Main;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;

@@ -1,3 +1,4 @@
+package Main;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -19,8 +20,8 @@ import View.Modules.*;
  * Main, cette classe gere les reltions  entre toutes les classes de l'application.
  * Elle  instancie layout general et les sous-main. Ce layout est rempli en fonction du type d'utilisateur et de l'action choisit
  * Elle stock le type d'utilisateur actiellement sur l'application, et lance le sous main correspondant
- * Elle assure le chargemment des données à son lancemment
- * Elle assure l'enregistremment des données lorsqu'on quitte l'application.
+ * Elle assure le chargemment des donnï¿½es ï¿½ son lancemment
+ * Elle assure l'enregistremment des donnï¿½es lorsqu'on quitte l'application.
  *
  */
 
@@ -28,20 +29,20 @@ public class Main {
 	private ArrayList<SchoolClass> schoolClasses; // Liste des classes
 	private User user; //le type d'utilisateur
 	private DatabaseLoader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
-	private DatabaseRecorder databaseRecorder; //enregistremment des données
+	private DatabaseRecorder databaseRecorder; //enregistremment des donnï¿½es
 	private DatabaseCreation databaseCreation; // creation SSI BDD invexistante; 
     
 	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		
-		loadDatas(); // Charge des données
+		loadDatas(); // Charge des donnï¿½es
 		GeneralLayout layout = new GeneralLayout();
-		ClassLoginView classSelection = new ClassLoginView(schoolClasses, layout); // Crée le panel de liste de classes
+		ClassLoginView classSelection = new ClassLoginView(schoolClasses, layout); // Crï¿½e le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
         
 	}
 	
 	/**
-	 * Charge un jeu de données
+	 * Charge un jeu de donnï¿½es
 	 * @throws StringSizeException 
 	 * @throws NegativeIntegerException 
 	 * @throws EmptyStringException 
