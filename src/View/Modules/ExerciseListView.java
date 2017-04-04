@@ -9,16 +9,17 @@ import javax.swing.JScrollPane;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
+import Exception.tooLongStringException;
 import Model.Child;
 import Model.Exercise;
 import Model.SchoolClass;
 import Model.Teacher;
 
+import java.awt.Frame;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -28,10 +29,44 @@ import javax.swing.JFrame;
  */
 public class ExerciseListView extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private SchoolClass classe;
 	private ArrayList<Exercise> listExercises;
 	private JScrollPane scrollPane;
+	
+	public static void main(String[] args)  {
+		try {
+			Frame frame = new JFrame();
+			Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null,"azerty");
+			Child child1 = new Child("Alexis", "Amiand", 12, null);
+			Child child2 = new Child("Laurent", "L'abricot", 13, null);
+			Child child3 = new Child("Severin", "Chargeur", 11, null);
+			// Create classes
+			SchoolClass classe1 = new SchoolClass("CE1", teacher1);
+			SchoolClass classe2 = new SchoolClass("CE2", teacher1);
+			// add eleve to classes
+			classe1.addChild(child1);
+			classe1.addChild(child2);
+			classe2.addChild(child3);
+			// crea exo
+			Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",null, teacher1, null);
 
+			ExerciseListView view = new ExerciseListView(child1);
+			frame.add(view);
+			frame.setVisible(true);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		
+			
+		} finally {
+			// TODO: handle finally clause
+		}
+		
+	}
 
 	/**
 	 * Create the panel.
@@ -40,75 +75,38 @@ public class ExerciseListView extends JPanel {
 	 * @param child
 	 */
 	public ExerciseListView(Child child) {
-		//surround with a scroll pan
+		// surround with a scroll pan
 		scrollPane = new JScrollPane();
 		add(scrollPane);
-		//creation of our panel
+		// creation of our panel
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new GridLayout(50, 3, 0, 0));
-		
-		//getting the list of exercise and the status of each exercise for the student
+
+		// getting the list of exercise and the status of each exercise for the
+		// student
 		classe = child.getSchoolClass();
 		listExercises = classe.getExerciseList();
-	
-		
-		
-		Map<String, String> details = new HashMap<>();
-		for (int i = 1; i <101; i++) {
-		    if (i<60) {
-		        details.put("person" + i, "female");
-		    }
-		    else {
-		        details.put("person" + i, "male");
-		    }
-		}
-		
-	
-		
-//		for (Exercise exercise : listExercises){
-//			JButton btn+exercise.getTitle() = new JButton("New button");
-//			panel.add(btnExercise);
-//		}
-		
-	
-		
-	
-		
 
-		
+		Map<String, String> details = new HashMap<>();
+		for (int i = 1; i < 101; i++) {
+			if (i < 60) {
+				details.put("person" + i, "female");
+			} else {
+				details.put("person" + i, "male");
+			}
+		}
+
+		for (Exercise exercise : listExercises) {
+
+			System.out.println(exercise.getTitle());
+		}
+
 		JButton btnExercise = new JButton("New button");
 		panel.add(btnExercise);
-		
-
 	}
-	
-	
-	public JScrollPane getExerciseListView(){
+
+	public JScrollPane getExerciseListView() {
 		return scrollPane;
 	}
-	
-	public static void main(String [] args) throws EmptyStringException, NegativeIntegerException, StringSizeException
-	{
-		JFrame frame = new JFrame();
-		//crea data
-		
-		Teacher teacher1 = 
-		new Teacher("Patrick", "Girard", 25, null, "azerty");;
-		Child child1 = new Child("Alexis", "Amiand", 12, null);
-		Child child2 = new Child("Laurent", "L'abricot", 13, null);
-		Child child3 = new Child("Severin", "Chargeur", 11, null);
-		//Create classes
-		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
-		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
-		//add eleve to classes
-		classe1.addChild(child1);
-		classe1.addChild(child2);
-		classe2.addChild(child3);;
-		ExerciseListView view = new ExerciseListView(child1);
-		frame.add(view);
-		frame.setVisible(true);
-		
-	}	
-
 }
