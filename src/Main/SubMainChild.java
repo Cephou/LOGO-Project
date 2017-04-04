@@ -3,9 +3,11 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
+import Exception.tooLongStringException;
 import Model.Child;
 import Model.SchoolClass;
 import Model.User;
@@ -32,7 +34,7 @@ public class SubMainChild extends Main {
 	 * @param layout 
 	 * @param Child current child
 	 */
-	public SubMainChild(Child child, GeneralLayout layout, ArrayList<SchoolClass> schoolClasses) throws EmptyStringException, NegativeIntegerException, StringSizeException{
+	public SubMainChild(Child child, GeneralLayout layout, ArrayList<SchoolClass> schoolClasses) throws AlreadyInListException, tooLongStringException, EmptyStringException, NegativeIntegerException, StringSizeException{
 		this.child = child;
 		this.layout = layout;
 		this.schoolClasses = schoolClasses;

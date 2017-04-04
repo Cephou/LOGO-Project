@@ -7,9 +7,11 @@ import javax.swing.*;
 import Database.DatabaseObj;
 import Database.Loader;
 import Database.Recorder;
+import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
+import Exception.tooLongStringException;
 import Model.*;
 import Model.Action;
 import Model.Tortue.*;
@@ -35,7 +37,7 @@ public class Main {
 	private Recorder databaseRecorder; //enregistremment des donn�es
 	private DatabaseObj databaseCreation; // creation SSI BDD invexistante; 
     
-	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
+	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
 		loadDatas(); // Charge des donn�es
 		layout = new GeneralLayout();
 		ClassLoginView classSelection = new ClassLoginView(schoolClasses, this); // Cr�e le panel de liste de classes
@@ -47,8 +49,10 @@ public class Main {
 	 * @throws StringSizeException 
 	 * @throws NegativeIntegerException 
 	 * @throws EmptyStringException 
+	 * @throws tooLongStringException 
+	 * @throws AlreadyInListException 
 	 */
-	public void loadDatas() throws EmptyStringException, NegativeIntegerException, StringSizeException {
+	public void loadDatas() throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
 		//Generate school
 		schoolClasses = new ArrayList<SchoolClass>();
 		//Create Prof
@@ -60,6 +64,12 @@ public class Main {
 		//Create classes
 		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
 		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
+		
+		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
+				null, teacher1, null);
+		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits",
+				null, teacher1, null);
+		
 		//add eleve to classes
 		classe1.addChild(child1);
 		classe1.addChild(child2);
@@ -89,7 +99,12 @@ public class Main {
 	public void loginChild(Child child) {
 		// Cr�e le submain	
 		try {
-			new SubMainChild(child, layout, schoolClasses);
+			try {
+				new SubMainChild(child, layout, schoolClasses);
+			} catch (tooLongStringException | AlreadyInListException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (EmptyStringException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,8 +117,25 @@ public class Main {
 		}	
 	}
 	 
-	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException {
-		new Main();
+	public static void main(String[] args) {
+		try {
+			new Main();
+		} catch (EmptyStringException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NegativeIntegerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (StringSizeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (tooLongStringException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AlreadyInListException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void test() {
