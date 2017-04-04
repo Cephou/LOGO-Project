@@ -14,6 +14,8 @@ import Model.*;
 import Model.Action;
 import Model.Tortue.*;
 import View.*;
+import View.Child.ChildHomeView;
+import View.Login.ChildLoginView;
 import View.Login.ClassLoginView;
 import View.Modules.*;
 /**
@@ -27,18 +29,17 @@ import View.Modules.*;
 
 public class Main {
 	private ArrayList<SchoolClass> schoolClasses; // Liste des classes
-	private User user; //le type d'utilisateur
+	private User user; // L'utilisateur connecté
+	private GeneralLayout layout; // Le layout général
 	private DatabaseLoader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
 	private DatabaseRecorder databaseRecorder; //enregistremment des donnï¿½es
 	private DatabaseCreation databaseCreation; // creation SSI BDD invexistante; 
     
 	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException {
-		
 		loadDatas(); // Charge des donnï¿½es
-		GeneralLayout layout = new GeneralLayout();
+		layout = new GeneralLayout();
 		ClassLoginView classSelection = new ClassLoginView(schoolClasses, layout); // Crï¿½e le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
-        
 	}
 	
 	/**
@@ -48,7 +49,6 @@ public class Main {
 	 * @throws EmptyStringException 
 	 */
 	public void loadDatas() throws EmptyStringException, NegativeIntegerException, StringSizeException {
-		
 		//Generate school
 		schoolClasses = new ArrayList<SchoolClass>();
 		//Create Prof
@@ -68,6 +68,43 @@ public class Main {
 		//add classe tou classes
 		schoolClasses.add(classe1);
 		schoolClasses.add(classe2);
+	}
+
+	/**
+	 * Génère le panel de sélection d'élève, actualise le header
+	 * @param schoolClass
+	 */
+	public void generateChildSelectionContent(SchoolClass schoolClass) {
+		// Crée un nouveau panel d'élève avec la classe
+		ChildLoginView childLogin = new ChildLoginView(schoolClass, this);
+		JPanel childLoginPanel = childLogin.getChildLogin();
+		// Change le body avec le nouveau panel d'élèves
+		this.layout.changeBodyContent(childLoginPanel);
+	}
+	
+	/**
+	 * Génère le home de l'élève
+	 * @param child
+	 */
+	public void generateChildExerciseContent(Child child) {
+		// Crï¿½e le submain	
+		try {
+			new SubMainChild(child);
+		} catch (EmptyStringException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NegativeIntegerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (StringSizeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// Crï¿½e un nouveau panel d'ï¿½lï¿½ve avec la classe
+		ChildHomeView childHome = new ChildHomeView();
+		JPanel childHomePanel = childHome.getChildHomeView();
+		// Change le body avec le nouveau panel d'exercices
+		layout.changeBodyContent(childHomePanel);		
 	}
 	
 	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException {

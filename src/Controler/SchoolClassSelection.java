@@ -10,6 +10,8 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
+import Main.Main;
+
 /*
  * Cette classe permet de controler le choix de la classe lors d'un clic sur un bouton issu de la classe ClassSelection
  * Elle permet d'instancier la classe ChildSelectionView qui affiche la liste d'élève disponible pour la classe choisie.
@@ -17,21 +19,16 @@ import javax.swing.JPanel;
 public class SchoolClassSelection implements MouseListener {
 	
 	private SchoolClass schoolClass; // Récupère la classe cliquée
-	private GeneralLayout layout; // Le body a changer
+	private Main main; // Le main
 
-	public SchoolClassSelection(SchoolClass schoolClass, GeneralLayout layout) {
+	public SchoolClassSelection(SchoolClass schoolClass, Main main) {
 		this.schoolClass = schoolClass;
-		this.layout = layout;
+		this.main = main;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// Crée un nouveau panel d'élève avec la classe
-		ChildLoginView childLogin = new ChildLoginView(this.schoolClass, this.layout);
-		JPanel childLoginPanel = childLogin.getChildLogin();
-		// Change le body avec le nouveau panel d'élèves
-		this.layout.changeBodyContent(childLoginPanel);
-		
+		this.main.generateChildSelectionContent(schoolClass);		
 	}
 
 	@Override

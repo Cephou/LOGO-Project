@@ -7,6 +7,7 @@ import View.GeneralLayout;
 import javax.swing.*;
 
 import Controler.ChildLoginSelection;
+import Main.Main;
 
 import java.awt.*;
 
@@ -19,17 +20,17 @@ import java.awt.*;
 public class ChildLoginView {
 	
 	private JPanel childLogin;
-	private GeneralLayout layout;
+	private Main main;
 
 	/**
 	 * Constructeur de la classe ChildLoginView
 	 *
 	 * @param schoolClass
 	 */
-	public ChildLoginView(SchoolClass schoolClass, GeneralLayout layout) {
+	public ChildLoginView(SchoolClass schoolClass, Main main) {
 		// Procédure de boucle qui pioche dans la classe choisie pour afficher les enfants.
         setChildrenPanel(schoolClass);
-        this.layout = layout;
+        this.main = main;
 	}
 
 	/**
@@ -53,7 +54,7 @@ public class ChildLoginView {
 //	    itemButton[i].setEnabled(true);
 //	    itemButton[i].setPreferredSize(new Dimension(100, 100));
 		JButton childBtn = new JButton(child.getFirstName());
-		childBtn.addMouseListener(new ChildLoginSelection(child, this.layout));
+		childBtn.addMouseListener(new ChildLoginSelection(child, this.main));
 		childLogin.add(childBtn);
 
 	}

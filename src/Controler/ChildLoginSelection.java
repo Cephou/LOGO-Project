@@ -12,6 +12,7 @@ import Model.Child;
 import View.GeneralLayout;
 import View.Child.ChildHomeView;
 import View.Login.ChildLoginView;
+import Main.Main;
 import Main.SubMainChild;
 
 /*
@@ -21,33 +22,16 @@ import Main.SubMainChild;
 public class ChildLoginSelection implements MouseListener {
 
 	private Child child;
-	private GeneralLayout layout;
+	private Main main;
 	
-	public ChildLoginSelection(Child child, GeneralLayout layout) {
+	public ChildLoginSelection(Child child, Main main) {
 		this.child = child;
-		this.layout = layout;
+		this.main = main;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// Cr�e le submain	
-		try {
-			new SubMainChild(child);
-		} catch (EmptyStringException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NegativeIntegerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (StringSizeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// Cr�e un nouveau panel d'�l�ve avec la classe
-		ChildHomeView childHome = new ChildHomeView();
-		JPanel childHomePanel = childHome.getChildHomeView();
-		// Change le body avec le nouveau panel d'exercices
-		this.layout.changeBodyContent(childHomePanel);
+		main.generateChildExerciseContent(child);
 	}
 
 	@Override

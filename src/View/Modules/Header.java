@@ -11,8 +11,10 @@ import javax.swing.JPanel;
 
 public class Header {
 	
-	JPanel header;
-
+	private JPanel header, goBack;
+	private JButton btnReturn;
+	private JLabel lblLastName, lblFirstName, lblClass, lblPageTitle;
+	
 	public Header() {
 		header = new JPanel();
 		header.setLayout(new BorderLayout(0, 0));
@@ -21,10 +23,10 @@ public class Header {
 		header.add(headerContent, BorderLayout.CENTER);
 		headerContent.setLayout(new BorderLayout(0, 0));
 		
-		JPanel goBack = new JPanel();
+		goBack = new JPanel();
 		headerContent.add(goBack, BorderLayout.WEST);
 		
-		JButton btnReturn = new JButton("RETURN");
+		btnReturn = new JButton("RETURN");
 		goBack.add(btnReturn);
 		
 		JPanel headerInformation = new JPanel();
@@ -44,7 +46,7 @@ public class Header {
 		/*
 		 * Récupère la valeur du nom de l'utilisateur en cours		
 		 */
-		JLabel lblLastName = new JLabel("NAME");
+		lblLastName = new JLabel("NAME");
 		userLastName.add(lblLastName);
 		
 		JPanel userFirstName = new JPanel();
@@ -53,7 +55,7 @@ public class Header {
 		/*
 		 * Récupère la valeur du prénom de l'utilisateur en cours		
 		 */
-		JLabel lblFirstName = new JLabel("PRENOM");
+		lblFirstName = new JLabel("PRENOM");
 		userFirstName.add(lblFirstName);
 		
 		JPanel userClass = new JPanel();
@@ -62,7 +64,7 @@ public class Header {
 		/*
 		 * Récupère la valeur de la classe de l'utilisateur		
 		 */
-		JLabel lblClass = new JLabel("CLASSE");
+		lblClass = new JLabel("CLASSE");
 		userClass.add(lblClass);
 		
 		JPanel pageTitle = new JPanel();
@@ -72,7 +74,7 @@ public class Header {
 		/*
 		 * Récupère la valeur de la page en cours
 		 */
-		JLabel lblPageTitle = new JLabel("PAGE TITLE");
+		lblPageTitle = new JLabel("PAGE TITLE");
 		pageTitle.add(lblPageTitle, BorderLayout.EAST);
 		
 		JPanel help = new JPanel();
@@ -90,23 +92,73 @@ public class Header {
 		return header;
 	}
 	
-	public void changeIcon() {
-		// Change l'icone
+	/**
+	 * @return the btnReturn
+	 */
+	public JButton getBtnReturn() {
+		return btnReturn;
 	}
-	
-	public void changeFirstName() {
-		// Change le prénom
+
+	/**
+	 * @param btnReturn the btnReturn to set
+	 */
+	public void setBtnReturn(JButton btnReturn) {
+		this.btnReturn = btnReturn;
 	}
-	
-	public void changeLastName() {
-		// Change le nom de famille
+
+	/**
+	 * @return the lblLastName
+	 */
+	public JLabel getLblLastName() {
+		return lblLastName;
 	}
-	
-	public void changeClass() {
-		// Change la classe
+
+	/**
+	 * @param lblLastName the lblLastName to set
+	 */
+	public void setLblLastName(JLabel lblLastName) {
+		this.lblLastName = lblLastName;
 	}
-	
-	public void changePageTitle() {
-		// Change le titre de la page
+
+	/**
+	 * @return the lblFirstName
+	 */
+	public JLabel getLblFirstName() {
+		return lblFirstName;
+	}
+
+	/**
+	 * @param lblFirstName the lblFirstName to set
+	 */
+	public void setLblFirstName(JLabel lblFirstName) {
+		this.lblFirstName = lblFirstName;
+	}
+
+	/**
+	 * @return the lblClass
+	 */
+	public JLabel getLblClass() {
+		return lblClass;
+	}
+
+	/**
+	 * @param lblClass the lblClass to set
+	 */
+	public void setLblClass(JLabel lblClass) {
+		this.lblClass = lblClass;
+	}
+
+	/**
+	 * @return the lblPageTitle
+	 */
+	public JLabel getLblPageTitle() {
+		return lblPageTitle;
+	}
+
+	/**
+	 * @param lblPageTitle the lblPageTitle to set
+	 */
+	public void setLblPageTitle(JLabel lblPageTitle) {
+		this.lblPageTitle = lblPageTitle;
 	}
 }
