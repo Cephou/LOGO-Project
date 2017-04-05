@@ -152,17 +152,20 @@ public class ExerciseListView extends JPanel {
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
 		Exercise exercise3 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+		Exercise exercise4 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
 
 
 		
 		child1.createAssay(exercise1);
 		child1.createAssay(exercise2);
 		child1.createAssay(exercise3);
+		child1.createAssay(exercise4);
 		
 
-		teacher1.evaluateAssay(child1.getAssays().get(0), "commentaire", Grade.NotAcquired);
-		teacher1.evaluateAssay(child1.getAssays().get(2), "commentaire", Grade.Acquired);
-		teacher1.evaluateAssay(child1.getAssays().get(1), "commentaire", Grade.InAcquisition);
+		teacher1.evaluateAssay(child1.getAssays().get(0), "c'est nul tu as fait n'importequoi", Grade.NotAcquired);
+		teacher1.evaluateAssay(child1.getAssays().get(2), "c'est ien tu es un bon eleve", Grade.Acquired);
+		teacher1.evaluateAssay(child1.getAssays().get(1), "avec de la volonté tu pourrais y arriver", Grade.InAcquisition);
+		
 
 
 		Main main = null;
