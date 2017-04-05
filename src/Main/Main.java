@@ -54,31 +54,39 @@ public class Main {
 	 */
 	public void loadDatas() throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
 		//Generate school
-		schoolClasses = new ArrayList<SchoolClass>();
-		//Create Prof
+		//prof
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
-		Teacher teacher2 = new Teacher("Annie", "Geniet", 30, null, "azerty");
-		//create child
+		Teacher teacher2 = new Teacher("Marie", "Girard", 28, null, "azerty");
+		//child
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
 		Child child2 = new Child("Laurent", "L'abricot", 13, null);
 		Child child3 = new Child("Severin", "Chargeur", 11, null);
-		//Create classes
+
+		// Create classes
 		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
 		SchoolClass classe2 = new SchoolClass("CE2", teacher2);
-		
-		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits",
-				null, teacher1, null);
-		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits",
-				null, teacher1, null);
-		
-		//add eleve to classes
+		// add eleve to classes
 		classe1.addChild(child1);
 		classe1.addChild(child2);
 		classe2.addChild(child3);
+
+		// crea exo
+		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
+		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+		Exercise exercise3 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+		Exercise exercise4 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+
+
 		
-		//add classe tou classes
-		schoolClasses.add(classe1);
-		schoolClasses.add(classe2);
+		child1.createAssay(exercise1);
+		child1.createAssay(exercise2);
+		child1.createAssay(exercise3);
+		child1.createAssay(exercise4);
+		
+
+		teacher1.evaluateAssay(child1.getAssays().get(0), "c'est nul tu as fait n'importequoi", Grade.NotAcquired);
+		teacher1.evaluateAssay(child1.getAssays().get(2), "c'est ien tu es un bon eleve", Grade.Acquired);
+		teacher1.evaluateAssay(child1.getAssays().get(1), "avec de la volonté tu pourrais y arriver", Grade.InAcquisition);
 	}
 
 	/**
