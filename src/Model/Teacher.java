@@ -39,7 +39,7 @@ public class Teacher extends User {
 	 * @throws NegativeIntegerException
 	 * @throws EmptyStringException
 	 */
-	public Teacher(String pFirstName, String pLastName, int pAge, File pPicture, String pPassword)
+	public Teacher(String pFirstName, String pLastName, int pAge, ImageIcon pPicture, String pPassword)
 			throws EmptyStringException, NegativeIntegerException, StringSizeException {
 		super(pFirstName, pLastName, pAge, pPicture);
 		this.setAge(pAge);

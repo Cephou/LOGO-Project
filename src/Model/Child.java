@@ -8,6 +8,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 /**
  * @author Groupe 7 Cette classe d�crit l'objet enfant, un �l�ve qui r�alise des
  *         tentatives. Un enfant fait partie d'une classe et peut realiser
@@ -18,7 +20,7 @@ public class Child extends User {
 
 	private ArrayList<Assay> assays; // Liste des tentatives de l'enfant
 	private SchoolClass schoolClass; // La classe de l'�l�ve.
-	private URL pPicture;
+	private ImageIcon pPicture;
 
 	/*
 	 * Cr�� un enfant. Controle l'age (entre 3 et 12 ans).
@@ -33,7 +35,7 @@ public class Child extends User {
 	 * 
 	 */
 	public Child(String pFirstName, String pLastName, int pAge,
-                 File pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+			ImageIcon pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
         super(pFirstName, pLastName, pAge, pPicture);
         assays = new ArrayList<Assay>();
     }

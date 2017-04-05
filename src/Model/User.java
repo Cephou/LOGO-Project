@@ -3,6 +3,8 @@ package Model;
 import java.io.File;
 import java.net.URL;
 
+import javax.swing.ImageIcon;
+
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
@@ -15,7 +17,7 @@ public abstract class User {
 	protected String firstName; // The first name of the user
 	protected String lastName; // The last name of the user
 	protected int age; // The age of the user
-	protected File picture; // The icon associated to the user
+	protected ImageIcon picture; // The icon associated to the user
 
 	/**
 	 * Constructor of the class User.
@@ -33,7 +35,7 @@ public abstract class User {
 	 * @throws StringSizeException
 	 */
 	public User(String pFirstName, String pLastName, int pAge,
-				File pPicture) throws EmptyStringException,
+			ImageIcon pPicture) throws EmptyStringException,
 			NegativeIntegerException, StringSizeException {
 
 		this.setFirstName(pFirstName);
@@ -109,7 +111,7 @@ public abstract class User {
 
 	//////////////////// PICTURE ////////////////////
 
-	public File getPicture() {
+	public ImageIcon getPicture() {
 		return picture;
 	}
 
@@ -117,7 +119,7 @@ public abstract class User {
 	 * TODO CONTRAINTES ??????
 	 * @param picture
 	 */
-	protected void setPicture(File picture) {
+	protected void setPicture(ImageIcon picture) {
 		this.picture = picture;
 	}
 
