@@ -1,18 +1,11 @@
 package Database;
 
-import java.applet.Applet;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 
-import Exception.EmptyStringException;
-import Exception.NegativeIntegerException;
-import Exception.StringSizeException;
-import Model.*;
-
-// Enregistrement dans la base de données 
+/* This class is the recorder.  
+ * It is meant to be called only once when the program is closed. 
+ * We do not update our program while it is running because it is too complicated. 
+ * This class first deletes everything in the database then saves all the data again. 
+ */  
 
 public class Recorder {
 
@@ -30,72 +23,13 @@ public class Recorder {
 				+ "delete from SCHOOLCLASS;"
 				+ "delete from TEACHER;");
 		
-		//database.
 		
-		//insert all the data again.
-		/*
-		 * data = Main.getSchoolClasses()
-		 * while (data.next()) {
-		 * 	database.sqlQuery("INSERT INTO SCHOOLCLASS(NAME_CLASS) VALUES(?);";
-		 * 	
-            
-		 * }
+		//insert everything again 
+		/*ArrayList<SchoolClass> data = main.getSchoolClasses(); 
+		 *for(SchoolClass c : data) { 
+		 *	database.sqlQuery("INSERT A BALLE!!"); 
+		 *} 
 		 */
-		
 	}
 
-	public static void main(String[] args) throws Exception {
-		new Recorder();
-	}
 }
-
-
-
-
-
-
-/*Exemple de syntaxe op�ration UPDATE SQLite/JDBC
- * 
- * import java.sql.*;
-
-	public class SQLiteJDBC
-	{
-	  public static void main( String args[] )
-	  {
-	    Connection c = null;
-	    Statement stmt = null;
-	    try {
-	      Class.forName("org.sqlite.JDBC");
-	      c = DriverManager.getConnection("jdbc:sqlite:test.db");
-	      c.setAutoCommit(false);
-	      System.out.println("Opened database successfully");
-
-	      stmt = c.createStatement();
-	      String sql = "UPDATE COMPANY set SALARY = 25000.00 where ID=1;";
-	      stmt.executeUpdate(sql);
-	      c.commit();
-
-	      ResultSet rs = stmt.executeQuery( "SELECT * FROM COMPANY;" );
-	      while ( rs.next() ) {
-	         int id = rs.getInt("id");
-	         String  name = rs.getString("name");
-	         int age  = rs.getInt("age");
-	         String  address = rs.getString("address");
-	         float salary = rs.getFloat("salary");
-	         System.out.println( "ID = " + id );
-	         System.out.println( "NAME = " + name );
-	         System.out.println( "AGE = " + age );
-	         System.out.println( "ADDRESS = " + address );
-	         System.out.println( "SALARY = " + salary );
-	         System.out.println();
-	      }
-	      rs.close();
-	      stmt.close();
-	      c.close();
-	    } catch ( Exception e ) {
-	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-	      System.exit(0);
-	    }
-	    System.out.println("Operation done successfully");
-	  }
-	}*/
