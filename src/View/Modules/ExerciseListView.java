@@ -96,6 +96,7 @@ public class ExerciseListView extends JPanel {
 
 							break;
 						case NotAcquired:
+							
 							btnNewButton.setBackground(Color.RED);
 							btnNewButton.setForeground(Color.WHITE);
 							break;
@@ -127,9 +128,11 @@ public class ExerciseListView extends JPanel {
 	 * @throws EmptyStringException
 	 * @throws tooLongStringException
 	 * @throws AlreadyInListException
+	 * @throws WrongTeacherException 
+	 * @throws WrongGradeException 
 	 */
 	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException,
-			tooLongStringException, AlreadyInListException {
+			tooLongStringException, AlreadyInListException, WrongGradeException, WrongTeacherException {
 
 		Frame frame = new JFrame();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
@@ -148,12 +151,19 @@ public class ExerciseListView extends JPanel {
 		// crea exo
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+		Exercise exercise3 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
 
-		//
-		child1.createAssay(exercise1);
-		child2.createAssay(exercise2);
+
 		
-	
+		child1.createAssay(exercise1);
+		child1.createAssay(exercise2);
+		child1.createAssay(exercise3);
+		
+
+		teacher1.evaluateAssay(child1.getAssays().get(0), "commentaire", Grade.NotAcquired);
+		teacher1.evaluateAssay(child1.getAssays().get(2), "commentaire", Grade.Acquired);
+		teacher1.evaluateAssay(child1.getAssays().get(1), "commentaire", Grade.InAcquisition);
+
 
 		Main main = null;
 		ExerciseListView view = new ExerciseListView(child1, main);
