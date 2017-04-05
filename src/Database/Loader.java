@@ -1,4 +1,5 @@
 package Database;
+import java.applet.Applet;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.*;
@@ -12,15 +13,16 @@ import Model.Child;
 
 // Chargement des données contenu dans la base de données afin de les utiliser dans l'application
 
-public class Loader {
+public class Loader extends Applet{
 	
 	private DatabaseObj database = new DatabaseObj();
 	private ArrayList<Child> childList = new ArrayList<Child>();
 	
-	public Loader() throws SQLException, MalformedURLException, EmptyStringException, NegativeIntegerException, StringSizeException{
+	public Loader() throws Exception{
 		ResultSet rs = database.selectChildren();
 		while(rs.next()){
-			Child  child = new Child(rs.getString("Firstname_Child"),rs.getString("Lastname_Child"),rs.getInt("Age_Child"),new URL(rs.getString("Pic_Child")));
+			Child  child = new Child(rs.getString("Firstname_Child"),rs.getString("Lastname_Child"),rs.getInt("Age_Child"),new URL(getCodeBase(),rs.getString("Pic_Child")));
+			//img = ImageIO.read(url);
 			childList.add(child);		
 		}
 		for(Child c : childList){
@@ -28,7 +30,7 @@ public class Loader {
 		}
 	}
 	
-	public static void main(String[] args) throws MalformedURLException, SQLException, EmptyStringException, NegativeIntegerException, StringSizeException{
+	public static void main(String[] args) throws Exception{
 		new Loader();
 		
 	}

@@ -54,7 +54,7 @@ public class DatabaseObj {
     /**
      * Créer une table
      */
-    public void createTable(String query) {
+    public void sqlQuery(String query) {
         this.connect();
         if (this.connection != null) {
             try {
