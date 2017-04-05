@@ -151,6 +151,9 @@ public class ExerciseListView extends JPanel {
 
 		//
 		child1.createAssay(exercise1);
+		child2.createAssay(exercise2);
+		
+	
 
 		Main main = null;
 		ExerciseListView view = new ExerciseListView(child1, main);
