@@ -11,8 +11,8 @@ public class Creation {
 				+ "ID_ACTION            INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ "ID_ASSAY             int not null, "
 				+ "COMMAND_ACTION       varchar(50) not null,"
-				+ "D_ACTION             varchar(50) not null,"
-				+ "SPEED_ACTION         varchar(50) not null,"
+				+ "COLOR_ACTION             varchar(50) not null,"
+				+ "SPEED_ACTION         int varchar(50) not null,"
 				+ "TURTLE_ACTION        varchar(50) not null,"
 				+ "FOREIGN KEY(ID_ASSAY) REFERENCES ASSAY(ID_ASSAY));");
 		
@@ -81,7 +81,7 @@ public class Creation {
 				+ "PASS_TEACHER         varchar(80) not null,"
 				+ "PIC_TEACHER          longblob not null);");
 		
-		// INSERT CHILD		
+		// INSERT CHILD	(X100)
 		database.insertChild("Amber","Schultz", 7, "res/Image/child-drawing.jpg");
 		database.insertChild("Tarik","Weaver", 9, "res/Image/child-drawing.jpg");
 		database.insertChild("Edan","Rios", 6, "res/Image/child-drawing.jpg");
@@ -182,8 +182,62 @@ public class Creation {
 		database.insertChild("Leo","Durham", 11, "res/Image/child-drawing.jpg");
 		database.insertChild("Penelope","Chapman", 12, "res/Image/child-drawing.jpg");
 		database.insertChild("Penelope","Jones", 10,"res/Image/child-drawing.jpg");
-		
 		// INSERT EXERCISE		
+		// INSERT PROFESSORS (X4)
+		database.insertProfessors("Sophia", "Aguirre", 53,"PNJ05VMZ4AK","res/Image/child-drawing.jpg");
+		database.insertProfessors("Sasha", "Guerrero", 37,"MIJ36RWS5AL","res/Image/child-drawing.jpg");
+		database.insertProfessors("Oren", "Woodward", 29,"VBE00ZCV2KW","res/Image/child-drawing.jpg");
+		database.insertProfessors("Whoopi", "Lester", 23,"QPG61FUR7EE","res/Image/child-drawing.jpg");
+		
+		// INSERT EXERCICE (X40)
+		
+		database.insertExercise("Exercice1", "mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice2", "lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi.","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice3", "In ornare sagittis felis. Donec tempor, est ac mattis semper,","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice4", "nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse","res/Image/child-drawing.jpg", "normal");
+		database.insertExercise("Exercice5", "id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice6", "vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim.","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice7", "posuere, enim nisl elementum purus, accumsan interdum libero dui nec", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice8", "convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice9", "mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent", "res/Image/child-drawing.jpg","couleur");
+		database.insertExercise("Exercice10", "auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice1", "magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.", "res/Image/child-drawing.jpg","normal");
+		database.insertExercise("Exercice2", "mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a,","res/Image/child-drawing.jpg" ,"vitesse");
+		database.insertExercise("Exercice3", "mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice4", "lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi.","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice5", "In ornare sagittis felis. Donec tempor, est ac mattis semper,","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice6", "nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse","res/Image/child-drawing.jpg", "normal");
+		database.insertExercise("Exercice7", "id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice8", "vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim.","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice9", "posuere, enim nisl elementum purus, accumsan interdum libero dui nec", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice10", "convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice1", "mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent", "res/Image/child-drawing.jpg","couleur");
+		database.insertExercise("Exercice2", "auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice3", "magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.", "res/Image/child-drawing.jpg","normal");
+		database.insertExercise("Exercice4", "mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a,","res/Image/child-drawing.jpg" ,"vitesse");
+		database.insertExercise("Exercice5", "mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice6", "lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi.","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice7", "In ornare sagittis felis. Donec tempor, est ac mattis semper,","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice8", "nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse","res/Image/child-drawing.jpg", "normal");
+		database.insertExercise("Exercice9", "id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice10", "vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim.","res/Image/child-drawing.jpg", "couleur"); 
+		database.insertExercise("Exercice1", "posuere, enim nisl elementum purus, accumsan interdum libero dui nec", "res/Image/child-drawing.jpg","vitesse");
+		database.insertExercise("Exercice2", "convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice3", "mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent", "res/Image/child-drawing.jpg","couleur");
+		database.insertExercise("Exercice4", "auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice5", "magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.", "res/Image/child-drawing.jpg","normal");
+		database.insertExercise("Exercice6", "mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a,","res/Image/child-drawing.jpg" ,"vitesse");
+		database.insertExercise("Exercice7", "mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet,","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice8", "lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi.","res/Image/child-drawing.jpg", "vitesse");
+		database.insertExercise("Exercice9", "In ornare sagittis felis. Donec tempor, est ac mattis semper,","res/Image/child-drawing.jpg", "couleur");
+		database.insertExercise("Exercice10", "nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse","res/Image/child-drawing.jpg", "normal");
+		
+		// INSERT CLASS
+		database.insertSchoolClass("CE1");
+		database.insertSchoolClass("CE2");
+		database.insertSchoolClass("CM1");
+		database.insertSchoolClass("CM2");
+		
 	}
 		
 	

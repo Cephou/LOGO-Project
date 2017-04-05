@@ -1,23 +1,18 @@
 package Database;
 
-import java.net.URL;
+import java.io.File;
 import java.sql.*;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.sqlite.SQLiteDataSource;
+import javax.swing.ImageIcon;
 
-import Model.User;
+import Model.Teacher;
+import Model.Tortue.TortueG;
+
 
 /**
- * Contient le code permettant de creer la base de donnée et de générer le tables définies par le MPD
+ * Contient le code permettant de creer la base de données et de générer le tables définies par le MPD
  */
 
 
@@ -69,10 +64,10 @@ public class DatabaseObj {
  
     /**
      * Insérer un eleve dans la table
-     * @param firstname String
-     * @param lastname String
-     * @param int age
-     * @param url picture
+     * @param firstName String
+     * @param lastName String
+     * @param age
+     * @param picture
      */
     public void insertChild(String firstName, String lastName, int age,String picture) {
         if (this.connection == null) {
@@ -97,8 +92,8 @@ public class DatabaseObj {
     
     /**
      * Insérer un professeur dans la table
-     * @param firstname String
-     * @param lastname String
+     * @param firstName String
+     * @param lastName String
      * @param age int
      * @param password String
      * @param picture url
@@ -123,6 +118,83 @@ public class DatabaseObj {
             Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    /**
+     * Insérer un exercice dans la table
+     * @param title String
+     * @param instruction String
+     * @param imagePath String
+     * @param tortue String
+     */
+    public void insertExercise(String title, String instruction, String imagePath,String tortue) {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL = "INSERT INTO EXERCISE(TITLE_EXERCISE,INSTRUCTION_EXERCISE,PIC_EXERCISE,TURTLE_EXERCISE) VALUES(?,?,?,?);";
+            PreparedStatement ins_stmt = connection.prepareStatement(SQL);
+ 
+            ins_stmt.setString(1, title);
+            ins_stmt.setString(2, instruction);
+            ins_stmt.setString(3, imagePath);
+            ins_stmt.setString(4, tortue);       
+ 
+            ins_stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Insérer une classe dans la table
+     * @param className String
+     */
+    public void insertSchoolClass(String className) {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL = "INSERT INTO SCHOOLCLASS (NAME_CLASS) VALUES(?);";
+            PreparedStatement ins_stmt = connection.prepareStatement(SQL);
+ 
+            ins_stmt.setString(1, className);     
+ 
+            ins_stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Insérer une action dans la table
+     * @param possibleAction String
+     * @param color String
+     * @param speed String
+     * @param tortue String
+     */
+    public void insertAction(String possibleAction, String color, int speed,String tortue) {
+        if (this.connection == null) {
+            this.connect();
+        }
+ 
+        try {
+            String SQL = "INSERT INTO EXERCISE(COMMAND_ACTION,COLOR_ACTION,SPEED_ACTION,TURTLE_ACTION) VALUES(?,?,?,?);";
+            PreparedStatement ins_stmt = connection.prepareStatement(SQL);
+ 
+            ins_stmt.setString(1, possibleAction);
+            ins_stmt.setString(2, color);
+            ins_stmt.setInt(3, speed);
+            ins_stmt.setString(4, tortue);       
+ 
+            ins_stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
  
     /**
      * Select children
