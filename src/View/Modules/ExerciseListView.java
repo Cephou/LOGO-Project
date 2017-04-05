@@ -11,6 +11,8 @@ import Exception.AlreadyInListException;
 import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
+import Exception.WrongGradeException;
+import Exception.WrongTeacherException;
 import Exception.tooLongStringException;
 import Main.Main;
 import Model.Assay;
@@ -38,7 +40,6 @@ import java.awt.Color;
  *
  */
 public class ExerciseListView extends JPanel {
-
 	private SchoolClass classe;
 	private Child child;
 	private ArrayList<Exercise> listExercises;
@@ -66,89 +67,76 @@ public class ExerciseListView extends JPanel {
 		if (listExercises.isEmpty()) {
 			JLabel label = new JLabel("Pas d'exercice disponible.");
 			panelView.add(label);
+		} else {// Il y a des exos, on se charge de les afficher
 
-		}
-
-		else {//Il y a des exos, on se charge de les afficher
-			
-			//creation des boutons, et ajout de leur nom
+			// creation des boutons, et ajout de leur nom
 			for (Exercise exercise : listExercises) {
 				System.out.println(exercise.getTitle());
 				JButton btnNewButton = new JButton(exercise.getTitle());
 				btnNewButton.addMouseListener(new ExerciseVisualizationSelection(exercise, main));
-				
-				//coloration en fonction de la tentative eleve
-				for (Assay assay : assays){
-					//on compare si la tentative correspond ben a cet exercice
-					if(assay.getExercise().equals(exercise)){
 
-						//on change la couleur du bouton en focntion du grade
+				// coloration en fonction de la tentative eleve
+				for (Assay assay : assays) {
+
+					// on compare si la tentative correspond ben a cet exercice
+					if (assay.getExercise().equals(exercise)) {
+
+						// on change la couleur du bouton en focntion du grade
+						System.out.println(assay.getGrade());
 						switch (assay.getGrade()) {
+
 						case Acquired:
-							
 							System.out.println();
 							btnNewButton.setBackground(Color.GREEN);
-							btnNewButton.setForeground(Color.GREEN);
+							btnNewButton.setForeground(Color.WHITE);
 							break;
 						case InAcquisition:
 							btnNewButton.setBackground(Color.YELLOW);
-							btnNewButton.setForeground(Color.YELLOW);
-							
+							btnNewButton.setForeground(Color.WHITE);
+
 							break;
 						case NotAcquired:
 							btnNewButton.setBackground(Color.RED);
-							btnNewButton.setForeground(Color.RED);
+							btnNewButton.setForeground(Color.WHITE);
 							break;
 						case NotGraded:
 							btnNewButton.setBackground(Color.CYAN);
-							btnNewButton.setForeground(Color.CYAN);
+
 							break;
 						default:
 							break;
 						}
-					};
-					
+					} else {
+						System.out.println("pas le meme exo");
+					}
+					;
 				}
-				
-				
-				
-				
-				//ajout de l'image de l'exercice en arriere plan
-				
-				//ajout des listenner
-				
-				//btnNewButton.setBackground();
-				
-				panelView.add(btnNewButton);
-				
-			}
-			
-			
-		}
 
+				panelView.add(btnNewButton);
+			}
+		}
 	}
 
 	public JScrollPane getExerciseListView() {
 		return scrollPane;
 	}
-
 	/**
 	 * @param args
 	 * @throws StringSizeException
 	 * @throws NegativeIntegerException
 	 * @throws EmptyStringException
 	 * @throws tooLongStringException
-	 * @throws AlreadyInListException 
+	 * @throws AlreadyInListException
 	 */
-	public static void main(String[] args)
-			throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
-	
+	public static void main(String[] args) throws EmptyStringException, NegativeIntegerException, StringSizeException,
+			tooLongStringException, AlreadyInListException {
 
 		Frame frame = new JFrame();
 		Teacher teacher1 = new Teacher("Patrick", "Girard", 25, null, "azerty");
 		Child child1 = new Child("Alexis", "Amiand", 12, null);
 		Child child2 = new Child("Laurent", "L'abricot", 13, null);
 		Child child3 = new Child("Severin", "Chargeur", 11, null);
+
 		// Create classes
 		SchoolClass classe1 = new SchoolClass("CE1", teacher1);
 		SchoolClass classe2 = new SchoolClass("CE2", teacher1);
@@ -160,6 +148,9 @@ public class ExerciseListView extends JPanel {
 		// crea exo
 		Exercise exercise1 = new Exercise("Exercice1", "Tracer des traits", null, teacher1, null);
 		Exercise exercise2 = new Exercise("Exercice2", "Tracer des traits", null, teacher1, null);
+
+		//
+		child1.createAssay(exercise1);
 
 		Main main = null;
 		ExerciseListView view = new ExerciseListView(child1, main);
