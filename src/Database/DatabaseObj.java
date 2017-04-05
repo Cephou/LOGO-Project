@@ -92,7 +92,7 @@ public class DatabaseObj {
      * @param password String
      * @param picture url
      */
-    public void insertProfessor(String firstName, String lastName, int age, String password, String picture) {
+    public void insertProfessors(String firstName, String lastName, int age, String password, String picture) {
         if (this.connection == null) {
             this.connect();
         }
