@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.File;
 import java.net.URL;
 
 import Exception.EmptyStringException;
@@ -14,7 +15,7 @@ public abstract class User {
 	protected String firstName; // The first name of the user
 	protected String lastName; // The last name of the user
 	protected int age; // The age of the user
-	protected URL picture; // The icon associated to the user
+	protected File picture; // The icon associated to the user
 
 	/**
 	 * Constructor of the class User.
@@ -32,7 +33,7 @@ public abstract class User {
 	 * @throws StringSizeException
 	 */
 	public User(String pFirstName, String pLastName, int pAge,
-				URL pPicture) throws EmptyStringException,
+				File pPicture) throws EmptyStringException,
 			NegativeIntegerException, StringSizeException {
 
 		this.setFirstName(pFirstName);
@@ -108,7 +109,7 @@ public abstract class User {
 
 	//////////////////// PICTURE ////////////////////
 
-	public URL getPicture() {
+	public File getPicture() {
 		return picture;
 	}
 
@@ -116,7 +117,7 @@ public abstract class User {
 	 * TODO CONTRAINTES ??????
 	 * @param picture
 	 */
-	protected void setPicture(URL picture) {
+	protected void setPicture(File picture) {
 		this.picture = picture;
 	}
 

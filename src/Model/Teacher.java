@@ -5,6 +5,7 @@ import Model.Tortue.TortueG;
 
 import javax.swing.*;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -33,7 +34,7 @@ public class Teacher extends User {
      * @throws NegativeIntegerException 
      * @throws EmptyStringException 
      */
-    public Teacher(String pFirstName, String pLastName, int pAge, URL pPicture, String pPassword) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+    public Teacher(String pFirstName, String pLastName, int pAge, File pPicture, String pPassword) throws EmptyStringException, NegativeIntegerException, StringSizeException {
         super(pFirstName, pLastName,  pAge, pPicture);
         this.setAge(pAge);
         this.setPassword(pPassword);

@@ -4,6 +4,7 @@ import Exception.EmptyStringException;
 import Exception.NegativeIntegerException;
 import Exception.StringSizeException;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class Child extends User {
 	 * 
 	 */
 	public Child(String pFirstName, String pLastName, int pAge,
-                 URL pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
+                 File pPicture) throws EmptyStringException, NegativeIntegerException, StringSizeException {
         super(pFirstName, pLastName, pAge, pPicture);
         assays = new ArrayList<Assay>();
     }
