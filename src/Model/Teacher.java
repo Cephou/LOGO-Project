@@ -110,5 +110,42 @@ public class Teacher extends User {
     	Exercise newExercise = new Exercise(title, instruction, icon, this, turtle);
     	schoolClass.addExercice(newExercise);    	
     }
+    
+    
+    /**
+	 * Evaluer une tentative Une evaluation de tentive est r�alis�e par un
+	 * professeur Il laisse un petit texte (le commentaire) et une note (un des
+	 * 3 smileys disponible). Cette action ne peut etre effectu�e qu'une et
+	 * une seule fois par tentative. La tentative d'un eleve ne peut �tre
+	 * �valu�e que par son professeur.
+	 * 
+	 * @param teacher
+	 *            le professeur qui r�alise l'�valuation (on restreint
+	 *            l'avluation d'un eleve a un professeur)
+	 * @param c
+	 *            le commentaire � laisser, il peut �tre vide.
+	 * @param g
+	 *            la note � laisser, la note a laisser ne pas etre "�
+	 *            �valuer"
+	 * @throws WrongGradeException
+	 * @throws WrongTeacherException
+     * @throws tooLongStringException 
+	 */
+	private void evaluateAssay(Assay assay, String comment, Grade grade)
+			throws WrongGradeException, WrongTeacherException, tooLongStringException {
+
+		if (this == assay.getChild().getSchoolClass().getTeacher()) {
+			if (grade != Grade.NotGraded) {
+				assay.setComment(comment);
+				assay.setGrade(grade);
+			} else {
+				throw new WrongGradeException();
+			}
+
+		} else {
+			throw new WrongTeacherException();
+		}
+		// TODO Else
+	}
 
 }

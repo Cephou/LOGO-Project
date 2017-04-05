@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import Exception.WrongGradeException;
 import Exception.WrongTeacherException;
+import Exception.tooLongStringException;
 
 /**
  * Classe tentative Cette classe permet de stocker pour chaque eleve et pour
@@ -22,7 +23,7 @@ import Exception.WrongTeacherException;
  * replay(). Cette fonction permet de rejouer une tentative.
  *
  */
-public class Assay {
+public  class Assay {
 	private ArrayList<Action> listAction; // liste des actions ï¿½ rï¿½alisï¿½es
 											// par
 											// l'eleves
@@ -45,6 +46,7 @@ public class Assay {
 		this.exercise = exercise;
 		listAction = new ArrayList<Action>();
 		this.grade = Grade.NotGraded;
+		this.comment="";
 
 	}
 
@@ -58,40 +60,7 @@ public class Assay {
 		listAction.add(a);
 	}
 
-	/**
-	 * Evaluer une tentative Une evaluation de tentive est rï¿½alisï¿½e par un
-	 * professeur Il laisse un petit texte (le commentaire) et une note (un des
-	 * 3 smileys disponible). Cette action ne peut etre effectuï¿½e qu'une et
-	 * une seule fois par tentative. La tentative d'un eleve ne peut ï¿½tre
-	 * ï¿½valuï¿½e que par son professeur.
-	 * 
-	 * @param teacher
-	 *            le professeur qui rï¿½alise l'ï¿½valuation (on restreint
-	 *            l'avluation d'un eleve a un professeur)
-	 * @param c
-	 *            le commentaire ï¿½ laisser, il peut ï¿½tre vide.
-	 * @param g
-	 *            la note ï¿½ laisser, la note a laisser ne pas etre "ï¿½
-	 *            ï¿½valuer"
-	 * @throws WrongGradeException
-	 * @throws WrongTeacherException
-	 */
-	public void evaluateAssay(Teacher teacher, String comment, Grade grade)
-			throws WrongGradeException, WrongTeacherException {
-
-		if (teacher == child.getSchoolClass().getTeacher()) {
-			if (grade != Grade.NotGraded) {
-				this.comment = comment;
-				this.grade = grade;
-			} else {
-				throw new WrongGradeException();
-			}
-
-		} else {
-			throw new WrongTeacherException();
-		}
-		// TODO Else
-	}
+	
 
 	/**
 	 * Methode permettant de rejouer la liste d'actions enregistrï¿½es On
@@ -120,6 +89,32 @@ public class Assay {
 
 	public Grade getGrade() {
 		return grade;
+	}
+
+	/*
+	 * ecriture d'un comentaire
+	 * Un commentaire est un string e taille maximal 400
+	 * Un commentaire peut etre vide
+	 * 
+	 * @param comment le commentaire à écrire
+	 */
+	public void setComment(String comment) throws tooLongStringException {
+		if (comment.length()>400){
+			throw new tooLongStringException();
+		}
+		else{
+			this.comment=comment;
+		}
+		
+	}
+
+	/*
+	 * Methode pour noter un eleve.
+	 * Les seules notes disponibles sont dy type Grade
+	 */
+	public void setGrade(Grade grade) {
+		this.grade = grade;
+		
 	}
 
 }
