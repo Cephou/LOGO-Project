@@ -1,12 +1,23 @@
 package Database;
 
+import java.net.URL;
 import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.sqlite.SQLiteDataSource;
+
+import Model.User;
 
 /**
- * Contient le code permettant de creer la base de données et de générer le tables définies par le MPD
+ * Contient le code permettant de creer la base de donnée et de générer le tables définies par le MPD
  */
 
 
@@ -58,10 +69,10 @@ public class DatabaseObj {
  
     /**
      * Insérer un eleve dans la table
-     * @param firstName String
-     * @param lastName String
-     * @param age
-     * @param picture
+     * @param firstname String
+     * @param lastname String
+     * @param int age
+     * @param url picture
      */
     public void insertChild(String firstName, String lastName, int age,String picture) {
         if (this.connection == null) {
@@ -86,8 +97,8 @@ public class DatabaseObj {
     
     /**
      * Insérer un professeur dans la table
-     * @param firstName String
-     * @param lastName String
+     * @param firstname String
+     * @param lastname String
      * @param age int
      * @param password String
      * @param picture url

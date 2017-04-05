@@ -17,10 +17,8 @@ import Model.*;
 public class Recorder {
 
 	private DatabaseObj database = new DatabaseObj();
-	private ArrayList<Child> childList = new ArrayList<Child>();
-	private
 
-	public Recorder() {
+	public Recorder () throws Exception{
 		//drop all the tables
 		database.sqlQuery("drop table if exists ACTION;"
 				+ "drop table if exists ASSAY;"
@@ -33,6 +31,14 @@ public class Recorder {
 				+ "drop table if exists TEACHER;");
 		
 		//insert all the data again.
+		/*
+		 * data = Main.getSchoolClasses()
+		 * while (data.next()) {
+		 * 	database.sqlQuery("INSERT INTO SCHOOLCLASS(NAME_CLASS) VALUES(?);";
+		 * 	
+            
+		 * }
+		 */
 		
 	}
 
