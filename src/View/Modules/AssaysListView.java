@@ -26,6 +26,7 @@ public class AssaysListView {
         AssaysPanel.setSize(50, 200);
         for (Assay assay : child.getAssays()) {
             createAssayButton(assay, i);
+            i++;
         }
 
     }
