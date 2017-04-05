@@ -27,7 +27,12 @@ public class Recorder {
 		//insert everything again 
 		/*ArrayList<SchoolClass> data = main.getSchoolClasses(); 
 		 *for(SchoolClass c : data) { 
-		 *	database.sqlQuery("INSERT A BALLE!!"); 
+		 *	database.sqlQuery("INSERT LES CLASSES A BALLE!!");
+		 *		for(ChildList d : data.ChildList) {
+		 *			database.sqlQuery("INSERT LES CHILDREN A BALLE!!");
+		 *		}
+		 *		database.sqlQuery("INSERT LE PROF A BALLE");
+		 *	}
 		 *} 
 		 */
 	}
