@@ -41,15 +41,11 @@ public class SubMainChild extends Main {
 		this.layout = layout;
 		this.schoolClasses = schoolClasses;
 
-		// Crï¿½e un nouveau panel d'ï¿½lï¿½ve avec la classe
-		ChildHomeView childHome = new ChildHomeView();
-		ExerciseListView exerciseList = new ExerciseListView(child, this);
-		JPanel childHomePanel = childHome.getChildHomeView();
-		childHomePanel.add(exerciseList);
-		// Change le body avec le nouveau panel d'exercices
-		layout.changeBodyContent(childHomePanel); 
+		ChildHomeView childHome = new ChildHomeView(child, this);
+		layout.loadChildHomeView(childHome);
+		
 		changeHeader(child, "Ma liste d'exercices");
-		//ajout des listenner
+
 	}
 	
 	public void changeHeader(User user, String pageTitle) {
@@ -64,8 +60,8 @@ public class SubMainChild extends Main {
 		// Générer la vue exercice
 		ExerciseVisualizationView exerciseVisualisation = new ExerciseVisualizationView(exercise);
 		JPanel exerciseVisualisationPanel = exerciseVisualisation.getExerciseVisualisation();
-		// Ajoute la vue
-		layout.addToBody(exerciseVisualisationPanel);
+		layout.getChildHomeView().setCenterPart(exerciseVisualisationPanel);
+		layout.refresh();
 	}
 
 }

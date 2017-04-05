@@ -1,6 +1,6 @@
 package View;
+import View.Child.ChildHomeView;
 import View.Login.ClassLoginView;
-import View.Modules.Body;
 import View.Modules.Header;
 
 import java.awt.EventQueue;
@@ -24,8 +24,8 @@ public class GeneralLayout {
 
 	private JFrame frame;
 	private Header header;
-	private Body body;
-	private JPanel footer;
+	private JPanel body, footer;
+	private ChildHomeView childHomeView;
 
 	/**
 	 * Create the application.
@@ -41,13 +41,13 @@ public class GeneralLayout {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 801, 466);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		frame.getContentPane().setLayout(new BorderLayout());
 		
 		header = new Header();
 		frame.getContentPane().add(header.getHeader(), BorderLayout.NORTH);
 		
-		body = new Body();		
-		frame.getContentPane().add(body.getBody(), BorderLayout.CENTER);
+		body = new JPanel();
+		frame.getContentPane().add(body, BorderLayout.CENTER);
 		
 		footer = new JPanel();
 		frame.getContentPane().add(footer, BorderLayout.SOUTH);
@@ -61,17 +61,20 @@ public class GeneralLayout {
 	 */
 	public void changeBodyContent(JPanel object) {
 		body.removeAll(); // Vide le contenu existant
-		body.add(object); // Ajoute le nouveau contenu
+		body.add(object, BorderLayout.WEST); // Ajoute le nouveau contenu
+		refresh();
+	}
+	
+	public void loadChildHomeView(ChildHomeView pchildHomeView) {
+		childHomeView = pchildHomeView;
+		changeBodyContent(childHomeView.getChildHomeView());
+	}
+
+	public void refresh() {
 		frame.setVisible(false);
 		frame.setVisible(true);
 	}
-	
-	public void addToBody(JPanel panel) {
-		body.add(panel);
-		frame.setVisible(false);
-		frame.setVisible(true);
-	}
-	
+
 	public Header getHeader() {
 		return header;
 	}
@@ -79,4 +82,9 @@ public class GeneralLayout {
 	public JFrame getFrame() {
 		return frame;
 	}
+
+	public ChildHomeView getChildHomeView() {
+		return childHomeView;
+	}
+
 }
