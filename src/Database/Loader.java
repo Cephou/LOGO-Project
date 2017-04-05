@@ -23,9 +23,10 @@ public class Loader{
 		ResultSet rs = database.selectChildren();
 		while(rs.next()){
 			Child  child = new Child(rs.getString("Firstname_Child"),rs.getString("Lastname_Child"),rs.getInt("Age_Child"),new File(rs.getString("Pic_Child")));
-			//img = ImageIO.read(url);
-			childList.add(child);		
-		
+			childList.add(child);				
+		}
+		for (Child c : childList){
+			System.out.println(c.getFirstName());
 		}
 	}
 	
