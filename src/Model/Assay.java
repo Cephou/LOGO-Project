@@ -3,13 +3,11 @@
  */
 package Model;
 
-import Model.Tortue.TortueG;
-
-
-import java.util.ArrayList;
-
 import Exception.WrongGradeException;
 import Exception.WrongTeacherException;
+import Model.Tortue.TortueG;
+
+import java.util.ArrayList;
 
 /**
  * Classe tentative Cette classe permet de stocker pour chaque eleve et pour
@@ -37,8 +35,8 @@ public class Assay {
 	 * 
 	 * @param child
 	 *            l'enfant qui effectue la tentative
-	 * @param exercice
-	 *            l'exercice sur le quel la tentative est exerc�e
+     * @param exercise
+     *            l'exercice sur le quel la tentative est exerc�e
 	 */
 	public Assay(Child child, Exercise exercise) {
 		this.child = child;
@@ -68,9 +66,7 @@ public class Assay {
 	 * @param teacher
 	 *            le professeur qui r�alise l'�valuation (on restreint
 	 *            l'avluation d'un eleve a un professeur)
-	 * @param c
 	 *            le commentaire � laisser, il peut �tre vide.
-	 * @param g
 	 *            la note � laisser, la note a laisser ne pas etre "�
 	 *            �valuer"
 	 * @throws WrongGradeException
@@ -121,5 +117,9 @@ public class Assay {
 	public Grade getGrade() {
 		return grade;
 	}
+
+    public ArrayList<Action> getListAction() {
+        return listAction;
+    }
 
 }

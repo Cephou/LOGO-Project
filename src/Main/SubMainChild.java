@@ -1,21 +1,14 @@
 package Main;
-import java.util.ArrayList;
 
-import javax.swing.JPanel;
-
-import Exception.AlreadyInListException;
-import Exception.EmptyStringException;
-import Exception.NegativeIntegerException;
-import Exception.StringSizeException;
-import Exception.tooLongStringException;
-import Model.Child;
-import Model.Exercise;
-import Model.SchoolClass;
-import Model.User;
-import View.GeneralLayout;
+import Exception.*;
+import Model.*;
 import View.Child.ChildHomeView;
 import View.Child.ExerciseVisualizationView;
+import View.GeneralLayout;
 import View.Modules.ExerciseListView;
+
+import javax.swing.*;
+import java.util.ArrayList;
 
 public class SubMainChild extends Main {
 	/**
@@ -57,15 +50,20 @@ public class SubMainChild extends Main {
 	}
 
 	/**
-	 * Génère la vue rapide de l'exercice
+	 * Gï¿½nï¿½re la vue rapide de l'exercice
 	 * @param exercise
 	 */
 	public void generateExerciseVisualisation(Exercise exercise) {
-		// Générer la vue exercice
+		// Gï¿½nï¿½rer la vue exercice
 		ExerciseVisualizationView exerciseVisualisation = new ExerciseVisualizationView(exercise);
 		JPanel exerciseVisualisationPanel = exerciseVisualisation.getExerciseVisualisation();
 		// Ajoute la vue
 		layout.addToBody(exerciseVisualisationPanel);
+	}
+
+
+	public void selectAssay(Assay assay) {
+
 	}
 
 }
