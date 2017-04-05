@@ -96,6 +96,10 @@ public class Loader{
 		}
 	}
 	
+	public ArrayList<SchoolClass> getSchoolClassList(){
+		return schoolClassList;
+	}
+	
 	public static void main(String[] args) throws Exception{
 		Loader loader = new Loader();
 		loader.displayFunction();
