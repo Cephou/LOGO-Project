@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Contient le code permettant de creer la base de donnée et de générer le tables définies par le MPD
+ * Contient le code permettant de creer la base de données et de générer le tables définies par le MPD
  */
 
 
