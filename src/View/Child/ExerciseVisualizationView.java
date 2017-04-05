@@ -3,6 +3,7 @@ package View.Child;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import Main.SubMainChild;
 import Model.Child;
 import Model.Exercise;
 
@@ -21,10 +22,16 @@ public class ExerciseVisualizationView {
      *
      * @param exercise est l'exercice sélectionné par l'enfant
      */
-    public ExerciseVisualizationView(Exercise exercise) {
+    public ExerciseVisualizationView(Exercise exercise, Child child, SubMainChild main) {
     	exerciseVisualisation = new JPanel();
-    	JButton test = new JButton(exercise.getTitle());
-    	exerciseVisualisation.add(test);
+    	if(child.hasSuceededExercise(exercise)) {
+    		JButton replay = new JButton("Rejouer");
+        	exerciseVisualisation.add(replay);
+    	} else {
+    		JButton play = new JButton("Jouer");
+    		exerciseVisualisation.add(play);
+    	}
+    	
     }
 
 	public JPanel getExerciseVisualisation() {

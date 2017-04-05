@@ -73,5 +73,20 @@ public class Child extends User {
 	public void setSchoolClass(SchoolClass schoolClass) {
 		this.schoolClass = schoolClass;
 	}
+	
+	/**
+	 * 
+	 * @param exercise
+	 * @return
+	 */
+
+	public boolean hasSuceededExercise(Exercise exercise) {
+		for(Assay assay : assays) {
+			if(assay.getGrade().equals(Grade.Acquired)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
