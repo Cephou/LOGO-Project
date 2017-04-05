@@ -1,12 +1,54 @@
 package Database;
 
+import java.applet.Applet;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import Exception.EmptyStringException;
+import Exception.NegativeIntegerException;
+import Exception.StringSizeException;
+import Model.*;
+
 // Enregistrement dans la base de données 
 
 public class Recorder {
 
-	/*Exemple de syntaxe op�ration UPDATE SQLite/JDBC
-	 * 
-	 * import java.sql.*;
+	private DatabaseObj database = new DatabaseObj();
+	private ArrayList<Child> childList = new ArrayList<Child>();
+	private
+
+	public Recorder() {
+		//drop all the tables
+		database.sqlQuery("drop table if exists ACTION;"
+				+ "drop table if exists ASSAY;"
+				+ "drop table if exists CHILD;"
+				+ "drop table if exists COMPLETE;"
+				+ "drop table if exists EXERCISE;"
+				+ "drop table if exists IS_AVAILABLE;"
+				+ "drop table if exists RULE;"
+				+ "drop table if exists SCHOOLCLASS;"
+				+ "drop table if exists TEACHER;");
+		
+		//insert all the data again.
+		
+	}
+
+	public static void main(String[] args) throws Exception {
+		new Recorder();
+	}
+}
+
+
+
+
+
+
+/*Exemple de syntaxe op�ration UPDATE SQLite/JDBC
+ * 
+ * import java.sql.*;
 
 	public class SQLiteJDBC
 	{
@@ -49,5 +91,3 @@ public class Recorder {
 	    System.out.println("Operation done successfully");
 	  }
 	}*/
-	
-}
