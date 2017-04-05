@@ -85,16 +85,23 @@ public class ExerciseListView extends JPanel {
 						//on change la couleur du bouton en focntion du grade
 						switch (assay.getGrade()) {
 						case Acquired:
+							
+							System.out.println();
 							btnNewButton.setBackground(Color.GREEN);
+							btnNewButton.setForeground(Color.GREEN);
 							break;
 						case InAcquisition:
 							btnNewButton.setBackground(Color.YELLOW);
+							btnNewButton.setForeground(Color.YELLOW);
+							
 							break;
 						case NotAcquired:
 							btnNewButton.setBackground(Color.RED);
+							btnNewButton.setForeground(Color.RED);
 							break;
 						case NotGraded:
 							btnNewButton.setBackground(Color.CYAN);
+							btnNewButton.setForeground(Color.CYAN);
 							break;
 						default:
 							break;
