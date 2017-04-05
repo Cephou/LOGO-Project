@@ -41,7 +41,7 @@ public class AssaysListView {
 
     public void createAssayButton(Assay assay, int i) {
         JButton assayBtn = new JButton("Tentative " + i);
-        assayBtn.addMouseListener(new AssaysListSelection(assay, main)); // Contrôleur
+        assayBtn.addMouseListener(new AssaysListSelection(assay, main));
         AssaysPanel.add(assayBtn);
     }
 
