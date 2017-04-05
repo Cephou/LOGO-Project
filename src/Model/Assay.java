@@ -90,7 +90,7 @@ public class Assay {
 	 * suppose que la position initiale de la tortue est toujours la m�me.
 	 * TODO Pas plus de controle sur cette fonction ?
 	 *
-	 * @param tortue
+	 * @param tortueG
 	 *            la tortue (G, Rapide, Couleur) utilis�e par l'eleves lors de
 	 *            sa tentative
 	 */
