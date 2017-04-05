@@ -58,8 +58,8 @@ public class SubMainChild extends Main {
 	 */
 	public void generateExerciseVisualisation(Exercise exercise) {
 		// Générer la vue exercice
-		ExerciseVisualizationView exerciseVisualisation = new ExerciseVisualizationView(exercise);
-		JPanel exerciseVisualisationPanel = exerciseVisualisation.getExerciseVisualisation();
+		ExerciseVisualizationView eV = new ExerciseVisualizationView(exercise, child, this);
+		JPanel exerciseVisualisationPanel = eV.getExerciseVisualisation();
 		layout.getChildHomeView().setCenterPart(exerciseVisualisationPanel);
 		layout.refresh();
 	}
