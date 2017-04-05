@@ -93,6 +93,8 @@ public class Teacher extends User {
         else classes.add(schoolClass);
     }
     
+    ////////////EXERCICE ET ASSAYS////////////////////////
+    
     /**
      * createExercise allows a teacher to add a new exercise.
      * The function will also add the exercise in the list of exercise of a given class
@@ -131,7 +133,7 @@ public class Teacher extends User {
 	 * @throws WrongTeacherException
      * @throws tooLongStringException 
 	 */
-	private void evaluateAssay(Assay assay, String comment, Grade grade)
+public void evaluateAssay(Assay assay, String comment, Grade grade)
 			throws WrongGradeException, WrongTeacherException, tooLongStringException {
 
 		if (this == assay.getChild().getSchoolClass().getTeacher()) {
