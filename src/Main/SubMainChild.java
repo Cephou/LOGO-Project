@@ -65,9 +65,7 @@ public class SubMainChild extends Main {
 		ExerciseVisualizationView exerciseVisualisation = new ExerciseVisualizationView(exercise);
 		JPanel exerciseVisualisationPanel = exerciseVisualisation.getExerciseVisualisation();
 		// Ajoute la vue
-		layout.getBody().add(exerciseVisualisationPanel);
-		layout.getFrame().setVisible(false);
-		layout.getFrame().setVisible(true);
+		layout.addToBody(exerciseVisualisationPanel);
 	}
 
 }

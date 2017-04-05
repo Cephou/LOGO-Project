@@ -23,7 +23,7 @@ public class ExerciseVisualizationView {
      */
     public ExerciseVisualizationView(Exercise exercise) {
     	exerciseVisualisation = new JPanel();
-    	JButton test = new JButton("test");
+    	JButton test = new JButton(exercise.getTitle());
     	exerciseVisualisation.add(test);
     }
 

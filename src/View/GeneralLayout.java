@@ -1,5 +1,6 @@
 package View;
 import View.Login.ClassLoginView;
+import View.Modules.Body;
 import View.Modules.Header;
 
 import java.awt.EventQueue;
@@ -23,7 +24,8 @@ public class GeneralLayout {
 
 	private JFrame frame;
 	private Header header;
-	private JPanel body, footer;
+	private Body body;
+	private JPanel footer;
 
 	/**
 	 * Create the application.
@@ -44,9 +46,8 @@ public class GeneralLayout {
 		header = new Header();
 		frame.getContentPane().add(header.getHeader(), BorderLayout.NORTH);
 		
-		body = new JPanel();		
-		frame.getContentPane().add(body, BorderLayout.CENTER);
-		body.setLayout(new BorderLayout(0, 0));
+		body = new Body();		
+		frame.getContentPane().add(body.getBody(), BorderLayout.CENTER);
 		
 		footer = new JPanel();
 		frame.getContentPane().add(footer, BorderLayout.SOUTH);
@@ -60,17 +61,19 @@ public class GeneralLayout {
 	 */
 	public void changeBodyContent(JPanel object) {
 		body.removeAll(); // Vide le contenu existant
-		body.add(object, BorderLayout.CENTER); // Ajoute le nouveau contenu
+		body.add(object); // Ajoute le nouveau contenu
+		frame.setVisible(false);
+		frame.setVisible(true);
+	}
+	
+	public void addToBody(JPanel panel) {
+		body.add(panel);
 		frame.setVisible(false);
 		frame.setVisible(true);
 	}
 	
 	public Header getHeader() {
 		return header;
-	}
-
-	public JPanel getBody() {
-		return body;
 	}
 
 	public JFrame getFrame() {
