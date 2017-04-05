@@ -71,7 +71,7 @@ public class Loader{
 		//======================== select schoolclass ========================
 		ResultSet rsSchool = database.select("SELECT * FROM SCHOOLCLASS");
 		while(rsSchool.next()){
-			SchoolClass schoolClass = new SchoolClass(rsSchool.getString("NAME_CLASS"),teacherList.get(compt2/10));
+			SchoolClass schoolClass = new SchoolClass(rsSchool.getString("NAME_CLASS"),teacherList.get(compt2));
 			compt2++;
 			schoolClassList.add(schoolClass);
 		}
