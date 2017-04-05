@@ -1,16 +1,10 @@
-/**
- * 
- */
 package Model;
-
-import Model.Tortue.TortueG;
-
-
-import java.util.ArrayList;
 
 import Exception.WrongGradeException;
 import Exception.WrongTeacherException;
-import Exception.tooLongStringException;
+import Model.Tortue.TortueG;
+
+import java.util.ArrayList;
 
 /**
  * Classe tentative Cette classe permet de stocker pour chaque eleve et pour
@@ -23,10 +17,10 @@ import Exception.tooLongStringException;
  * replay(). Cette fonction permet de rejouer une tentative.
  *
  */
-public  class Assay {
+public class Assay {
 	private ArrayList<Action> listAction; // liste des actions ï¿½ rï¿½alisï¿½es
-											// par
-											// l'eleves
+	// par
+	// l'eleves
 	private Child child; // enfant qui effectue la tentative
 	private Exercise exercise; // exercice associï¿½ ï¿½ cette tentaive
 	private String comment; // commentaire laisser par le professeur
@@ -35,10 +29,10 @@ public  class Assay {
 	/**
 	 * Constructeur de la classe Tentative Lors de la crï¿½ation d'une
 	 * tentative, cette derniere prend le statut "non notï¿½".
-	 * 
+	 *
 	 * @param child
 	 *            l'enfant qui effectue la tentative
-	 * @param exercice
+	 * @param exercise
 	 *            l'exercice sur le quel la tentative est exercï¿½e
 	 */
 	public Assay(Child child, Exercise exercise) {
@@ -46,7 +40,6 @@ public  class Assay {
 		this.exercise = exercise;
 		listAction = new ArrayList<Action>();
 		this.grade = Grade.NotGraded;
-		this.comment="";
 
 	}
 
@@ -60,13 +53,43 @@ public  class Assay {
 		listAction.add(a);
 	}
 
-	
+	/**
+	 * Evaluer une tentative Une evaluation de tentive est rï¿½alisï¿½e par un
+	 * professeur Il laisse un petit texte (le commentaire) et une note (un des
+	 * 3 smileys disponible). Cette action ne peut etre effectuï¿½e qu'une et
+	 * une seule fois par tentative. La tentative d'un eleve ne peut ï¿½tre
+	 * ï¿½valuï¿½e que par son professeur.
+	 *
+	 * @param teacher le professeur qui rï¿½alise l'ï¿½valuation (on restreint
+	 *                l'avluation d'un eleve a un professeur)
+	 *                le commentaire ï¿½ laisser, il peut ï¿½tre vide.
+	 *                la note ï¿½ laisser, la note a laisser ne pas etre "ï¿½
+	 *                ï¿½valuer"
+	 * @throws WrongGradeException
+	 * @throws WrongTeacherException
+	 */
+	public void evaluateAssay(Teacher teacher, String comment, Grade grade)
+			throws WrongGradeException, WrongTeacherException {
+
+		if (teacher == child.getSchoolClass().getTeacher()) {
+			if (grade != Grade.NotGraded) {
+				this.comment = comment;
+				this.grade = grade;
+			} else {
+				throw new WrongGradeException();
+			}
+
+		} else {
+			throw new WrongTeacherException();
+		}
+		// TODO Else
+	}
 
 	/**
 	 * Methode permettant de rejouer la liste d'actions enregistrï¿½es On
 	 * suppose que la position initiale de la tortue est toujours la mï¿½me.
 	 * TODO Pas plus de controle sur cette fonction ?
-	 * 
+	 *
 	 * @param tortue
 	 *            la tortue (G, Rapide, Couleur) utilisï¿½e par l'eleves lors de
 	 *            sa tentative
@@ -79,42 +102,20 @@ public  class Assay {
 
 	public Exercise getExercise() {
 		return exercise;
-		
+
 	}
 
 	public Child getChild() {
 		return child;
-		
+
 	}
 
 	public Grade getGrade() {
 		return grade;
 	}
 
-	/*
-	 * ecriture d'un comentaire
-	 * Un commentaire est un string e taille maximal 400
-	 * Un commentaire peut etre vide
-	 * 
-	 * @param comment le commentaire à écrire
-	 */
-	public void setComment(String comment) throws tooLongStringException {
-		if (comment.length()>400){
-			throw new tooLongStringException();
-		}
-		else{
-			this.comment=comment;
-		}
-		
-	}
-
-	/*
-	 * Methode pour noter un eleve.
-	 * Les seules notes disponibles sont dy type Grade
-	 */
-	public void setGrade(Grade grade) {
-		this.grade = grade;
-		
+	public ArrayList<Action> getListAction() {
+		return listAction;
 	}
 
 }
