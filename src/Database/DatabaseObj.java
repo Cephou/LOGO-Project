@@ -104,7 +104,7 @@ public class DatabaseObj {
         }
  
         try {
-            String SQL = "INSERT INTO TEACHER(Fisrtname_Teaher,Lastname_Teacher,Age_Tacher,Pass_Teacher,Pic_teacher) VALUES(?,?,?,?,?);";
+            String SQL = "INSERT INTO TEACHER(Firstname_Teacher,Lastname_Teacher,Age_Teacher,Pass_Teacher,Pic_teacher) VALUES(?,?,?,?,?);";
             PreparedStatement ins_stmt = connection.prepareStatement(SQL);
  
             ins_stmt.setString(1, firstName);
@@ -197,15 +197,15 @@ public class DatabaseObj {
     
  
     /**
-     * Select children
+     * Select
      */
-    public ResultSet selectChildren() {
+    public ResultSet select(String query) {
         if (this.connection == null) {
             this.connect();
         }
  
         try {
-            String SQL="SELECT * FROM CHILD";
+            String SQL=query;
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQL);
             return rs;
@@ -216,44 +216,5 @@ public class DatabaseObj {
         
     } 
     
-    /**
-     * Select a professor
-     */
-    public  ResultSet selectProfessors() {
-        if (this.connection == null) {
-            this.connect();
-        }
- 
-        try {
-            String SQL="SELECT * FROM TEACHER";
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(SQL);
-            return rs;
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
- 
-    } 
-    
-    /**
-     * Select a class
-     */
-    public ResultSet selectSchoolClass() {
-        if (this.connection == null) {
-            this.connect();
-        }
- 
-        try {
-            String SQL="SELECT * FROM SCHOOLCLASS";
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(SQL);
-            return rs;
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseObj.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
- 
-    }   
 	 
 } 
