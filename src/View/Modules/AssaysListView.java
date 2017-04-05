@@ -1,5 +1,7 @@
 package View.Modules;
 
+import Controler.AssaysListSelection;
+import Main.Main;
 import Model.Assay;
 import Model.Child;
 
@@ -13,13 +15,19 @@ import java.awt.*;
 public class AssaysListView {
 
     JPanel AssaysPanel;
+    private Main main;
 
     /**
      * Constructeur de la classe AssaysListView.
      *
      * @param child est l'enfant qui sélectionne l'exercice
      */
-    public AssaysListView(Child child) {
+    public AssaysListView(Child child, Main main) {
+        this.main = main;
+        setAssaysPanel(child);
+    }
+
+    public void setAssaysPanel(Child child) {
         int i = 1;
         AssaysPanel = new JPanel();
         AssaysPanel.setLayout(new GridLayout(1, 1));
@@ -33,7 +41,7 @@ public class AssaysListView {
 
     public void createAssayButton(Assay assay, int i) {
         JButton assayBtn = new JButton("Tentative " + i);
-        //assayBtn.addMouseListener(new AssaysListSelection(assay, main)); // Contrôleur
+        assayBtn.addMouseListener(new AssaysListSelection(assay, main)); // Contrôleur
         AssaysPanel.add(assayBtn);
     }
 
