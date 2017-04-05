@@ -19,16 +19,18 @@ public class Recorder {
 	private DatabaseObj database = new DatabaseObj();
 
 	public Recorder () throws Exception{
-		//drop all the tables
-		database.sqlQuery("drop table if exists ACTION;"
-				+ "drop table if exists ASSAY;"
-				+ "drop table if exists CHILD;"
-				+ "drop table if exists COMPLETE;"
-				+ "drop table if exists EXERCISE;"
-				+ "drop table if exists IS_AVAILABLE;"
-				+ "drop table if exists RULE;"
-				+ "drop table if exists SCHOOLCLASS;"
-				+ "drop table if exists TEACHER;");
+		//delete all the tables
+		database.sqlQuery("delete from ACTION;"
+				+ "delete from ASSAY;"
+				+ "delete from CHILD;"
+				+ "delete from COMPLETE;"
+				+ "delete from EXERCISE;"
+				+ "delete from IS_AVAILABLE;"
+				+ "delete from RULE;"
+				+ "delete from SCHOOLCLASS;"
+				+ "delete from TEACHER;");
+		
+		//database.
 		
 		//insert all the data again.
 		/*

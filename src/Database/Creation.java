@@ -183,9 +183,7 @@ public class Creation {
 		database.insertChild("Penelope","Chapman", 12, "res/Image/child-drawing.jpg");
 		database.insertChild("Penelope","Jones", 10,"res/Image/child-drawing.jpg");
 		
-		// INSERT EXERCISE
-		database.insertProfessors(firstName, lastName, age, password, picture);
-		
+		// INSERT EXERCISE		
 	}
 		
 	
