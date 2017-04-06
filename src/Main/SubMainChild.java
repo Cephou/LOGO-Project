@@ -28,7 +28,7 @@ public class SubMainChild extends Main {
 	 * @param layout
 	 * @param child current child
 	 */
-	public SubMainChild(Child child, GeneralLayout layout, ArrayList<SchoolClass> schoolClasses) throws AlreadyInListException, tooLongStringException, EmptyStringException, NegativeIntegerException, StringSizeException{
+	public SubMainChild(Child child, GeneralLayout layout, ArrayList<SchoolClass> schoolClasses) throws Exception{
 		this.child = child;
 		this.layout = layout;
 		this.schoolClasses = schoolClasses;

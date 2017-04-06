@@ -12,7 +12,7 @@ public class SubMainTeacher extends Main {
 	 * @param teacher
 	 */
 
-	public SubMainTeacher(Teacher teacher)throws tooLongStringException, AlreadyInListException, EmptyStringException, NegativeIntegerException, StringSizeException{
+	public SubMainTeacher(Teacher teacher) throws Exception{
 		this.teacher = teacher;
 		//ajout des lsiteners
 

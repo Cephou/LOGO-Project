@@ -26,16 +26,19 @@ public class Main {
 	private GeneralLayout layout; // Le layout gï¿½nï¿½ral
 	private Loader databaseLoader; //creation de la connexion vers BDD (//TODO deplacer dans les classes
 	private Recorder databaseRecorder; //enregistremment des donnï¿½es
-	private DatabaseObj databaseCreation; // creation SSI BDD invexistante;
+	//private DatabaseObj databaseCreation; // creation SSI BDD invexistante;
 
-	public Main() throws EmptyStringException, NegativeIntegerException, StringSizeException, tooLongStringException, AlreadyInListException {
-		loadDatas(); // Charge des donnï¿½es
+	public Main() throws Exception {
+		//loadDatas(); // Charge des donnï¿½es
+		databaseLoader = new Loader();
+		schoolClasses = databaseLoader.getSchoolClassList();
+		
 		layout = new GeneralLayout();
 		ClassLoginView classSelection = new ClassLoginView(schoolClasses, this); // Crï¿½e le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		try {
 			new Main();
 		} catch (EmptyStringException e) {
@@ -94,7 +97,7 @@ public class Main {
 
 		teacher1.evaluateAssay(child1.getAssays().get(0), "c'est nul tu as fait n'importequoi", Grade.NotAcquired);
 		teacher1.evaluateAssay(child1.getAssays().get(2), "c'est ien tu es un bon eleve", Grade.Acquired);
-		teacher1.evaluateAssay(child1.getAssays().get(1), "avec de la volonté tu pourrais y arriver", Grade.InAcquisition);
+		teacher1.evaluateAssay(child1.getAssays().get(1), "avec de la volontï¿½ tu pourrais y arriver", Grade.InAcquisition);
 	}
 
 	/**
@@ -113,7 +116,7 @@ public class Main {
 	 * Gï¿½nï¿½re le home de l'ï¿½lï¿½ve
 	 * @param child
 	 */
-	public void loginChild(Child child) {
+	public void loginChild(Child child) throws Exception{
 		// Crï¿½e le submain
 		try {
 			try {

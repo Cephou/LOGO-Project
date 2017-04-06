@@ -81,6 +81,8 @@ public class Loader{
 		}
 	}
 	
+	// fonction de test
+	
 	public void displayFunction(){
 		for(SchoolClass Sc : schoolClassList)
 		{
@@ -96,14 +98,22 @@ public class Loader{
 		}
 	}
 	
-	public ArrayList<SchoolClass> getSchoolClassList(){
+
+	/**
+	 * @return the schoolClassList
+	 */
+	public ArrayList<SchoolClass> getSchoolClassList() {
 		return schoolClassList;
 	}
-	
-	public static void main(String[] args) throws Exception{
-		Loader loader = new Loader();
-		loader.displayFunction();
+
+	/**
+	 * @param schoolClassList the schoolClassList to set
+	 */
+	public void setSchoolClassList(ArrayList<SchoolClass> schoolClassList) {
+		this.schoolClassList = schoolClassList;
 	}
+
+
 }
 
 
