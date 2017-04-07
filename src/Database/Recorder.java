@@ -1,5 +1,9 @@
 package Database;
+import Model.*;
 
+import java.util.ArrayList;
+
+import Main.*;
 
 /* This class is the recorder.  
  * It is meant to be called only once when the program is closed. 
@@ -10,6 +14,7 @@ package Database;
 public class Recorder {
 
 	private DatabaseObj database = new DatabaseObj();
+	private ArrayList<SchoolClass> data;
 
 	public Recorder () throws Exception{
 		//delete all the tables
@@ -25,16 +30,23 @@ public class Recorder {
 		
 		
 		//insert everything again 
-		/*ArrayList<SchoolClass> data = main.getSchoolClasses(); 
-		 *for(SchoolClass c : data) { 
-		 *	database.sqlQuery("INSERT LES CLASSES A BALLE!!");
-		 *		for(ChildList d : data.ChildList) {
-		 *			database.sqlQuery("INSERT LES CHILDREN A BALLE!!");
-		 *		}
-		 *		database.sqlQuery("INSERT LE PROF A BALLE");
-		 *	}
-		 *} 
-		 */
+		data = main.getSchoolClasses();
+		System.out.println(data.size());
+		 for(SchoolClass c : data) { 
+			 database.insertSchoolClass(c.getClassName());
+			 Teacher t = c.getTeacher();
+			 database.insertProfessors(t.getFirstName(), t.getLastName(), t.getAge(), t.getPassword(), t.getPicture().getDescription());
+			 System.out.println(t.getPicture().getDescription());
+		 		for(Child d : c.getChildList()) {
+		 			database.sqlQuery("INSERT LES CHILDREN A BALLE!!");
+		 		}
+		 		database.sqlQuery("INSERT LE PROF A BALLE");
+		 	}
+		 }
+	
+	public static void main(String[] args) throws Exception{
+		new Recorder();
+	}
 	}
 
-}
+

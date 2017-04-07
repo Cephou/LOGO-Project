@@ -166,4 +166,11 @@ public class Teacher extends User {
 		}
 	}
 
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
 }

@@ -143,4 +143,18 @@ public class Main {
 
 	}
 
+	/**
+	 * @return the schoolClasses
+	 */
+	public ArrayList<SchoolClass> getSchoolClasses() {
+		return schoolClasses;
+	}
+
+	/**
+	 * @param schoolClasses the schoolClasses to set
+	 */
+	public void setSchoolClasses(ArrayList<SchoolClass> schoolClasses) {
+		this.schoolClasses = schoolClasses;
+	}
+
 }

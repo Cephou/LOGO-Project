@@ -75,7 +75,6 @@ public class Loader{
 			compt2++;
 			schoolClassList.add(schoolClass);
 		}
-		System.out.println(childList.size());
 		for (int i=0;i<childList.size();i++){
 			schoolClassList.get(i/25).addChild(childList.get(i));
 		}
@@ -112,7 +111,6 @@ public class Loader{
 	public void setSchoolClassList(ArrayList<SchoolClass> schoolClassList) {
 		this.schoolClassList = schoolClassList;
 	}
-
 
 }
 
