@@ -73,7 +73,7 @@ public class Assay {
 
 		if (teacher == child.getSchoolClass().getTeacher()) {
 			if (grade != Grade.NotGraded) {
-				this.comment = comment;
+				this.setComment(comment);
 				this.grade = grade;
 			} else {
 				throw new WrongGradeException();
@@ -114,8 +114,29 @@ public class Assay {
 		return grade;
 	}
 
+	/**
+	 * @param grade the grade to set
+	 */
+	public void setGrade(Grade grade) {
+		this.grade = grade;
+	}
+
 	public ArrayList<Action> getListAction() {
 		return listAction;
+	}
+
+	/**
+	 * @return the comment
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * @param comment the comment to set
+	 */
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 }

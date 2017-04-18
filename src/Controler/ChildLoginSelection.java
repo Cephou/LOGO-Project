@@ -31,7 +31,12 @@ public class ChildLoginSelection implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		main.loginChild(child);
+		try {
+			main.loginChild(child);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
