@@ -10,31 +10,31 @@ import Exception.EmptyStringException;
 import Exception.tooLongStringException;
 
 /**
- * @author Groupe 7 Cette classe décrit l'objet exercice. Un exercice est
- *         forcément créé par un professeur.
+ * @author Groupe 7 Cette classe dï¿½crit l'objet exercice. Un exercice est
+ *         forcï¿½ment crï¿½ï¿½ par un professeur.
  */
 
 public class Exercise {
 	private String title;
 	private String instruction;
 	private TortueG turtle;
-	private ImageIcon icon; // L'icône est une miniature du dessin final.
+	private ImageIcon icon; // L'icï¿½ne est une miniature du dessin final.
 	private Teacher teacher;
 
 	/**
 	 * Constructeur pour la classe Exercice.
 	 * 
 	 * @param title
-	 *            est le titre de l'exercice (taille du string inf à 50
-	 *            charactères)
+	 *            est le titre de l'exercice (taille du string inf ï¿½ 50
+	 *            charactï¿½res)
 	 * @param instruction
-	 *            est la consigne de l'exercice (taille du string inf à 3000
-	 *            charactères)
+	 *            est la consigne de l'exercice (taille du string inf ï¿½ 3000
+	 *            charactï¿½res)
 	 * @param icon
 	 *            est la miniature l'exercice.
 	 * @param teacher
 	 *            est le professeur auteur de l'exercice. Un exercice est
-	 *            toujours associé à l'exercice qu'il a écrit.
+	 *            toujours associï¿½ ï¿½ l'exercice qu'il a ï¿½crit.
 	 * @throws EmptyStringException
 	 * @throws tooLongStringException
 	 */
@@ -105,6 +105,13 @@ public class Exercise {
 	 */
 	public TortueG getTurtle() {
 		return turtle;
+	}
+
+	/**
+	 * @return the teacher
+	 */
+	public Teacher getTeacher() {
+		return teacher;
 	}
 
 }

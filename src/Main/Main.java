@@ -36,6 +36,7 @@ public class Main {
 		layout = new GeneralLayout();
 		ClassLoginView classSelection = new ClassLoginView(schoolClasses, this); // Cr�e le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
+		System.out.println(schoolClasses.size());
 	}
 
 	public static void main(String[] args) throws Exception {
