@@ -3,6 +3,7 @@ package Main;
 import Exception.*;
 import Model.*;
 import View.Child.ChildHomeView;
+import View.Child.ExerciseCompletionView;
 import View.Child.ExerciseVisualizationView;
 import View.GeneralLayout;
 
@@ -54,6 +55,12 @@ public class SubMainChild extends Main {
 		JPanel exerciseVisualisationPanel = eV.getExerciseVisualisation();
 		layout.getChildHomeView().setCenterPart(exerciseVisualisationPanel);
 		layout.refresh();
+	}
+	
+	public void generateExerciseCompletion(Exercise exercise) {
+		ExerciseCompletionView eC = new ExerciseCompletionView(exercise, child, this);
+		JPanel exerciseCompletionPanel = eC.getExerciseCompletion();
+		layout.changeBodyContent(exerciseCompletionPanel);		
 	}
 
 	public void selectAssay(Assay assay) {

@@ -74,6 +74,10 @@ public class GeneralLayout {
 		frame.setVisible(false);
 		frame.setVisible(true);
 	}
+	
+	public void changeReturnButton() {
+		
+	}
 
 	public Header getHeader() {
 		return header;

@@ -3,6 +3,8 @@ package View.Child;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import Controler.ExerciseCompletionSelection;
+import Controler.SchoolClassSelection;
 import Main.SubMainChild;
 import Model.Child;
 import Model.Exercise;
@@ -29,6 +31,7 @@ public class ExerciseVisualizationView {
         	exerciseVisualisation.add(replay);
     	} else {
     		JButton play = new JButton("Jouer");
+    		play.addMouseListener(new ExerciseCompletionSelection(exercise, main));
     		exerciseVisualisation.add(play);
     	}
     	
