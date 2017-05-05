@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
+import Main.Main;
+
 public class GeneralLayout {
 
 	private JFrame frame;
@@ -29,21 +31,23 @@ public class GeneralLayout {
 
 	/**
 	 * Create the application.
+	 * @param main 
 	 */
-	public GeneralLayout() {
-		initialize(); // Génère le header, body et footer
+	public GeneralLayout(Main main) {
+		initialize(main); // Génère le header, body et footer
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @param main 
 	 */
-	public void initialize() {
+	public void initialize(Main main) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 801, 466);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout());
 		
-		header = new Header();
+		header = new Header(main);
 		frame.getContentPane().add(header.getHeader(), BorderLayout.NORTH);
 		
 		body = new JPanel();
@@ -75,7 +79,7 @@ public class GeneralLayout {
 		frame.setVisible(true);
 	}
 	
-	public void changeReturnButton() {
+	public void changeReturnButton(Main main) {
 		
 	}
 

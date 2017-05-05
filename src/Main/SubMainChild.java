@@ -22,6 +22,8 @@ public class SubMainChild extends Main {
 	private Child child;
 	private GeneralLayout layout;
 	private ArrayList<SchoolClass> schoolClasses;
+	private Exercise currentExercise;
+	private int currentPage = 1;
 
 	/**
 	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Child
@@ -66,4 +68,12 @@ public class SubMainChild extends Main {
 	public void selectAssay(Assay assay) {
 
 	}
+
+	/**
+	 * @return the currentPage
+	 */
+	public int getCurrentPage() {
+		return currentPage;
+	}
+	
 }

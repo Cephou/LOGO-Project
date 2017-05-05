@@ -9,16 +9,20 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controler.ExerciseVisualizationSelection;
+import Controler.ReturnButtonSelection;
+import Main.Main;
 import Model.Child;
 import Model.User;
 
 public class Header {
 	
+	private Main main;
 	private JPanel header, goBack;
 	private JButton btnReturn;
 	private JLabel lblLastName, lblFirstName, lblClass, lblPageTitle;
 	
-	public Header() {
+	public Header(Main main) {
 		header = new JPanel();
 		header.setLayout(new BorderLayout(0, 0));
 		
@@ -30,6 +34,7 @@ public class Header {
 		headerContent.add(goBack, BorderLayout.WEST);
 		
 		btnReturn = new JButton("RETURN");
+		btnReturn.addMouseListener(new ReturnButtonSelection(main));
 		goBack.add(btnReturn);
 		
 		JPanel headerInformation = new JPanel();
@@ -80,15 +85,6 @@ public class Header {
 		lblPageTitle = new JLabel("PAGE TITLE");
 		pageTitle.add(lblPageTitle, BorderLayout.EAST);
 		
-		JPanel help = new JPanel();
-		headerInformation.add(help, BorderLayout.EAST);
-		
-		JButton btnHelp = new JButton("HELP");
-		btnHelp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		help.add(btnHelp);
 	}
 	
 	public JPanel getHeader() {

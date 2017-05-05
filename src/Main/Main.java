@@ -33,7 +33,7 @@ public class Main {
 		databaseLoader = new Loader();
 		schoolClasses = databaseLoader.getSchoolClassList();
 		
-		layout = new GeneralLayout();
+		layout = new GeneralLayout(this);
 		ClassLoginView classSelection = new ClassLoginView(schoolClasses, this); // Cr�e le panel de liste de classes
 		layout.changeBodyContent(classSelection.getClassSelection()); // Change le contenu du body et ajoute la liste de classes
 		System.out.println(schoolClasses.size());
