@@ -7,6 +7,12 @@ import Main.Main;
 import Main.SubMainChild;
 import Model.Exercise;
 
+/**
+ * Cette classe permet d'appeler la méthode de généreration de la vue de complétion d'exercice lors d'un clic sur un bouton play
+ * @author Groupe 7
+ *
+ */
+
 public class ExerciseCompletionSelection implements MouseListener {
 
 	private Exercise exercise;

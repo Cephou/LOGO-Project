@@ -8,18 +8,25 @@ import Model.Child;
 import Model.Exercise;
 
 /**
- * Prend en paramÃ¨tre un exercice, click sur bouton valider envoie tout vers database
+ * Affiche la vue completion d'un exercice donné, permettant de compléter l'exercice.
+ * @author Groupe 7
  */
+
 public class ExerciseCompletionView {
 	
 	private JPanel exerciseCompletion;
 
 	public ExerciseCompletionView(Exercise exercise, Child child, SubMainChild subMainChild) {
 		exerciseCompletion = new JPanel();
-		JLabel test = new JLabel("lol");
-		exerciseCompletion.add(test);
+		JLabel notImplemented = new JLabel("Not implemented");
+		exerciseCompletion.add(notImplemented);
 	}
 
+	/**
+	 * Récupère le pannel de l'exercice
+	 * @return le pannel exercice
+	 */
+	
 	public JPanel getExerciseCompletion() {
 		return exerciseCompletion;
 	}

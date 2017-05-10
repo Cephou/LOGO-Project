@@ -17,12 +17,13 @@ import Main.SubMainChild;
 
 /*
  * Cette classe est le controleur des boutons issus de ChildSelectionView.
- * Elle permet de choisir l'enfant et instancie la gï¿½nï¿½ration de ExerciceSelectionView, en lui donnant l'enfant.
+ * Elle permet de choisir l'enfant et instancie la procédure du main de génération de la vue de sélection d'exercice, en lui donnant l'enfant.
  */
+
 public class ChildLoginSelection implements MouseListener {
 
-	private Child child;
-	private Main main;
+	private Child child; // L'enfant loggé
+	private Main main; // Lien avec le main
 	
 	public ChildLoginSelection(Child child, Main main) {
 		this.child = child;

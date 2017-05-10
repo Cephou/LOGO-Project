@@ -5,5 +5,5 @@ package Controler;
  */
 
 public class ChildExerciseSelection {
-
+ // Non implémenté
 }
