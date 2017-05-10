@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 
 import Main.Main;
 import Main.SubMainChild;
+import Model.Exercise;
 
 public class ReturnButtonSelection implements MouseListener {
 
@@ -16,8 +17,8 @@ public class ReturnButtonSelection implements MouseListener {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		if(((SubMainChild) main).getCurrentPage() == 1) {
-			
+		if(((SubMainChild) main).getCurrentPage() == 2) {
+			((SubMainChild) main).generateExerciseVisualisation(((SubMainChild) main).getCurrentExercise());
 		}
 	}
 	

@@ -24,6 +24,9 @@ public class SubMainChild extends Main {
 	private ArrayList<SchoolClass> schoolClasses;
 	private Exercise currentExercise;
 	private int currentPage = 1;
+	
+	// 1 - Liste d'exercice
+	// 2 - Exercice joué
 
 	/**
 	 * Constructeur de la fenetre, de son remplissage et de l'ajout de ses controlleurs pour l'userAgent Child
@@ -62,7 +65,9 @@ public class SubMainChild extends Main {
 	public void generateExerciseCompletion(Exercise exercise) {
 		ExerciseCompletionView eC = new ExerciseCompletionView(exercise, child, this);
 		JPanel exerciseCompletionPanel = eC.getExerciseCompletion();
-		layout.changeBodyContent(exerciseCompletionPanel);		
+		layout.changeBodyContent(exerciseCompletionPanel);
+		currentPage = 2;
+		currentExercise = exercise;
 	}
 
 	public void selectAssay(Assay assay) {
@@ -74,6 +79,13 @@ public class SubMainChild extends Main {
 	 */
 	public int getCurrentPage() {
 		return currentPage;
+	}
+
+	/**
+	 * @return the currentExercise
+	 */
+	public Exercise getCurrentExercise() {
+		return currentExercise;
 	}
 	
 }

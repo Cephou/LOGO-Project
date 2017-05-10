@@ -22,7 +22,9 @@ public class Header {
 	private JButton btnReturn;
 	private JLabel lblLastName, lblFirstName, lblClass, lblPageTitle;
 	
-	public Header(Main main) {
+	public Header(Main pmain) {
+		
+		main = pmain;
 		header = new JPanel();
 		header.setLayout(new BorderLayout(0, 0));
 		
