@@ -30,7 +30,7 @@ public class Recorder {
 		
 		
 		//insert everything again 
-		data = Main.getSchoolClasses();
+		// data = Main.getSchoolClasses();
 		System.out.println(data.size());
 		 for(SchoolClass c : data) { 
 			 database.insertSchoolClass(c.getClassName());
